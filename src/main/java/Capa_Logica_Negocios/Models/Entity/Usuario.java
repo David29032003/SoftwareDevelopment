@@ -1,7 +1,6 @@
 package Capa_Logica_Negocios.Models.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,9 +15,15 @@ import java.io.Serializable;
 @Entity
 @Table(name = "Usuarios")
 public class Usuario implements Serializable {
+    @Id
+    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
+    @Column(name = "Nombre")
     private String Nombre;
+    @Column(name = "Contrasena")
     private String Contrasena;
+    @Column(name = "Email")
     private String Email;
 
 
