@@ -6,6 +6,7 @@ import { routes } from "./utils/routes"
 function App() {
   return (
     <Router>
+      {/* <Navbar/> */}
       <Routes>
         {routes.map((r) => {
           return <Route path={r.path} element={r.element} key={r.id} />
