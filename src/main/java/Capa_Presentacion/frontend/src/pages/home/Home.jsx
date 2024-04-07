@@ -35,10 +35,13 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div id="abot" className="page-section2">Contenido de la Sección 1</div>
-            <div id="faq" className="section3">Contenido de la Sección 2</div>
-            <div id="contact" className="section4">Contenido de la Sección 2</div>
-            {/* Añade más secciones como necesites */}
+            <div id="abot" className="page-section2">
+                Contenido de la Sección 1</div>
+            <div id="faq" className="section3">
+                Contenido de la Sección 2</div>
+            <div id="contact" className="section4">
+                Contenido de la Sección 2</div>
+            
         </div>
     )
 }
