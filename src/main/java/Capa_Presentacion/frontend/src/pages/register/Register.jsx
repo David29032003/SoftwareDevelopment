@@ -1,11 +1,13 @@
 import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from './utils/axios';
+import axios from '../../utils/axios';
 import "./Register.css";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+// Agregamos los caracteres no alfanumericos
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,24}$/; //que acepte todos los caracteres especiale
+const MAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const REGISTER_URL = '/register';
 
 const Register = () => {
@@ -24,6 +26,11 @@ const Register = () => {
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
 
+    //Creacion del correo
+    const [email, setEmail] = useState('');
+    const [validEmail, setValidEmail] = useState(false);
+    const [emailFocus, setEmailFocus] =useState(false);
+
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 console.log("estas aqui");
@@ -40,16 +47,23 @@ console.log("estas aqui");
         setValidMatch(pwd === matchPwd);
     }, [pwd, matchPwd])
 
+    // validacion del correo
+    useEffect(() => {
+        setValidEmail(MAIL_REGEX.test(email));
+    }, [email]);
+
     useEffect(() => {
         setErrMsg('');
-    }, [user, pwd, matchPwd])
+    }, [user, pwd, matchPwd, email])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         // if button enabled with JS hack
         const v1 = USER_REGEX.test(user);
         const v2 = PWD_REGEX.test(pwd);
-        if (!v1 || !v2) {
+        const v3 = MAIL_REGEX.test(email);
+
+        if (!v1 || !v2 || !v3) {
             setErrMsg("Invalid Entry");
             return;
         }
@@ -70,6 +84,8 @@ console.log("estas aqui");
             setUser('');
             setPwd('');
             setMatchPwd('');
+            setEmail('');
+            sendConfirmationEmail();
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
@@ -83,7 +99,15 @@ console.log("estas aqui");
             errRef.current.focus();
         }
     }
-
+    const sendConfirmationEmail = async () => {
+        try {
+            await axios.post(SEND_CONFIRMATION_EMAIL_URL, {email});
+            history.push('/confirmation');
+        } catch (error) {
+            console.error('Error sending confirmation email:', error);
+            setErrMsg('Error sending confirmation email');
+        }
+    };
     return (
         <div className= "body1">
             {success ? (// Operador ternario que verifica si el estado `success` es verdadero.
@@ -168,8 +192,30 @@ console.log("estas aqui");
                             <FontAwesomeIcon icon={faInfoCircle} />
                             Must match the first password input field.
                         </p>
+                        
+                        {/* Correo electronico */}
+                        <label hmtlFor = "email">
+                            Email:
+                            <FontAwesomeIcon icon={faCheck} className={validEmail ? "valid" : "hide"} />
+                            <FontAwesomeIcon icon={faTimes} className={validEmail || !email ? "hide" : "invalid"} />
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                            required
+                            aria-invalid={validEmail ? "false" : "true"}
+                            aria-describedby="emailnote"
+                            onFocus={() => setEmailFocus(true)}
+                            onBlur={() => setEmailFocus(false)}
+                        />
+                        <p id="emailnote" className={emailFocus && email && !validEmail ? "instructions" : "offscreen"}>
+                            <FontAwesomeIcon icon={faInfoCircle} />
+                            Please enter a valid email address.
+                        </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        <button disabled={!validName || !validPwd || !validMatch || !validEmail}>Sign Up</button>
                     </form>
                     <p>
                         Already registered?<br />
