@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informe del Primer Sprint</title>
-    <style>
-        body {
-            font-family: "Ubuntu", sans-serif;
-        }
-        table {
-            border-collapse: collapse;
-            width: 90%;
-            margin: 0 auto;
-        }
-    </style>
-</head>
-<body>
 
 <h1 style="text-align: center;">Informe Inicial del Primer Sprint</h1>
 
