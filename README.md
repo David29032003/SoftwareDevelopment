@@ -1,3 +1,4 @@
+
 <h1 style="text-align: center;">Informe Inicial del Primer Sprint</h1>
 
 <h2>Objetivos</h2>
@@ -146,11 +147,38 @@
     <tr>
         <td style="text-align: center;">Criterios de aceptación</td>
         <td>
-            <ul>
-                <li>Creación exitosa de una cuenta de usuario válida</li>
-                <li>Creación de una cuenta fallida con un nombre de usuario existente</li>
-                <li>Creación fallida de una contraseña existente</li>
-            </ul>
+            <ol>
+                <li>
+                    <p>Creación exitosa de una cuenta de usuario válida</p>
+                    <b>Dado</b> un nombre de usuario válido inexistente <br>
+                    <b>Cuando</b> creo una cuenta con este nombre usuario <br>
+                    <b>Y</b> una contraseña válida que coincida con la contraseña confirmada <br>
+                    <b>Y</b> una direccion de correo electrónico válida <br>
+                    <b>Entonces</b> el sistema deberían crear unaa nueva cuenta. <br>
+                    <b>Y</b> mostrar un mensaje de que me he registrado con éxito. <br>
+                    <br>
+                </li>
+                <li>
+                    <p>Creación de una cuenta fallida con un nombre de usuario existente</p>
+                    <b>Dado</b> un nombre de usuario que ya existe <br>
+                    <b>Cuando</b> creo una cuenta con este nombre de usuario <br>
+                    <b>Y</b> una contraseña válida que coincida con la contraseña confirmada <br>
+                    <b>Y</b> una dirección de correo electrónico válida <br>
+                    <b>Entonces</b> el sistema no debería crear una nueva cuenta <br>
+                    <b>Y</b> debería mostrar un mensaje de error. <br>
+                    <br>
+                </li>
+                <li>
+                    <p>Creación fallida de una contraseña existente</p>
+                    <b>Dado</b> un nombre de usuario válido inexistente<br>
+                    <b>Cuando</b> un usuario crea una cuenta con este nombre de usuario <br>
+                    <b>Y</b> una contraseña no válida<br>
+                    <b>Y</b> la misma contraseña confirmada <br>
+                    <b>Y</b> una dirección de correo electrónico no válida <br>
+                    <b>Entonces</b> el sistema no debería crear una nueva cuenta <br>
+                    <b>Y</b> debería mostrar un mensaje de error. <br>
+                </li>
+            </ol>
         </td>
         <td>
             <ul>
@@ -187,11 +215,51 @@
     <tr>
         <td style="text-align: center;">Criterios de aceptación</td>
         <td>
+            <ol>
+                <li>
+                    <p>Inicio de sesión exitoso con credenciales válidas</p>
+                    <b>Dado</b> un usuario ya registrado y confirmado <br>
+                    <b>Cuando</b> ingrese el nombre de usuario <br>
+                    <b>Y</b> la contraseña válida <br>
+                    <b>Entonces</b> el sistema debería autenticar exitosamente <br>
+                    <b>Y</b> redirigir a la página de inicio. <br>
+                    <br>
+                </li>
+                <li>
+                    <p>Intento fallido de inicio de sesión con contraseña incorrecta</p>
+                    <b>Dado</b> un usuario ya registrado y confirmado <br>
+                    <b>Cuando</b> ingreso un nombre de usuario <br>
+                    <b>Y</b> la contraseña incorrecta <br>
+                    <b>Entonces</b> el sistema debería no autenticar exitosamente <br>
+                    <b>Y</b> debería mostrar un mensaje de error. <br>
+                    <br> 
+                </li>
+                <li>
+                    <p>Intento de inicio de sesión con un nombre de usuario inexistente</p>
+                    <b>Dado</b> un nombre de usuario inexistente <br>
+                    <b>Cuando</b> ingreso un nombre de usuario <br>
+                    <b>Y</b> una contraseña inexistente <br>
+                    <b>Entonces</b> el sistema debería no permitir iniciar sesión <br>
+                    <b>Y</b> mostrar un mensaje de error. <br>
+                    <br> 
+                </li>
+                <li>
+                    <p>Intento de inicio de sesión con un correo electrónico no asociado a ningún usuario</p>
+                    <b>Dado</b> un correo electrónico que no esta asociado a ningun usuario registrado <br>
+                    <b>Cuando</b> ingreso un correo no registrado <br>
+                    <b>Y</b> una contraseña inexistente <br>
+                    <b>Entonces</b> el sistema debería no autenticar exitosamente <br>
+                    <b>Y</b> debería mostrar un mensaje de error.<br>
+                    <br> 
+                </li>
+            </ol>
+        </td>
+        <td> 
             <ul>
-                <li>Creación exitosa de una cuenta de usuario válida</li>
+                <li>Ruiz Milagros</li>
+                <li>Reeves David</li>
             </ul>
         </td>
-        <td> </td>
     </tr>
     <tr>
         <td style="text-align: center;">Codificación</td>
@@ -220,8 +288,25 @@
     </tr>
     <tr>
         <td style="text-align: center;">Criterios de aceptación</td>
-        <td> </td>
-        <td> </td>
+        <td> 
+            <ol>
+                <li>
+                    <p>Cierre de sesión exitoso de una cuenta registrada</p>
+                    <b>Dado</b> un usuario con una cuenta registrada <br>
+                    <b>Y</b> autenticacion exitosa <br>
+                    <b>Cuando</b> presiono el botón de cerrar sesión <br>
+                    <b>Y</b> confirmo el mensaje de aceptación <br>
+                    <b>Entonces</b> el sistema debería cerrar sesión de la cuenta registrada <br>
+                    <b>Y</b> redirigir a la pagina de inicio de sesión. 
+                </li>
+            </ol>
+        </td>
+        <td> 
+            <ul>
+                <li>Reeves David</li>
+                <li>Ravichagua Manuel</li>
+            </ul>
+        </td>
     </tr>
     <tr>
         <td style="text-align: center;">Codificación</td>
@@ -251,10 +336,33 @@
     <tr>
         <td style="text-align: center;">Criterios de aceptación</td>
         <td>
-            <ul>
-                <li>Selección de tablero de damas</li>
-                <li>Selección exitosa de un diseño de tablero de damas</li>
-            </ul>
+            <ol>
+                <li>
+                    <p>Selección de modelo de tablero de damas</p>
+                    <b>Dado</b> un jugador presiona el botón de jugar una partida de damas <br>
+                    <b>Cuando</b> selecciono el boton para elegir un modelo tablero de damas <br>
+                    <b>Y</b> confirmar el diseño elegido <br>
+                    <b>Entonces</b> el sistema debería mostrar el tablero elegido <br>
+                    <br>
+                </li>
+                <li>
+                    <p>Selección de un color de pieza de damas</p>
+                    <b>Dado</b> un jugador presiona el botón de jugar una partida de damas <br>
+                    <b>Y</b> elegido un tablero de damas <br>
+                    <b>Cuando</b> presiono el botón para elegir un color de pieza de damas <br>
+                    <b>Y</b> confirmar el color elegido <br>
+                    <b>Entonces</b> el sistema debería mostrar el color de pieza elegido <br>
+                    <br>
+                </li>
+                <li>
+                    <p>Visualizacion exitosa de tablero de damas</p>
+                    <b>Dado</b> un jugador que selecciono el modelo de tablero de damas <br>
+                    <b>Y</b> un color de pieza de damas <br>
+                    <b>Cuando</b> presiono el botón iniciar partida <br>
+                    <b>Entonces</b> el sistema debería mostrar el modelo del tablero<br>
+                    <b>Y</b> el color de pieza de damas elegido;
+                </li>
+            </ol>
         </td>
         <td>
             <ul>
@@ -279,27 +387,29 @@
     </tr>
     <tr>
         <td style="text-align: center;">Jose Manuel <br> Ravichagua Marin</td>
-        <td style="text-align: center;"> </td>
-        <td style="text-align: center;"> </td>
-        <td style="text-align: center;"> </td>
+        <td style="text-align: center;"> 8</td>
+        <td style="text-align: center;"> 9</td>
+        <td style="text-align: center;"> 9</td>
     </tr>
     <tr>
         <td style="text-align: center;">David Fernando <br> Reeves Goñi</td>
-        <td style="text-align: center;"> </td>
-        <td style="text-align: center;"> </td>
-        <td style="text-align: center;"> </td>
+        <td style="text-align: center;"> 8</td>
+        <td style="text-align: center;"> 9</td>
+        <td style="text-align: center;"> 8</td>
     </tr>
     <tr>
         <td style="text-align: center;">Milagros Cristina <br> Ruiz Arica</td>
-        <td style="text-align: center;"> </td>
-        <td style="text-align: center;"> </td>
-        <td style="text-align: center;"> </td>
+        <td style="text-align: center;"> 8</td>
+        <td style="text-align: center;"> 8</td>
+        <td style="text-align: center;"> 9</td>
     </tr>
     <tr>
         <td style="text-align: right;">Promedio</td>
-        <td style="text-align: center;"> </td>
-        <td style="text-align: center;"> </td>
-        <td style="text-align: center;"> </td>
+        <td style="text-align: center;"> 8</td>
+        <td style="text-align: center;"> 8.67</td>
+        <td style="text-align: center;"> 8.67</td>
     </tr>
     
 </table>
+</body>
+</html>
