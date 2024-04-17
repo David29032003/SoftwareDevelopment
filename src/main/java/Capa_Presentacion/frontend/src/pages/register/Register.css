@@ -105,21 +105,24 @@ html {
 
 section {
     width: 100%;
-    max-width: 420px;
-    min-height: 400px;
+    /* max-width: 420px; */
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 1rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(75, 66, 66, 0.416);
+    align-items: center;
+    backdrop-filter: blur(2px);
 }
 
 form {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-grow: 1;
     padding-bottom: 1rem;
+    width: 40%;
 }
 
 a, a:visited {
@@ -128,21 +131,48 @@ a, a:visited {
 
 input[type="text"],
 input[type="password"],
+input[type="email"],
 button,
 textarea {
   font-family: 'Nunito', sans-serif;
   font-size: 22px;
   padding: 0.25rem;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
+  background-color: rgba(226, 226, 226, 0.542);
+  border: 2.5px solid rgba(229, 208, 208, 0.518);
 }
 
 label,
 button {
   margin-top: 1rem;
+  font-size: large;
 }
 
-button {
-  padding: 0.5rem;
+.but-reg {
+    padding: 0.5rem;
+    color: white;
+    border-radius: 35px;
+    /* background-color: rgba(6, 5, 23, 0.849); */
+    /* transition: background-color 0.3s; */
+    /* border: 3.5px solid white; */
+    border: 3.5px solid white;
+    font-size: x-large;
+    color: white;
+    border-radius: 35px;
+    background-color: rgba(112, 99, 255, 0.89);
+    transition: background-color 0.3s;
+    font-family: "Mountains of Christmas", serif;
+    font-weight: 500;
+    font-style: normal;
+    align-self: center;
+    width: 20vh;
+}
+.but-reg:hover {
+    background-color: rgb(90, 76, 240); /* Color de fondo al pasar el cursor con opacidad completa */
+  }
+  
+.but-reg:active {
+background-color: rgba(30, 24, 94, 0.849); /* Color de fondo al presionar el botón con 50% de opacidad */
 }
 
 .instructions {
@@ -188,5 +218,8 @@ button {
 
 .line {
     display: inline-block;
+}
+.descrpricion{
+    font-size:small;
 }
 

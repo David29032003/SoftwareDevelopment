@@ -6,9 +6,9 @@ import "./Register.css";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 // Agregamos los caracteres no alfanumericos
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,24}$/; //que acepte todos los caracteres especiale
+const PWD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,16}$/; //que acepte todos los caracteres especiale
 const MAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const REGISTER_URL = '/register';
+const REGISTER_URL = '/user/register';
 
 const Register = () => {
     const userRef = useRef();
@@ -69,7 +69,7 @@ console.log("estas aqui");
         }
         try {
             const response = await axios.post(REGISTER_URL,
-                JSON.stringify({ user, pwd }),
+                JSON.stringify({ name: user, password: pwd, email: email}),
                 {
                     headers: { 'Content-Type': 'application/json' },
                     withCredentials: true
@@ -85,7 +85,15 @@ console.log("estas aqui");
             setPwd('');
             setMatchPwd('');
             setEmail('');
-            sendConfirmationEmail();
+            if (response.status === 201) {
+                console.log('Registrado con éxito');
+                setSuccess(true);
+                // Otros estados y lógica
+            } else if (response.data.numOfErrors > 0) {
+                console.log('Errores en el registro:', response.data.message);
+                setErrMsg(response.data.message);
+            }
+            // sendConfirmationEmail();
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
@@ -112,9 +120,9 @@ console.log("estas aqui");
         <div className= "body1">
             {success ? (// Operador ternario que verifica si el estado `success` es verdadero.
                 <section> {/* // Si `success` es verdadero, se muestra un mensaje de éxito. */}
-                    <h1>Success!</h1>
+                    <h1>Registro exitoso!</h1>
                     <p>
-                        <a href="#">Sign In</a>
+                        <a href="/login">Inicia sesión</a>
                     </p>
                 </section>
             ) : (
@@ -123,10 +131,11 @@ console.log("estas aqui");
                     <h1>Register</h1>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">
-                            Username:
+                            USERNAME:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
                         </label>
+                        
                         <input
                             type="text"
                             id="username"
@@ -140,6 +149,9 @@ console.log("estas aqui");
                             onFocus={() => setUserFocus(true)}
                             onBlur={() => setUserFocus(false)}
                         />
+                        <p className="descrpricion">
+                        Esto es lo que verán tus amigos y otros jugadores cuando juegues
+                        </p>
                         <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             4 to 24 characters.<br />
@@ -149,7 +161,7 @@ console.log("estas aqui");
 
 
                         <label htmlFor="password">
-                            Password:
+                            PASSWORD:
                             <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                         </label>
@@ -173,7 +185,7 @@ console.log("estas aqui");
 
 
                         <label htmlFor="confirm_pwd">
-                            Confirm Password:
+                            CONFIRM PASSWORD:
                             <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                         </label>
@@ -195,7 +207,7 @@ console.log("estas aqui");
                         
                         {/* Correo electronico */}
                         <label hmtlFor = "email">
-                            Email:
+                            EMAIL:
                             <FontAwesomeIcon icon={faCheck} className={validEmail ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validEmail || !email ? "hide" : "invalid"} />
                         </label>
@@ -215,13 +227,14 @@ console.log("estas aqui");
                             Please enter a valid email address.
                         </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch || !validEmail}>Sign Up</button>
+                        <button className="but-reg" disabled={!validName || !validPwd || !validMatch || !validEmail}>Registrarme</button>
                     </form>
+                    
                     <p>
                         Already registered?<br />
                         <span className="line">
                             {/*put router link here*/}
-                            <a href="#">Sign In</a>
+                            <a href="/login">Sign In</a>
                         </span>
                     </p>
                 </section>
