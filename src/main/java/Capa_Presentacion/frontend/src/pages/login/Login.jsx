@@ -6,8 +6,8 @@ import axios from '../../utils/axios';
 const LOGIN_URL = '/user/login';
 
 const Login = () => {
-    // 
-    const { setAuth } = useContext(AuthContext);
+    
+    const { auth, setAuth } = useContext(AuthContext);
     const userRef = useRef();
     const errRef = useRef();
 
@@ -24,41 +24,7 @@ const Login = () => {
         setErrMsg('');
     }, [email, pwd])
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     setErrMsg('');//limpiar mensajes previos
-    //     try {
-    //         console.log("estas aqui");
-    //         const response = await axios.post(LOGIN_URL,
-    //             JSON.stringify({ email,password: pwd }),
-    //             {
-                    
-    //                 headers: { 'Content-Type': 'application/json' },
-    //                 withCredentials: true
-    //             }
-    //         );
-    //         console.log(JSON.stringify(response?.data));
-    //         //console.log(JSON.stringify(response));
-    //         const accessToken = response?.data?.accessToken;
-    //         const roles = response?.data?.roles;
-    //         setAuth({ email,  roles, accessToken});
-    //         setEmail('');
-    //         setPwd('');
-    //         setSuccess(true);
-    //     } catch (err) {
-    //         if (!err?.response) {
-    //             setErrMsg('No Server Response');
-    //         } else if (err.response?.status === 400) {
-    //             setErrMsg('Missing Username or Password');
-    //         } else if (err.response?.status === 401) {
-    //             console.log("unauthorized");
-    //             setErrMsg('Unauthorized');
-    //         } else {
-    //             setErrMsg('Login Failed');
-    //         }
-    //         errRef.current.focus();
-    //     }
-    // }
+    // Función para manejar el envío
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrMsg(''); // Limpiar mensajes de error previos
@@ -75,6 +41,7 @@ const Login = () => {
             // Manejo de la respuesta exitosa
             handleSuccessResponse(response);
         } catch (err) {
+            console.log("Error de junior:", err);
             handleError(err);
         }
     }
@@ -82,8 +49,8 @@ const Login = () => {
     // Función para manejar la respuesta exitosa
     const handleSuccessResponse = (response) => {
         console.log("Autenticación exitosa", JSON.stringify(response?.data));
-        const { accessToken, roles } = response?.data;
-        setAuth({ email, roles, accessToken });
+        const { accessToken } = response?.data;
+        setAuth({ email, accessToken });
         setSuccess(true);
         setErrMsg(''); // Limpiar el mensaje de error
         setEmail('');
