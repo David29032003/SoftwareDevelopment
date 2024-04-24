@@ -38,8 +38,13 @@ export default function Board(){
                if(p.x === i && p.y === j){
                    image = p.image;
                }
-           })
-            board.push(<Tile image={image} number={number} />)
+           });
+
+           "0,0"
+           "1,0"
+           "2,0"
+
+            board.push(<Tile key={`${i}${j}`} image={image} number={number} />) // el key es un id que contiene las coordenadas
            
         }
         
