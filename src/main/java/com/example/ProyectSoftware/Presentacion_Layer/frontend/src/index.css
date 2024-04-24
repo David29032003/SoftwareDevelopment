@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap'); */
+:root{
+  --font-primary: 'IBM Plex Sans', sans-serif;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+.mountains-of christmas-regular {
+  font-family: "Mountains of Christmas", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.molengo-regular {
+  font-family: "Molengo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+

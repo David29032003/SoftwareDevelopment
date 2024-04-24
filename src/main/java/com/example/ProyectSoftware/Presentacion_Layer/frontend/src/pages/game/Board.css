@@ -1,0 +1,14 @@
+#board-checker{
+    background-color: rgb(10, 15, 10);
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: (8,8);
+    grid-template-rows: (8,8);
+    color: black;
+    /* justify-content: center;
+    align-items: center; */
+   
+}
+

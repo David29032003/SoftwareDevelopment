@@ -1,0 +1,35 @@
+.bod-login {
+    /* min-height: ; */
+    background: url('../home/assets/chekcershome.png') no-repeat center center ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+}
+.botonlogin{
+    padding: 0.5rem;
+    color: white;
+    border-radius: 35px;
+    /* background-color: rgba(6, 5, 23, 0.849); */
+    /* transition: background-color 0.3s; */
+    /* border: 3.5px solid white; */
+    border: 3.5px solid white;
+    font-size: x-large;
+    color: white;
+    border-radius: 35px;
+    background-color: rgba(112, 99, 255, 0.89);
+    transition: background-color 0.3s;
+    font-family: "Mountains of Christmas", serif;
+    font-weight: 500;
+    font-style: normal;
+    align-self: center;
+    width: 20vh;
+}
+.botonlogin:hover {
+    background-color: rgb(90, 76, 240); /* Color de fondo al pasar el cursor con opacidad completa */
+  }
+  
+.botonlogin:active {
+background-color: rgba(30, 24, 94, 0.849); /* Color de fondo al presionar el botón con 50% de opacidad */
+}

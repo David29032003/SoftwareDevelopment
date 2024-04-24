@@ -1,0 +1,148 @@
+.Lobby{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    padding: 22px;
+}
+.section1{
+    background-color: red;
+    background: url('../assets/fondotableromadera.jpg');
+    width: 60%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section2{
+    background: url(/src/pages/game/assets/chekcershome.png);
+    width: 40%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+
+.section2::before {
+    content: ""; /* Necesario para que el pseudo-elemento se muestre */
+    position: absolute; /* Posicionamiento absoluto respecto al contenedor relativo */
+    top: 0;
+    right: 0;
+    width: 41%; /* Cubre toda el área del contenedor */
+    height: 100%; /* Cubre toda el área del contenedor */
+    background: rgba(0, 0, 0, 0.397); /* Color negro con opacidad 50% */
+    pointer-events: none; /* Asegura que los clics se pasen al elemento subyacente */
+    z-index: -1;
+}
+.imgtablero{
+    width: 55%;
+    height: 65%;
+}
+.lobby-logo{
+    /* background-color: blue; */
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+.lobby-title{
+    /* background-color: aqua; */
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-weight: bold;
+}
+.lobby-options{
+    /* background-color: red; */
+    height: 50%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.lobby-cierresesion{
+    /* background-color: yellowgreen; */
+}
+.lobby-line{
+    margin: 3px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lobby-button1{
+    display: flex;
+    /* justify-content: center; */
+    border: 3.5px solid white;
+    /* font-size: x-large; */
+    color: white;
+    border-radius: 14px;
+    background-color: rgba(124, 137, 248, 0.925);
+    transition: background-color 0.3s;
+    height: 20%;
+    align-items: center;
+    width: 25vh;
+    box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+}
+.lobby-button2{
+    display: flex;
+    /* justify-content: center; */
+    border: 3.5px solid white;
+    /* font-size: x-large; */
+    color: white;
+    border-radius: 14px;
+    background-color: #fd57dfdd;
+    transition: background-color 0.3s;
+    height: 20%;
+    align-items: center;
+    width: 25vh;
+    box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+}
+.icong{
+    width: 7vh;
+    /* margin-right: 10px; */
+}
+.iconr{
+    width: 5vh;
+  /* margin-right: 10px; */
+}
+.iconlin{
+    position: relative;
+    height: 10vh;
+    margin-right: 10px;
+}
+.lobbytextboton{
+    font-family: "Mountains of Christmas", serif;
+    font-weight: bold;
+    color: black;
+}
+.lobbytextb{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+.lobbycuadroicon {
+    width: 34%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.lobby-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: none;
+    border: none;
+    font-size: revert;
+}
+.iconlogout{
+    width: 4vh;
+}
