@@ -1,4 +1,4 @@
-package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Impl;
+package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services;
 
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Entities.UserEntity;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Repositories.UserRepository;
@@ -42,8 +42,9 @@ public class UserServiceImpl implements IUserService {
             // Verificar la contraseña
             if (verifyPassword(login.getPassword(), user.get().getPassword())) {
                 jwt.put("jwt", jwtUtilityService.generateJWT(user.get().getId()));
+                jwt.put("success", "Authentication succefully");
             } else {
-                jwt.put("error", "Authentication failed");
+                jwt.put("failed", "Authentication failed");
             }
 
             return jwt;
@@ -56,6 +57,7 @@ public class UserServiceImpl implements IUserService {
         try {
             ResponseDTO response = userValidation.validate(user);
 
+            // Verificar si hay errores de validación
             if (response.getNumOfErrors() > 0) {
                 return response;
             }
@@ -64,7 +66,45 @@ public class UserServiceImpl implements IUserService {
             Optional<UserEntity> existingUser = userRepository.findByEmail(user.getEmail());
             if (existingUser.isPresent()) {
                 response.setNumOfErrors(1);
-                response.setMessage("User already exists");
+                response.setMessage("User already exists with this email");
+                return response;
+            }
+
+            // Verificar si el usuario ya existe en la base de datos por su nombre de usuario
+            Optional<UserEntity> existingUserByUsername = userRepository.findByName(user.getName());
+            if (existingUserByUsername.isPresent()) {
+                response.setNumOfErrors(1);
+                response.setMessage("User already exists with this username");
+                return response;
+            }
+
+            // Codificar la contraseña antes de guardarla en la base de datos
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
+            user.setPassword(encoder.encode(user.getPassword()));
+            userRepository.save(user);
+            response.setMessage("User created successfully");
+
+            return response;
+        } catch (Exception e) {
+            throw new Exception(e.toString());
+        }
+    }
+
+    public ResponseDTO registerTest(UserEntity user) throws Exception {
+        try {
+            // Inicializar ResponseDTO
+            ResponseDTO response = new ResponseDTO();
+
+            // Verificar si hay errores de validación
+            if (response.getNumOfErrors() > 0) {
+                return response;
+            }
+
+            // Verificar si el usuario ya existe en la base de datos por su correo electrónico
+            Optional<UserEntity> existingUser = userRepository.findByEmail(user.getEmail());
+            if (existingUser.isPresent()) {
+                response.setNumOfErrors(1);
+                response.setMessage("User already exists with this email");
                 return response;
             }
 

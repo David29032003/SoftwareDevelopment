@@ -14,4 +14,6 @@ public interface IUserService {
     public HashMap<String, String> login(LoginDTO login) throws Exception;
     // Método para registrar un usuario
     ResponseDTO register(UserEntity user) throws Exception;
+
+    public ResponseDTO registerTest(UserEntity user) throws Exception;
 }

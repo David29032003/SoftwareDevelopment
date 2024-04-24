@@ -1,6 +1,13 @@
 package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Entities;
 
 import jakarta.persistence.*;
+import lombok.*;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 
 @Entity
 @Table(name = "users")//nombre de la tabla en la base de datos

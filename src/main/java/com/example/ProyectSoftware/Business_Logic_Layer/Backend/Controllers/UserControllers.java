@@ -4,6 +4,7 @@ import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Enti
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.IUserService;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos.LoginDTO;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos.ResponseDTO;
+import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Validation.UserValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,13 +25,23 @@ public class UserControllers {
 
     // Método para registrar un usuario
     @PostMapping("/register")
-    private ResponseEntity<ResponseDTO> register(@RequestBody UserEntity user) throws Exception {
-        return new ResponseEntity<>(userService.register(user), HttpStatus.CREATED);
+    public ResponseEntity<ResponseDTO> register(@RequestBody UserEntity user) throws Exception {
+        // Validar el usuario utilizando UserValidation
+        ResponseDTO validationResponse = new UserValidation().validate(user);
+        if (validationResponse.getNumOfErrors() > 0) {
+            // Si hay errores de validación, devuelve una respuesta con el código de estado BadRequest
+            return new ResponseEntity<>(validationResponse, HttpStatus.BAD_REQUEST);
+        } else {
+            // Si la validación es exitosa, llama al servicio para registrar al usuario
+            ResponseDTO registerResponse = userService.register(user);
+            // Devuelve la respuesta del servicio con el código de estado correspondiente
+            return new ResponseEntity<>(registerResponse, HttpStatus.CREATED);
+        }
     }
 
     // Método para realizar el inicio de sesión de un usuario
     @PostMapping("/login")
-    private ResponseEntity<HashMap<String, String>> login(@RequestBody LoginDTO loginRequest) throws Exception {
+    public ResponseEntity<HashMap<String, String>> login(@RequestBody LoginDTO loginRequest) throws Exception {
         System.out.println("Intento de login con email: " + loginRequest.getEmail());
         // Llama al servicio para realizar el inicio de sesión y obtiene el resultado
         HashMap<String, String> login = userService.login(loginRequest);

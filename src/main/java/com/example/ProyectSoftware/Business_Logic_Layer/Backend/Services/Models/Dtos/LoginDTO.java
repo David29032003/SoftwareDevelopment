@@ -11,6 +11,15 @@ public class LoginDTO {
     // Campo para almacenar la contraseña del usuario
     private String password;
 
+    public LoginDTO(){
+
+    }
+
+    public LoginDTO(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     //metodos getters y setters para los atributos email y password
     public String getEmail() {
         return email;

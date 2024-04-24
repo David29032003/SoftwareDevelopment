@@ -1,4 +1,4 @@
-package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Impl;
+package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services;
 
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Entities.UserEntity;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Repositories.UserRepository;
