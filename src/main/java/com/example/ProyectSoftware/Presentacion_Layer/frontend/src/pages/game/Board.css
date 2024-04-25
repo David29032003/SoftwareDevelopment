@@ -1,12 +1,12 @@
-#board-checker{
-    background-color: rgb(10, 15, 10);
-    width: 800px;
-    height: 800px;
-    display: flex;
-    flex-wrap: wrap;
-    grid-template-columns: (8,8);
-    grid-template-rows: (8,8);
-    color: black;
+#board-checker{ /*estilo del tablero*/
+    background-color: rgb(10, 15, 10); /*color del tablero*/
+    width: 800px; /*ancho del tablero*/
+    height: 800px; /*alto del tablero*/
+    display: flex; /*establece el tablero como flexible*/
+    flex-wrap: wrap; /*establece el tablero como flexible*/
+    grid-template-columns: (8,8);   /*columnas y filas del tablero*/
+    grid-template-rows: (8,8);   /*columnas y filas del tablero*/
+    color: black; /*color de las letras*/
     /* justify-content: center;
     align-items: center; */
    
