@@ -30,4 +30,9 @@ public class UserServiceImplement implements IUserserviceImplement {
         return userRepository.findByName(username).orElse(null);
 
     }
+
+    @Override
+    public UserEntity findUserById(int id) {
+        return userRepository.findById(id).orElse(null);
+    }
 }

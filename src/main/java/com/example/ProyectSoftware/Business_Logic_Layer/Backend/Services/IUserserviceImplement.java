@@ -11,4 +11,6 @@ public interface IUserserviceImplement {
 
     // Método para obtener un usuario por su nombre de usuario
     UserEntity findUserByName(String username);
+
+    UserEntity findUserById(int id);
 }

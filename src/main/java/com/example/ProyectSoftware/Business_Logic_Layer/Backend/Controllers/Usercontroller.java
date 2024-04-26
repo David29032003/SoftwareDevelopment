@@ -1,8 +1,6 @@
 package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Controllers;
 
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Entities.UserEntity;
-
-
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.IUserserviceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,11 +28,11 @@ public class Usercontroller {
         return new ResponseEntity<>(iUserservice.findAllUsers(), HttpStatus.OK);
     }
 
-    // Método GET para obtener un usuario por su ID utilizando el nombre de usuario en la URL
-    @GetMapping("/{username}")
-    private ResponseEntity<UserEntity> getUserById(@PathVariable("username") String username) {
+    // Método GET para obtener un usuario por su ID utilizando el ID en la URL
+    @GetMapping("/{id}")
+    private ResponseEntity<UserEntity> getUserById(@PathVariable("id") int id) {
         // Llama al servicio para obtener el usuario por su ID
-        UserEntity user = iUserservice.findUserByName(username);
+        UserEntity user = iUserservice.findUserById(id);
         // Verifica si se encontró el usuario
         if (user != null) {
             // Si se encontró, devuelve el usuario y el código de estado OK
@@ -44,4 +42,5 @@ public class Usercontroller {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
 }
