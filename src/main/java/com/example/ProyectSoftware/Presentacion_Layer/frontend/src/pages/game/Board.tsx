@@ -40,9 +40,7 @@ export default function Board(){
                }
            });
 
-           "0,0"
-           "1,0"
-           "2,0"
+         
 
             board.push(<Tile key={`${i}${j}`} image={image} number={number} />) // el key es un id que contiene las coordenadas
            
