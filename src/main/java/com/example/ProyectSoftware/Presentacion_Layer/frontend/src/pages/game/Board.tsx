@@ -24,19 +24,50 @@ for(let i = 0; i < 8; i++){ // recorremos el tablero horizontalmente
     pieces.push({image:piece1,x:i,y:6})
     pieces.push({image:piece1,x:i,y:5})
 }
+//moving piece
+
+let activePiece : HTMLElement | null = null;
+function movePiece(e : React.MouseEvent) { 
+    const element = e.target as HTMLElement;
+    console.log(element);
+    if(activePiece){ 
+        
+        const x = e.clientX -50;
+        const y = e.clientY -50 ;
+        element.style.position = "absolute";
+        element.style.left = `${x}px`;
+        element.style.top = `${y}px`;
+
+    }
+}
+function grabPiece(e : React.MouseEvent) { 
+    const element = e.target as HTMLElement; 
+    if(element.classList.contains("piece1")){ 
+        console.log(e);
+        const x = e.clientX -50;
+        const y = e.clientY -50;
+        element.style.position = "absolute";
+        element.style.left = `${x}px`;
+        element.style.top = `${y}px`;
+        activePiece = element;
+    }
+}
+function dropPiece(e : React.MouseEvent) { 
+    if(activePiece){
+    activePiece = null;}
+}
 
 export default function Board(){ //esto es el tablero 
     let board: JSX.Element[] = []; //array de piezas 
-    console.log("d") //esto es el tablero 
+    console.log("estas en el tablero") //esto es el tablero 
     
     for(let j = verticalAxis.length-1; j >=0; j--){ //recorremos el tablero verticalmente 
         for(let i = 0; i < horizontalAxis.length; i++){ //recorremos el tablero horizontalmente 
-            const number = j+i +1;  //esto es el numero de la coordenada 
-            let image = undefined; //esto es la imagen de la pieza
-            
+            const number = j+i +2;  //esto es el numero de la coordenada 
+            let image = undefined;
            pieces.forEach(p => {//recorremos el array de piezas 
                if(p.x === i && p.y === j){ 
-                   image = p.image; //esto es la imagen de la pieza 
+                   image = p.image; //
                }
            });
 
@@ -50,6 +81,10 @@ export default function Board(){ //esto es el tablero
         
     }
     return( 
-        <div id="board-checker">{board}</div> 
+        <div 
+        onMouseMove={(e) => movePiece(e)}
+        onMouseDown={(e) => grabPiece(e)} 
+        onMouseUp={(e) => dropPiece(e)}
+        id="board-checker">{board}</div> 
     )
 }

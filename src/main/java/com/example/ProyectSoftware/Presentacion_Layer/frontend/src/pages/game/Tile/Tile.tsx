@@ -8,19 +8,21 @@ interface Props { //esto es el cuadrado de tablero
     image?:string //esto es la imagen de la pieza
     number: number //esto es el numero del cuadrado de tablero   
 }
-export default function  Tile({number,image}: Props) { /*esto es el cuadrado de tablero*/
-    if( number % 2 === 0){ /*esto es el color del cuadrado de tablero*/
-        return <div className="tile black-tile">  
-             <img className="piece1" src={image}></img> //esto es la imagen de la pieza 
-        </div>
+export default function  Tile({number,image}: Props) {
+    if( number % 2 === 0){
+        console.log(image); 
+        return (<div className="tile black-tile"> 
+        {/* la siguiente linea sirve para mostrar la imagen de la pieza en el tablero  */}
+            { image && <div style={{backgroundImage: `url(${image})`}} className="piece1"></div>} {/*si la imagen no es undefined
+            la imagen se muestra */}
+
+        </div>);
     }else{ 
-        return <div className="tile white-tile"> //esto es el color del cuadrado de tablero 
+        return (<div className="tile white-tile">
+          
             {/* <img className="piece1" src={image}></img>  */}
-        </div>
+        </div>)
     }
         
-    // return (
-        
-    //     <div className="tile">hello</div>
-    // )
+   
 }
