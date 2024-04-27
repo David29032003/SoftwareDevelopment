@@ -1,7 +1,7 @@
-#gamechecker{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: black;
+#gamechecker{ /* Estilos para el contenedor del tablero de ajedrez  */
+    display: flex; /* Establece el contenedor como flexible  */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    height: 100vh; /* Alto del contenedor */
+    background-color: black; /* Color de fondo del contenedor  */
 }

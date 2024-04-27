@@ -2,10 +2,9 @@ package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services;
 
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Entities.UserEntity;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Repositories.UserRepository;
-import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.IJWTUtilityService;
-import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.IUserService;
 
 
+import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Security.TokenManager;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos.LoginDTO;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos.ResponseDTO;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Validation.UserValidation;
@@ -28,11 +27,15 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private UserValidation userValidation;
 
+    @Autowired
+    private TokenManager tokenManager;
+
     @Override
     public HashMap<String, String> login(LoginDTO login) throws Exception {
         try {
             HashMap<String, String> jwt = new HashMap<>();
             Optional<UserEntity> user = userRepository.findByEmail(login.getEmail());
+
 
             if (user.isEmpty()) {
                 jwt.put("error", "User not registered!");
@@ -43,13 +46,16 @@ public class UserServiceImpl implements IUserService {
             if (verifyPassword(login.getPassword(), user.get().getPassword())) {
                 jwt.put("jwt", jwtUtilityService.generateJWT(user.get().getId()));
                 jwt.put("success", "Authentication succefully");
+                // Almacenar el token asociado al usuario en la lista de tokens activos
+                tokenManager.storeTokenInActiveTokens(user.get().getId(), jwt.get("jwt"));
+
             } else {
                 jwt.put("failed", "Authentication failed");
             }
 
             return jwt;
         } catch (Exception e) {
-            throw new Exception(e.toString());
+            throw new Exception("Error during user registration: " + e.getMessage());
         }
     }
 

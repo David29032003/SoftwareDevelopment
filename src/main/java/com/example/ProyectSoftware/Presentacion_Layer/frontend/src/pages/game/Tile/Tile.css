@@ -1,17 +1,19 @@
-.tile{
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+.tile{ /*esto es el cuadrado de tablero*/
+    width: 100px; /*esto es el tamanio del cuadrado de tablero*/
+    height: 100px; /*esto es el tamanio del cuadrado de tablero*/
+    display: flex; /*esto hace que el cuadrado de tablero sea flexible*/
+    align-items: center; /*esto hace que el cuadrado de tablero se centre verticalmente*/
+    justify-content: center; /*esto hace que el cuadrado de tablero se centre horizontalmente*/
+    /*===================*/
+    border-radius: 10px; /*esto hace que el cuadrado de tablero tenga un radio de 10px*/
+    cursor: pointer; /*esto hace que el cuadrado de tablero tenga un cursor de mouse*/
 }
-.black-tile{
-    background-color: rgba(165, 160, 157, 0.571);
+.black-tile{ /*esto es el color del cuadrado de tablero*/
+    background-color: rgba(165, 160, 157, 0.571); /*esto es el color del cuadrado de tablero*/ 
 }
-.white-tile{
-    background-color: white;
+.white-tile{ /*esto es el color del cuadrado de tablero*/
+    background-color: white; /*esto es el color del cuadrado de tablero*/
 }
-.piece1{
-    width: 80%;
+.piece1{ /*esto es la imagen de la pieza*/
+    width: 80%; /*esto es el tamanio de la imagen de la pieza*/ 
 }

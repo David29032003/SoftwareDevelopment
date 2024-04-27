@@ -1,148 +1,148 @@
-.Lobby{
-    background-color: black;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    padding: 22px;
+.Lobby{ /* Estilos generales */
+    background-color: black; /* Color de fondo del contenedor */
+    width: 100%; /* Ancho del contenedor */
+    height: 100vh; /* Alto del contenedor */
+    display: flex; /* Establece el contenedor como flexible */
+    flex-direction: row; /* Establece la direccion de la flexbox en columnas */
+    padding: 22px; /* Espacio interno del contenedor */
 }
-.section1{
-    background-color: red;
-    background: url('../assets/fondotableromadera.jpg');
-    width: 60%;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.section1{ /* Estilos para la sección 1 */
+    background-color: red; /* Color de fondo de la sección 1 */
+    background: url('../assets/fondotableromadera.jpg'); /* Imagen de fondo de la sección 1 */
+    width: 60%; /* Ancho de la sección 1 */
+    background-position: center; /* Centra la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen de fondo al tamaño del contenedor */
+    display: flex; /* Establece la sección 1 como flexible */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center;/* Centra verticalmente los elementos */
 }
-.section2{
-    background: url(/src/pages/game/assets/chekcershome.png);
-    width: 40%;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    z-index: 0;
+.section2{/* Estilos para la sección 2 */
+    background: url(/src/pages/game/assets/chekcershome.png); /* Imagen de fondo de la sección 2 */
+    width: 40%; /* Ancho de la sección 2 */
+    background-position: center; /* Centra la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen de fondo al tamaño del contenedor */
+    display: flex; /* Establece la sección 2 como flexible */
+    flex-direction: column; /* Establece la direccion de la flexbox en columnas */
+    z-index: 0; /* Establece la posición de la sección 2 sobre la sección 1 */
 }
 
-.section2::before {
+.section2::before { /* Pseudo-elemento */
     content: ""; /* Necesario para que el pseudo-elemento se muestre */
     position: absolute; /* Posicionamiento absoluto respecto al contenedor relativo */
-    top: 0;
-    right: 0;
+    top: 0; /* Posicionamiento superior */
+    right: 0; /* Posicionamiento derecha */
     width: 41%; /* Cubre toda el área del contenedor */
     height: 100%; /* Cubre toda el área del contenedor */
     background: rgba(0, 0, 0, 0.397); /* Color negro con opacidad 50% */
     pointer-events: none; /* Asegura que los clics se pasen al elemento subyacente */
-    z-index: -1;
+    z-index: -1;/* Establece la profundidad de la sección 2 sobre la sección 1 */
 }
-.imgtablero{
-    width: 55%;
-    height: 65%;
+.imgtablero{ /* Estilos para la imagen del tablero */
+    width: 55%; /* Ancho de la imagen */
+    height: 65%; /* Alto de la imagen */
 }
-.lobby-logo{
+.lobby-logo{ /* Estilos para el logo de la sección 2 */
     /* background-color: blue; */
-    height: 20%;
-    display: flex;
-    justify-content: center;
+    height: 20%; /* Alto del logo */
+    display: flex; /* Establece el logo como flexible */
+    justify-content: center; /* Centra horizontalmente los elementos */
 }
-.lobby-title{
+.lobby-title{ /* Estilos para el título de la sección 2 */
     /* background-color: aqua; */
-    justify-content: center;
-    display: flex;
-    text-align: center;
-    font-weight: bold;
+    justify-content: center; /* Centra horizontalmente los elementos */
+    display: flex; /* Establece el titulo como flexible */
+    text-align: center; /* Centra el texto */
+    font-weight: bold; /* Establece la fuente en negrita */
 }
-.lobby-options{
+.lobby-options{ /* Estilos para las opciones de la sección 2 */
     /* background-color: red; */
-    height: 50%;
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    height: 50%; /* Alto de las opciones */
+    display: flex; /* Establece las opciones como flexible */
+    flex-grow: 1; /* Ajusta el tamaño de las opciones al tamaño del contenedor */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-direction: column; /* Establece la direccion de la flexbox en columnas */
 }
-.lobby-cierresesion{
+.lobby-cierresesion{ /* Estilos para el cierre de sesión de la sección 2 */
     /* background-color: yellowgreen; */
 }
-.lobby-line{
-    margin: 3px;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.lobby-line{ /* Estilos para la linea de la sección 2 */
+    margin: 3px; /* Espacio entre las lineas */
+    width: 40%; /* Ancho de la linea */
+    display: flex; /* Establece la linea como flexible */ 
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
 }
-.lobby-button1{
-    display: flex;
+.lobby-button1{ /* Estilos para el boton de la sección 2 */
+    display: flex; /* Establece el boton como flexible */
     /* justify-content: center; */
-    border: 3.5px solid white;
+    border: 3.5px solid white; /* Establece el borde del boton */
     /* font-size: x-large; */
-    color: white;
-    border-radius: 14px;
-    background-color: rgba(124, 137, 248, 0.925);
-    transition: background-color 0.3s;
-    height: 20%;
-    align-items: center;
-    width: 25vh;
-    box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+    color: white; /* Establece el color del texto */
+    border-radius: 14px; /* Establece el radio del borde */
+    background-color: rgba(124, 137, 248, 0.925); /* Establece el color de fondo */
+    transition: background-color 0.3s; /* Establece la transicion del color de fondo */
+    height: 20%; /* Alto del boton */
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 25vh; /* Ancho del boton */
+    box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.5);     /* Establece la sombra del boton */
+    cursor: pointer; /* Establece el cursor del mouse */
 
 }
-.lobby-button2{
-    display: flex;
-    /* justify-content: center; */
-    border: 3.5px solid white;
+.lobby-button2{ /* Estilos para el boton de la sección 2 */
+    display: flex; /* Establece el boton como flexible */
+    /* justify-content: center; */  
+    border: 3.5px solid white; /* Establece el borde del boton */
     /* font-size: x-large; */
-    color: white;
-    border-radius: 14px;
-    background-color: #fd57dfdd;
-    transition: background-color 0.3s;
-    height: 20%;
-    align-items: center;
-    width: 25vh;
-    box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+    color: white; /* Establece el color del texto */
+    border-radius: 14px; /* Establece el radio del borde */
+    background-color: #fd57dfdd; /* Establece el color de fondo */
+    transition: background-color 0.3s; /* Establece la transicion del color de fondo */
+    height: 20%; /* Alto del boton */
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 25vh; /* Ancho del boton */
+    box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.5);     /* Establece la sombra del boton */
+    cursor: pointer; /* Establece el cursor del mouse */
 
 }
-.icong{
-    width: 7vh;
+.icong{ /* Estilos para el icono de la sección 2 */
+    width: 7vh; /* Ancho del icono */
     /* margin-right: 10px; */
 }
-.iconr{
-    width: 5vh;
+.iconr{ /* Estilos para el icono de la sección 2 */
+    width: 5vh; /* Ancho del icono */
   /* margin-right: 10px; */
 }
-.iconlin{
-    position: relative;
-    height: 10vh;
-    margin-right: 10px;
+.iconlin{ /* Estilos para el icono de la sección 2 */
+    position: relative; /* Posicionamiento relativo */
+    height: 10vh; /* Alto del icono */
+    margin-right: 10px; /* Espacio entre el icono y el texto */
 }
-.lobbytextboton{
-    font-family: "Mountains of Christmas", serif;
-    font-weight: bold;
-    color: black;
+.lobbytextboton{ /* Estilos para el texto del boton de la sección 2 */
+    font-family: "Mountains of Christmas", serif; /* Fuente del texto */
+    font-weight: bold; /* Grosor de la fuente */
+    color: black; /* Color del texto */
 }
-.lobbytextb{
-    display: flex;
-    justify-content: center;
-    width: 60%;
+.lobbytextb{ /* Estilos para el texto del boton de la sección 2 */
+    display: flex; /* Establece el texto como flexible */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    width: 60%; /* Ancho del texto */
 }
-.lobbycuadroicon {
-    width: 34%;
-    display: flex;
-    align-content: center;
-    justify-content: center;
+.lobbycuadroicon { /* Estilos para el cuadro del icono de la sección 2 */
+    width: 34%; /* Ancho del cuadro */
+    display: flex; /* Establece el cuadro como flexible */
+    align-content: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
 }
-.lobby-button{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    background: none;
-    border: none;
-    font-size: revert;
+.lobby-button{  /* Estilos para el boton de la sección 2 */
+    display: flex; /* Establece el boton como flexible */
+    flex-direction: row; /* Establece la direccion de la flexbox en columnas */
+    justify-content: flex-start; /* Centra horizontalmente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    background: none; /* Borra el fondo del boton */
+    border: none; /* Borra el borde del boton */
+    font-size: revert; /* Establece el tamaño del texto */
 }
-.iconlogout{
-    width: 4vh;
+.iconlogout{ /* Estilos para el icono de la sección 2 */
+    width: 4vh; /* Ancho del icono */
 }
