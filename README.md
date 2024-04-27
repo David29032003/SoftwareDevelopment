@@ -411,7 +411,12 @@
     </tr>
     
 </table>
-
+<h1>Documentacion del Frontend</h1>
+<h2> </h2>
+<h2> </h2>
+<h2> </h2>
+<h2> </h2>
+<h2> </h2>
 <h1>Documentacion del Backend</h1>
 <h2>1)Clase CorsConfig</h2>
 <p>Esta clase es una configuracion de Spring que se encarga de configurar las
