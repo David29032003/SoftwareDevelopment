@@ -4,10 +4,13 @@ import com.nimbusds.jose.*;
 import com.nimbusds.jose.crypto.RSASSASigner;
 import com.nimbusds.jose.crypto.RSASSAVerifier;
 import com.nimbusds.jwt.JWTClaimsSet;
+import com.nimbusds.jwt.JWTParser;
 import com.nimbusds.jwt.SignedJWT;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
+import java.text.ParseException;
+import com.nimbusds.jwt.proc.JWTProcessor;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -85,7 +88,7 @@ public class JWTUtilityServiceImpl implements IJWTUtilityService {
     }
 
     // Método privado para cargar la clave privada desde un recurso
-    private PrivateKey loadPrivateKey(Resource resource) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
+    public PrivateKey loadPrivateKey(Resource resource) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
         // Lectura del archivo de la clave privada
         byte[] keyBytes = Files.readAllBytes(Paths.get(resource.getURI()));
         String privateKeyPEM = new String(keyBytes, StandardCharsets.UTF_8)
@@ -102,7 +105,7 @@ public class JWTUtilityServiceImpl implements IJWTUtilityService {
     }
 
     // Método privado para cargar la clave pública desde un recurso
-    private PublicKey loadPublicKey(Resource resource) throws IOException, InvalidKeySpecException, NoSuchAlgorithmException {
+    public PublicKey loadPublicKey(Resource resource) throws IOException, InvalidKeySpecException, NoSuchAlgorithmException {
         // Lectura del archivo de la clave pública
         byte[] keyBytes = Files.readAllBytes(Paths.get(resource.getURI()));
         String publicKeyPEM = new String(keyBytes, StandardCharsets.UTF_8)

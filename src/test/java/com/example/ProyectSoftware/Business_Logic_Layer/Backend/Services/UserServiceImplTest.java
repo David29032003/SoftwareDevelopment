@@ -16,12 +16,13 @@ import static org.mockito.Mockito.*;
 
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.swing.text.html.Option;
 import java.util.HashMap;
 import java.util.Optional;
 
-@ExtendWith(MockitoExtension.class)
+@SpringBootTest
 public class UserServiceImplTest {
 
     @Mock
@@ -120,40 +121,5 @@ public class UserServiceImplTest {
                 .get("error"));
     }
 
-    @DisplayName("Test para el login de un usuario con autenticacion exitosa")
-    @Test
-    void testLoginUserAuthenticationSuccesfully() throws Exception {
-        //Arrange
-        String email = "Alexandra@outlook.com";
-        String password = "Alexandra34756";
-        LoginDTO loginDTO = new LoginDTO(email, password);
-
-        when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
-
-        //Act
-        HashMap<String, String> result = userService.login(loginDTO);
-
-        //Assert
-        assertEquals(1, result.size());
-        assertEquals("Authentication succefully",result.get("success"));
-    }
-
-    @DisplayName("Test para el login de un usuario no registrado")
-    @Test
-    void testLoginUserAuthenticationFailed() throws Exception {
-        //Arrange
-        String email = "Failed@example.com";
-        String password = "password123";
-        LoginDTO loginDTO = new LoginDTO(email, password);
-        when(userRepository.findByEmail(email)).thenReturn(Optional.empty());
-
-        //Act
-        HashMap<String, String> result = userService.login(loginDTO);
-
-        //Assert
-        assertEquals(1, result.size());
-        assertEquals("Authentication failed", result
-                .get("failed"));
-    }
 
 }

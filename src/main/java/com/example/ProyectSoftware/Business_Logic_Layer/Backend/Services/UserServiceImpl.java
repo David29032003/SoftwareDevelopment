@@ -10,6 +10,7 @@ import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Validation.UserValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -134,7 +135,8 @@ public class UserServiceImpl implements IUserService {
         }
     }
 
-    private boolean verifyPassword(String enteredPassword, String storedPassword) {
+
+    public boolean verifyPassword(String enteredPassword, String storedPassword) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         return encoder.matches(enteredPassword, storedPassword);
     }
