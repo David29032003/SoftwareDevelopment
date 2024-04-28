@@ -411,34 +411,282 @@
     </tr>
     
 </table>
-<h1>Documentacion del Frontend</h1>
-<h2>Main.jsx</h2>
-<p> React y ReactDOM son importados desde los módulos de React.
-App es importado desde el archivo App.jsx.
-Se importa un archivo CSS local (index.css) para los estilos.
-AuthProvider es importado desde el componente AuthProvider.jsx para la autenticación.
-ReactDOM.createRoot(document.getElementById('root')) selecciona el elemento con el id "root" en el HTML donde se renderizará la aplicación.
-.render() renderiza el contenido de la aplicación.
-<React.StrictMode> envuelve la aplicación para activar el "Modo Estricto" de React, que ayuda a identificar problemas potenciales en la aplicación.
-<AuthProvider> es un componente utilizado para proporcionar autenticación a la aplicación.
-<App /> es el componente principal de la aplicación que se renderiza dentro del <AuthProvider>.</p>
-<h2>App.jsx</h2>
-<p>Se importa un archivo CSS local (App.css) para los estilos del componente.
-Se importan los módulos necesarios de react-router-dom:
-BrowserRouter as Router: Importa BrowserRouter renombrándolo como Router para ser utilizado en el componente.
-Route: Utilizado para definir rutas individuales dentro del enrutador.
-Routes: Contenedor para todas las rutas de la aplicación.
-App es un componente funcional que renderiza la estructura principal de la aplicación.
-Utiliza <Router> como componente de enrutamiento principal para manejar las rutas de la aplicación.
-Dentro de <Router>, se utiliza <Routes> para definir el conjunto de rutas disponibles en la aplicación.
-{routes.map((r) => { ... })}: Itera sobre el array routes definido en utils/routes.js para generar dinámicamente un conjunto de <Route> componentes basados en la configuración de cada ruta.
-r.path: Define la URL de la ruta.
-r.element: Especifica el componente React que se renderizará cuando la ruta coincida.
-key={r.id}: Proporciona una clave única para cada ruta, lo que ayuda a React a identificar y manejar los componentes de manera eficiente durante las actualizaciones.
-App se exporta como el componente predeterminado, lo que permite que otros archivos importen y utilicen este componente como import App from './App';.</p>
-<h2> </h2>
-<h2> </h2>
-<h2> </h2>
+<h1>Documentacion de Frontend</h1>
+
+# Main.jsx
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled.png)
+
+Este código es una aplicación frontend construida con React. Utiliza **`ReactDOM.createRoot`** para renderizar la aplicación en el elemento HTML con id "root". La aplicación está configurada para usar **`<React.StrictMode>`** para activar estrictos avisos y comprobaciones adicionales para ayudar a detectar problemas potenciales en la aplicación. Además, utiliza un componente **`<AuthProvider>`** para proporcionar autenticación a la aplicación envolviendo el componente **`<App>`**.
+
+- **`React`** y **`ReactDOM`** son importados desde los módulos de React.
+- **`App`** es importado desde el archivo **`App.jsx`**.
+- Se importa un archivo CSS local (**`index.css`**) para los estilos.
+- **`AuthProvider`** es importado desde el componente **`AuthProvider.jsx`** para la autenticación.
+- **`ReactDOM.createRoot(document.getElementById('root'))`** selecciona el elemento con el id "root" en el HTML donde se renderizará la aplicación.
+- **`.render()`** renderiza el contenido de la aplicación.
+- **`<React.StrictMode>`** envuelve la aplicación para activar el "Modo Estricto" de React, que ayuda a identificar problemas potenciales en la aplicación.
+- **`<AuthProvider>`** es un componente utilizado para proporcionar autenticación a la aplicación.
+- **`<App />`** es el componente principal de la aplicación que se renderiza dentro del **`<AuthProvider>`**.
+
+# App.jsx
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%201.png)
+
+Este código define un componente funcional llamado **`App`** que utiliza React Router para manejar las rutas y la navegación en una aplicación web. El componente **`App`** renderiza un enrutador (**`Router`**) que contiene un conjunto de rutas (**`Routes`**) definidas por las configuraciones especificadas en **`routes`** dentro de **`utils/routes.js`**. Cada ruta se representa como un componente **`<Route>`** dentro del **`<Routes>`** del enrutador.
+
+- Se importa un archivo CSS local (**`App.css`**) para los estilos del componente.
+- Se importan los módulos necesarios de **`react-router-dom`**:
+    - **`BrowserRouter as Router`**: Importa **`BrowserRouter`** renombrándolo como **`Router`** para ser utilizado en el componente.
+    - **`Route`**: Utilizado para definir rutas individuales dentro del enrutador.
+    - **`Routes`**: Contenedor para todas las rutas de la aplicación.
+- **`App`** es un componente funcional que renderiza la estructura principal de la aplicación.
+- Utiliza **`<Router>`** como componente de enrutamiento principal para manejar las rutas de la aplicación.
+- Dentro de **`<Router>`**, se utiliza **`<Routes>`** para definir el conjunto de rutas disponibles en la aplicación.
+- **`{routes.map((r) => { ... })}`**: Itera sobre el array **`routes`** definido en **`utils/routes.js`** para generar dinámicamente un conjunto de **`<Route>`** componentes basados en la configuración de cada ruta.
+    - **`r.path`**: Define la URL de la ruta.
+    - **`r.element`**: Especifica el componente React que se renderizará cuando la ruta coincida.
+    - **`key={r.id}`**: Proporciona una clave única para cada ruta, lo que ayuda a React a identificar y manejar los componentes de manera eficiente durante las actualizaciones.
+- **`App`** se exporta como el componente predeterminado, lo que permite que otros archivos importen y utilicen este componente como **`import App from './App';`**.
+
+# Routes.jsx
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%202.png)
+
+Este código define un array llamado **`routes`** que contiene objetos representando las rutas disponibles en la aplicación. Cada objeto en el array representa una ruta específica con propiedades como **`id`**, **`path`** y **`element`**. Estas propiedades son utilizadas por el componente **`App`** para configurar las rutas en el enrutador (**`Router`**) usando React Router.
+
+- Se importan los componentes **`Home`**, **`Login`**, **`Register`** y **`Game`** desde sus respectivas ubicaciones en el proyecto.
+- **`routes`** es un array que contiene objetos, donde cada objeto representa una ruta en la aplicación.
+- Cada objeto en **`routes`** tiene las siguientes propiedades:
+    - **`id`**: Identificador único de la ruta.
+    - **`path`**: URL de la ruta.
+    - **`element`**: Componente React asociado a la ruta.
+- Cuando la URL coincide con **`/`**, se renderiza el componente **`Home`**.
+- Cuando la URL coincide con **`/login`**, se renderiza el componente **`Login`**.
+- Cuando la URL coincide con **`/register`**, se renderiza el componente **`Register`**.
+- Cuando la URL coincide con **`/game`**, se renderiza el componente **`Game`**
+
+# Links.jsx
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%203.png)
+
+Este código define un array llamado **`links`** que contiene objetos representando enlaces de navegación en una barra de navegación, por ejemplo. Cada objeto en el array representa un enlace con propiedades como **`id`**, **`link`** y **`text`**. Estas propiedades son utilizadas para renderizar elementos de navegación en la interfaz de usuario.
+
+- **`links`** es un array que contiene objetos, donde cada objeto representa un enlace de navegación en la interfaz de usuario.
+- Cada objeto en **`links`** tiene las siguientes propiedades:
+    - **`id`**: Identificador único del enlace.
+    - **`link`**: Destino del enlace, generalmente una URL relativa o un identificador.
+    - **`text`**: Texto visible del enlace.
+- Enlace a "HOME" (**`#inicio`**):
+• Este enlace apunta a **`#inicio`** y muestra el texto "HOME".
+- Enlace a "ABOUT" (**`#about`**):
+• Este enlace apunta a **`#about`** y muestra el texto "ABOUT".
+- Enlace a "FAQ" (**`#faq`**):
+• Este enlace apunta a **`#faq`** y muestra el texto "FAQ".
+- Enlace a "CONTACT" (**`#contact`**)
+• Este enlace apunta a **`#contact`** y muestra el texto "CONTACT".
+
+# Axios.jsx
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%204.png)
+
+Este código utiliza Axios para crear una instancia de cliente HTTP configurada con una URL base. La instancia de Axios proporciona un cliente HTTP preconfigurado que puede realizar peticiones a la URL base especificada y realizar otras configuraciones adicionales según sea necesario.
+• Se importa Axios, una librería para realizar peticiones HTTP desde el navegador o desde Node.js.
+
+- **`axios.create()`** crea una nueva instancia de Axios con una configuración específica.
+- **`baseURL: 'http://localhost:8080/'`**: Establece la URL base a la cual se enviarán las peticiones HTTP. En este caso, las peticiones se enviarán a **`http://localhost:8080/`**.
+    - La URL base es la parte común de la URL para todas las peticiones realizadas con esta instancia de Axios.
+
+# Register.jsx
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%205.png)
+
+Este componente **`Register`** es responsable de renderizar un formulario de registro que permite a los usuarios registrarse en la aplicación. Utiliza múltiples estados para controlar la entrada de usuario, validar los campos del formulario y realizar una solicitud HTTP POST al servidor para registrar nuevos usuarios.
+
+- Importa los módulos y componentes necesarios para el funcionamiento del componente **`Register`**.
+- Utiliza **`useRef`**, **`useState`** y **`useEffect`** para manejar referencias, estados y efectos secundarios en el componente.
+- Define expresiones regulares (**`USER_REGEX`**, **`PWD_REGEX`**, **`MAIL_REGEX`**) para validar el formato del nombre de usuario, contraseña y correo electrónico.
+- **`REGISTER_URL`** especifica la URL a la cual se realizará la solicitud de registro.
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%206.png)
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%207.png)
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%208.png)
+
+- El componente **`Register`** renderiza un formulario de registro con campos para nombre de usuario, contraseña, confirmación de contraseña y correo electrónico.
+- Utiliza estados (**`useState`**) para controlar los valores de los campos de entrada y el estado de validación.
+- Utiliza **`useRef`** para crear referencias a elementos de entrada y mensajes de error.
+- Utiliza **`useEffect`** para manejar efectos secundarios, como establecer el foco en un campo de entrada (**`userRef.current.focus()`**) o validar la entrada cuando cambian los valores (**`useEffect(() => { ... }, [user])`**).
+- El método **`handleSubmit`** maneja la lógica de envío del formulario, realizando una solicitud POST al servidor utilizando Axios (**`axios.post(REGISTER_URL, { ... })`**) y gestionando las respuestas y posibles errores.
+- El componente renderiza mensajes de error (**`errMsg`**) y un mensaje de éxito si el registro es exitoso (**`success`**). También muestra un enlace para iniciar sesión si el usuario ya está registrado.
+
+El componente **`Register`** utiliza Axios (**`axios`**) para realizar solicitudes HTTP al servidor (**`axios.post`**) y expresiones regulares (**`USER_REGEX`**, **`PWD_REGEX`**, **`MAIL_REGEX`**) para validar los campos del formulario (**`USER_REGEX.test(user)`**, **`PWD_REGEX.test(pwd)`**, **`MAIL_REGEX.test(email)`**
+
+- El componente **`Register`** muestra mensajes de ayuda y validación utilizando íconos (**`FontAwesomeIcon`**) de Font Awesome para indicar la validez de los campos.
+- Utiliza **`aria-live="assertive"`** para proporcionar una experiencia accesible al usuario, anunciando mensajes de error importantes a través de tecnologías de asistencia.
+
+# Login.jsx
+
+El componente `Login` implementa un formulario interactivo de inicio de sesión de usuario en una aplicación React. Permite a los usuarios ingresar sus credenciales (correo electrónico y contraseña) para autenticarse en el sistema.
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%209.png)
+
+- Importa el componente `Login` en el archivo donde deseamos mostrar el formulario de inicio de sesión:
+- Renderiza el componente `Login` dentro del componente principal o en la ruta deseada:
+- `email`: Estado que almacena el correo electrónico ingresado por el usuario.
+- `pwd`: Estado que almacena la contraseña ingresada por el usuario.
+- `errMsg`: Estado que muestra mensajes de error en caso de problemas durante el inicio de sesión.
+- `success`: Estado que indica si el inicio de sesión fue exitoso.
+- `useState`: Utilizado para definir estados locales en el componente.
+- `useRef`: Utilizado para crear referencias a elementos del DOM, como campos de entrada.
+- `useEffect`: Utilizado para realizar efectos secundarios, como enfocar un campo al cargar el componente.
+- `handleSubmit`: Función que se ejecuta al enviar el formulario de inicio de sesión. Realiza una solicitud HTTP POST al servidor para autenticar al usuario.
+- `handleSuccessResponse`: Función que maneja la respuesta exitosa del servidor después de una autenticación exitosa. Actualiza el estado de autenticación global y muestra un mensaje de éxito.
+- `handleError`: Función que maneja los errores durante el inicio de sesión, mostrando mensajes de error apropiados según el tipo de error.
+- `axios`: Utilizado para realizar peticiones HTTP al servidor de autenticación.
+- `AuthContext`: Utilizado para acceder al contexto de autenticación global y actualizar el estado de autenticación después del inicio de sesión.
+
+# AuthProvider.jsx
+
+El contexto de autenticación (`AuthProvider`) proporciona un contexto global en una aplicación React para gestionar el estado de autenticación del usuario.
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2010.png)
+
+Para utilizar este contexto de autenticación en una aplicación React:
+
+Encapsula la parte de la aplicación donde necesitamos acceder al estado de autenticación dentro del componente `AuthProvider`.
+
+En los componentes hijos, podemos acceder al estado de autenticación utilizando el hook `useContext` con el contexto `AuthContext`.
+
+- `auth`: Estado que almacena la información de autenticación, como el correo electrónico y el token de acceso.
+- `setAuth`: Función utilizada para actualizar el estado de autenticación.
+- `AuthProvider`: Componente de proveedor de contexto que envuelve otros componentes para proporcionar acceso al estado de autenticación a través del contexto `AuthContext`.
+- `useState`: Utilizado en `AuthProvider` para definir y gestionar el estado de autenticación.
+- `createContext`: Utilizado para crear el contexto `AuthContext` que permite compartir datos a través de la jerarquía de componentes.
+
+# Home.jsx
+
+El componente `Home` representa la página de inicio de la aplicación de juegos de damas (`Checkers Elite`). Proporciona una interfaz para que los usuarios se registren o inicien sesión y ofrece información sobre el juego y sus características.
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2011.png)
+
+- **`React`**: Importa la librería principal de React para definir componentes.
+- **`useNavigate`**: Hook de React Router para gestionar la navegación entre rutas.
+- **`Navbar`**: Componente de barra de navegación.
+- **`checkers`**: Importa una imagen (**`chekcershome.png`**) como recurso estático.
+- **`"./Home.css"`**: Importa estilos CSS para el componente Home.
+- **`routes`**: Importa un objeto con las rutas definidas en la aplicación.
+- **`navigate`**: Variable que utiliza **`useNavigate()`** para obtener una función de navegación.
+- **`navigateToRegister()`**: Función que maneja la navegación hacia la ruta '/register' al hacer clic en el botón "Sign up".
+- **`navigateToLogin()`**: Función que maneja la navegación hacia la ruta '/login' al hacer clic en el botón "Login".
+- Títulos (**`text1`**, **`text2`**): Textos descriptivos.
+- Botones (**`botonlog`**, **`botonsign`**): Botones para iniciar sesión y registrarse, con funciones **`onClick`** que invocan **`navigateToLogin`** y **`navigateToRegister`** respectivamente.
+- Secciones (**`page-section1`**, **`page-section2`**, **`section3`**, **`section4`**): Contenedores div con diferentes identificadores para contenido de secciones específicas.
+- El componente **`Home`** renderiza una página principal que incluye una barra de navegación (**`Navbar`**), una imagen (**`checkerhome`**) y secciones con contenido y botones interactivos para navegación.
+- Al hacer clic en los botones "Login" o "Sign up", se utiliza **`navigate`** para redirigir a las rutas correspondientes ('/login' o '/register').
+
+# Game.jsx
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2012.png)
+
+Este componente **`Game`** representa el juego principal de damas dentro de la aplicación. Es responsable de renderizar el tablero de juego utilizando el componente **`Board`**.
+
+- **`React`**: Librería principal de React para definir componentes.
+- **`"./Game.css"`**: Archivo de estilos CSS específicos para el componente **`Game`**.
+- **`Board`**: Componente que representa el tablero de juego.
+- Este componente es una función de React que retorna un elemento JSX.
+- Renderiza un contenedor **`<div>`** con **`id="gamechecker"`**.
+- Dentro del contenedor, se incluye el componente **`Board`**, que muestra la interfaz del tablero de damas.
+
+# Board.tsx
+
+El componente **`Board`** es responsable de representar y gestionar el tablero de juego de damas. Este componente utiliza elementos **`Tile`** para renderizar cada casilla del tablero y manejar la interacción con las piezas de juego.
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2013.png)
+
+- **`React`**: Importa la librería principal de React para definir componentes.
+- **`useRef`**: Hook de React utilizado para acceder al elemento DOM del tablero.
+- **`"./Board.css"`** y **`"./Tile/Tile.css"`**: Archivos de estilos CSS para el componente **`Board`** y sus subcomponentes **`Tile`**.
+- **`Tile`**: Componente que representa cada casilla del tablero.
+- **`piece1`** y **`piece2`**: Importa las imágenes de las piezas del juego.
+- **`verticalAxis`** y **`horizontalAxis`**: Definen las coordenadas verticales (y) y horizontales (x) del tablero.
+- **`Piece`**: Interfaz que define la estructura de una pieza del juego.
+- **`pieces`**: Array que almacena las piezas del juego con sus respectivas posiciones en el tablero.
+- **Componente Funcional `Board()`:**
+    - Este componente es una función de React que retorna un elemento JSX.
+    - Renderiza el tablero de juego con sus cuadrados y piezas correspondientes.
+    - Gestiona la interacción del usuario con las piezas a través de eventos de ratón.
+    
+
+# Tile.tsx
+
+El componente **`Tile`** representa un cuadrado individual del tablero de juego de damas. Este componente se encarga de renderizar visualmente un cuadrado negro o blanco, dependiendo de su posición en el tablero, y opcionalmente muestra una imagen de una pieza en el cuadrado.
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2014.png)
+
+- **`React`**: Importa la librería principal de React para definir componentes.
+- **`"./Tile.css"`**: Archivo de estilos CSS específicos para el componente **`Tile`**.
+- **`piece1`**, **`piece2`**: Imágenes de las piezas del juego.
+- **`image?: string`**: URL de la imagen de la pieza (opcional).
+- **`number: number`**: Número que representa la posición del cuadrado en el tablero.
+- **Componente Funcional `Tile({number, image}: Props)`:**
+    - Este componente es una función de React que retorna un elemento JSX.
+    - Renderiza un cuadrado negro o blanco (**`div`**) dependiendo del valor del número.
+    - Opcionalmente muestra una imagen de una pieza en el cuadrado si se proporciona una URL de imagen.
+    
+
+# Lobby.jsx
+
+El componente **`Lobby`** representa la interfaz de la sala de espera del juego de damas. Este componente permite al usuario elegir entre jugar contra otro usuario en línea, contra la computadora o cerrar sesión.
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2015.png)
+
+- **`"./Lobby.css"`**: Archivo de estilos CSS específicos para el componente **`Lobby`**.
+- Imágenes importadas para la interfaz (**`imgtablero`**, **`imglinea2`**, **`logocheckers`**, **`robot`**, **`uservsuser`**, **`linev`**, **`logout`**).
+- **`useNavigate`** de **`react-router-dom`**: Librería para la navegación entre rutas.
+- **Componente Funcional `Lobby()`:**
+    - Este componente es una función de React que retorna un elemento JSX.
+    - Renderiza la interfaz del lobby con secciones organizadas visualmente.
+    - Utiliza botones para permitir al usuario navegar a diferentes rutas y opciones de juego.
+- **Secciones del Lobby:**
+    - **`section1`**: Muestra una imagen del tablero de damas.
+    - **`section2`**: Contiene el logotipo del juego, título y botones de opciones de juego.
+        - **`lobby-logo`**: Sección con el logotipo y líneas decorativas.
+        - **`lobby-title`**: Título que indica el tipo de juego disponible.
+        - **`lobby-options`**: Contenedor de botones para elegir entre jugar en línea o contra la computadora.
+            - **`lobby-button1`**: Botón para jugar en línea contra otro usuario.
+            - **`lobby-button2`**: Botón para jugar contra la computadora.
+    - **`lobby-cierresesion`**: Sección para cerrar sesión con un botón de "Cerrar sesión".
+    
+
+# Modal.jsx
+
+El componente **`Modal`** renderiza un modal condicionalmente basado en el estado proporcionado. Este componente permite mostrar o ocultar contenido dentro de un modal en la interfaz.
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2016.png)
+
+- **`React`**: Importa la librería principal de React para definir componentes.
+- **`"./Modal.css"`**: Archivo de estilos CSS específicos para el componente **`Modal`**.
+- **Componente Funcional `Modal({ children, estado, cambiarEstado })`:**
+    - Este componente es una función de React que recibe tres propiedades:
+        - **`children`**: Contenido del modal que se mostrará cuando **`estado`** sea verdadero.
+        - **`estado`**: Estado booleano que indica si el modal debe mostrarse (**`true`**) o no (**`false`**).
+        - **`cambiarEstado`**: Función para cambiar el estado del modal.
+        
+
+# Personalizartablero.jsx
+
+El componente **`Personalizartablero`** renderiza una sección que contiene botones para abrir y cerrar dos modales (**`Modal`**) diferentes. Cada modal tiene su propio estado (**`estadoModal1`** y **`estadoModal2`**) para controlar su visibilidad.
+
+![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2017.png)
+
+- **`"./Personalizartab.css"`**: Archivo de estilos CSS específicos para el componente **`Personalizartablero`**.
+- **`Modal`**: Componente **`Modal`** importado para mostrar los modales.
+- **`React, { useState }`**: Importa la librería React y la función **`useState`** para manejar el estado local del componente.
+- **Componente Funcional `Personalizartablero()`:**
+    - Este componente es una función de React que utiliza el estado local (**`useState`**) para controlar la visibilidad de los modales.
+    - Renderiza botones que, al hacer clic, cambian el estado de los respectivos modales para mostrar u ocultar su contenido.
 <h1>Documentacion del Backend</h1>
 <h2>1)Clase CorsConfig</h2>
 <p>Esta clase es una configuracion de Spring que se encarga de configurar las
