@@ -412,8 +412,30 @@
     
 </table>
 <h1>Documentacion del Frontend</h1>
-<h2> </h2>
-<h2> </h2>
+<h2>Main.jsx</h2>
+<p> React y ReactDOM son importados desde los módulos de React.
+App es importado desde el archivo App.jsx.
+Se importa un archivo CSS local (index.css) para los estilos.
+AuthProvider es importado desde el componente AuthProvider.jsx para la autenticación.
+ReactDOM.createRoot(document.getElementById('root')) selecciona el elemento con el id "root" en el HTML donde se renderizará la aplicación.
+.render() renderiza el contenido de la aplicación.
+<React.StrictMode> envuelve la aplicación para activar el "Modo Estricto" de React, que ayuda a identificar problemas potenciales en la aplicación.
+<AuthProvider> es un componente utilizado para proporcionar autenticación a la aplicación.
+<App /> es el componente principal de la aplicación que se renderiza dentro del <AuthProvider>.</p>
+<h2>App.jsx</h2>
+<p>Se importa un archivo CSS local (App.css) para los estilos del componente.
+Se importan los módulos necesarios de react-router-dom:
+BrowserRouter as Router: Importa BrowserRouter renombrándolo como Router para ser utilizado en el componente.
+Route: Utilizado para definir rutas individuales dentro del enrutador.
+Routes: Contenedor para todas las rutas de la aplicación.
+App es un componente funcional que renderiza la estructura principal de la aplicación.
+Utiliza <Router> como componente de enrutamiento principal para manejar las rutas de la aplicación.
+Dentro de <Router>, se utiliza <Routes> para definir el conjunto de rutas disponibles en la aplicación.
+{routes.map((r) => { ... })}: Itera sobre el array routes definido en utils/routes.js para generar dinámicamente un conjunto de <Route> componentes basados en la configuración de cada ruta.
+r.path: Define la URL de la ruta.
+r.element: Especifica el componente React que se renderizará cuando la ruta coincida.
+key={r.id}: Proporciona una clave única para cada ruta, lo que ayuda a React a identificar y manejar los componentes de manera eficiente durante las actualizaciones.
+App se exporta como el componente predeterminado, lo que permite que otros archivos importen y utilicen este componente como import App from './App';.</p>
 <h2> </h2>
 <h2> </h2>
 <h2> </h2>
