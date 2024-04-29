@@ -422,16 +422,16 @@
             <td>Alto</td>
             <td>8h</td>
             <td>12h</td>
-            <td>finalizado</td>
+            <td>Finalizado</td>
         </tr>
         <tr>
             <td style="text-align: center;">4</td>
-            <td>Visualizacion del tablero</td>
+            <td>Jugar con el computador</td>
             <td>Como usuario quiero jugar con el computador</td>
             <td>Medio</td>
             <td>19h</td>
             <td>21h</td>
-            <td>finalizado</td>
+            <td>Finalizado</td>
         </tr>
     </table>
 <p>
