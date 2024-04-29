@@ -117,6 +117,264 @@
             </ul>
         </td>
     </tr>
+    <tr>
+        <td>08/04/2024</td>
+        <td>15 min</td>
+        <td>Reunion virtual por Google Meet</td>
+        <td>
+            <ul>
+                <li>Ravichagua Manuel</li>
+                <li>Reeves David</li>
+                <li>Ruiz Milagros</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Elaboracion de la api rest</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Definir los metodos http</li>
+                <li>Decidir si encriptamos las contrasenas</li>
+                <li>Definir la base de datos que usaremos</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>10/04/2024</td>
+        <td>15 min</td>
+        <td>Reunion virtual por Google Meet</td>
+        <td>
+            <ul>
+                <li>Ravichagua Manuel</li>
+                <li>Reeves David</li>
+                <li>Ruiz Milagros</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Finalizacion del registro de usuario</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Conectar la api rest con el front end</li>
+                <li>Comentar el avance back end y front end</li>
+                <li>Continuar con el log in</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>15/04/2024</td>
+        <td>15 min</td>
+        <td>Reunion virtual por Google Meet</td>
+        <td>
+            <ul>
+                <li>Reeves David</li>
+                <li>Ruiz Milagros</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Finalizacion del log in</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Hacer que el log in funcione en el front end</li>
+                <li>Comentar el avance del backend y frontend</li>
+                <li>Designar las tareas para la elaboracion del juego</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>18/04/2024</td>
+        <td>45 min</td>
+        <td>Reunion virtual por Google Meet</td>
+        <td>
+            <ul>
+                <li>Andrei Trujillo</li>
+                <li>Reeves David</li>
+                <li>Ruiz Milagros</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Inclusion de Andrei al equipo</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Incorporar a Andrei al equipo debido a que Manuel se retiro</li>
+                <li>Poner al dia a Andrei en el avance del proyecto</li>
+                <li>Asinarle tareas a Andrei</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>19/04/2024</td>
+        <td>20 min</td>
+        <td>Reunion virtual por Google Meet</td>
+        <td>
+            <ul>
+                <li>Andrei Trujillo</li>
+                <li>Reeves David</li>
+                <li>Ruiz Milagros</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Visualizacion del tablero</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Mostrar el tablero cuando el usuario inicia sesion</li>
+                <li>Planear como haremos e implementaremos la logica del juego</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>23/04/2024</td>
+        <td>15 min</td>
+        <td>Reunion virtual por Google Meet</td>
+        <td>
+            <ul>
+                <li>Andrei Trujillo</li>
+                <li>Reeves David</li>
+                <li>Ruiz Milagros</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Finalizacion de cierre de sesion</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Finalizamos con el cierre de sesion</li>
+                <li>Comentamos el avance en el backend y frontend</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>24/04/2024</td>
+        <td>15 min</td>
+        <td>Reunion virtual por Google Meet</td>
+        <td>
+            <ul>
+                <li>Andrei Trujillo</li>
+                <li>Reeves David</li>
+                <li>Ruiz Milagros</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Comenzar con el testing del backend</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Comenzamos con el testing del backend</li>
+                <li>Planeamos a que clase le aplicaremos cual metodo de testing</li>
+                <li>Seguimos avanzando con la logica del juego</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>25/03/2024</td>
+        <td>15 min</td>
+        <td>Reunion virtual por Google Meet</td>
+        <td>
+            <ul>
+                <li>Ravichagua Manuel</li>
+                <li>Reeves David</li>
+                <li>Ruiz Milagros</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Determinar los requerimientos y especificaciones</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Modificar el estado actual</li>
+                <li>Utilizar la técnica GWT para definir las especificaciones y requerimientos del software</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>26/04/2024</td>
+        <td>30 min</td>
+        <td>Reunion virtual por Google Meet</td>
+        <td>
+            <ul>
+                <li>Andrei Trujillo</li>
+                <li>Reeves David</li>
+                <li>Ruiz Milagros</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Finalizacion del testing del backend</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Terminamos el testing para las clases en el backend</li>
+                <li>Tomamos mas importancia a las historias de usuario y criterios de aceptacion</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>27/04/2024</td>
+        <td>25 min</td>
+        <td>Reunion virtual por Google Meet</td>
+        <td>
+            <ul>
+                <li>Andrei Trujillo</li>
+                <li>Reeves David</li>
+                <li>Ruiz Milagros</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Finalizacion de la logica del juego y empezar a refactorizar</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Mostramos la logica del juego</li>
+                <li>Planeamos como implementarlo en el tablero</li>
+                <li>Empezamos a refactorizar el backend</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>28/03/2024</td>
+        <td>15 min</td>
+        <td>Reunion virtual por Google Meet</td>
+        <td>
+            <ul>
+                <li>Andrei Trujillo</li>
+                <li>Reeves David</li>
+                <li>Ruiz Milagros</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Finalizar con la implementacion de la logica del juego y refactorizacion</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Terminamos de implementar la logica del juego</li>
+                <li>Terminamos de refactorizar el backend</li>
+            </ul>
+        </td>
+    </tr>
 </table>
 <h3>Decisiones Clave:</h3>
 <ul>
