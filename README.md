@@ -376,6 +376,37 @@
         </td>
     </tr>
 </table>
+
+<h2>Avances de cada Sprint</h2>
+<table border="3" cellpadding="10">
+    <tr>
+        <th> Sprint </th>
+        <th> Historia de usuario </th>
+        <th> Cristerios de aceptacion </th>
+        <th>Concluido</th>
+    </tr>
+    <tr>
+        <td style="text-align: center;"></td>
+        <td style="text-align: center;"></td>
+        <td>
+            <ul>
+                
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li></li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li></li>
+            </ul>
+        </td>
+    </tr>
+    
+</table>
+
 <h3>Decisiones Clave:</h3>
 <ul>
     <li>Lenguaje de programación: Java</li>
