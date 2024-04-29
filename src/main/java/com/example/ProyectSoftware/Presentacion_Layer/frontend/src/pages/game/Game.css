@@ -4,4 +4,6 @@
     justify-content: center; /* Centra horizontalmente los elementos */
     height: 100vh; /* Alto del contenedor */
     background-color: black; /* Color de fondo del contenedor  */
+    background: url('../game/assets/fondotableromadera.jpg'); 
+    background-size: cover;
 }
