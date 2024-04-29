@@ -415,7 +415,7 @@
 
 # Main.jsx
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled.png)
+![imagen](Imagenes/Frontend/Untitled.png)
 
 Este código es una aplicación frontend construida con React. Utiliza **`ReactDOM.createRoot`** para renderizar la aplicación en el elemento HTML con id "root". La aplicación está configurada para usar **`<React.StrictMode>`** para activar estrictos avisos y comprobaciones adicionales para ayudar a detectar problemas potenciales en la aplicación. Además, utiliza un componente **`<AuthProvider>`** para proporcionar autenticación a la aplicación envolviendo el componente **`<App>`**.
 
@@ -431,7 +431,7 @@ Este código es una aplicación frontend construida con React. Utiliza **`ReactD
 
 # App.jsx
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%201.png)
+![imagen](Imagenes/Frontend/Untitled%201.png)
 
 Este código define un componente funcional llamado **`App`** que utiliza React Router para manejar las rutas y la navegación en una aplicación web. El componente **`App`** renderiza un enrutador (**`Router`**) que contiene un conjunto de rutas (**`Routes`**) definidas por las configuraciones especificadas en **`routes`** dentro de **`utils/routes.js`**. Cada ruta se representa como un componente **`<Route>`** dentro del **`<Routes>`** del enrutador.
 
@@ -451,7 +451,7 @@ Este código define un componente funcional llamado **`App`** que utiliza React 
 
 # Routes.jsx
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%202.png)
+![imagen](Imagenes/Frontend/Untitled%202.png)
 
 Este código define un array llamado **`routes`** que contiene objetos representando las rutas disponibles en la aplicación. Cada objeto en el array representa una ruta específica con propiedades como **`id`**, **`path`** y **`element`**. Estas propiedades son utilizadas por el componente **`App`** para configurar las rutas en el enrutador (**`Router`**) usando React Router.
 
@@ -468,7 +468,7 @@ Este código define un array llamado **`routes`** que contiene objetos represent
 
 # Links.jsx
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%203.png)
+![imagen](Imagenes/Frontend/Untitled%203.png)
 
 Este código define un array llamado **`links`** que contiene objetos representando enlaces de navegación en una barra de navegación, por ejemplo. Cada objeto en el array representa un enlace con propiedades como **`id`**, **`link`** y **`text`**. Estas propiedades son utilizadas para renderizar elementos de navegación en la interfaz de usuario.
 
@@ -488,7 +488,7 @@ Este código define un array llamado **`links`** que contiene objetos representa
 
 # Axios.jsx
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%204.png)
+![imagen](Imagenes/Frontend/Untitled%204.png)
 
 Este código utiliza Axios para crear una instancia de cliente HTTP configurada con una URL base. La instancia de Axios proporciona un cliente HTTP preconfigurado que puede realizar peticiones a la URL base especificada y realizar otras configuraciones adicionales según sea necesario.
 • Se importa Axios, una librería para realizar peticiones HTTP desde el navegador o desde Node.js.
@@ -499,7 +499,7 @@ Este código utiliza Axios para crear una instancia de cliente HTTP configurada 
 
 # Register.jsx
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%205.png)
+![imagen](Imagenes/Frontend/Untitled%205.png)
 
 Este componente **`Register`** es responsable de renderizar un formulario de registro que permite a los usuarios registrarse en la aplicación. Utiliza múltiples estados para controlar la entrada de usuario, validar los campos del formulario y realizar una solicitud HTTP POST al servidor para registrar nuevos usuarios.
 
@@ -508,11 +508,11 @@ Este componente **`Register`** es responsable de renderizar un formulario de reg
 - Define expresiones regulares (**`USER_REGEX`**, **`PWD_REGEX`**, **`MAIL_REGEX`**) para validar el formato del nombre de usuario, contraseña y correo electrónico.
 - **`REGISTER_URL`** especifica la URL a la cual se realizará la solicitud de registro.
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%206.png)
+![imagen](Imagenes/Frontend/Untitled%206.png)
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%207.png)
+![imagen](Imagenes/Frontend/Untitled%207.png)
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%208.png)
+![imagen](Imagenes/Frontend/Untitled%208.png)
 
 - El componente **`Register`** renderiza un formulario de registro con campos para nombre de usuario, contraseña, confirmación de contraseña y correo electrónico.
 - Utiliza estados (**`useState`**) para controlar los valores de los campos de entrada y el estado de validación.
@@ -530,7 +530,7 @@ El componente **`Register`** utiliza Axios (**`axios`**) para realizar solicitud
 
 El componente `Login` implementa un formulario interactivo de inicio de sesión de usuario en una aplicación React. Permite a los usuarios ingresar sus credenciales (correo electrónico y contraseña) para autenticarse en el sistema.
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%209.png)
+![imagen](Imagenes/Frontend/Untitled%209.png)
 
 - Importa el componente `Login` en el archivo donde deseamos mostrar el formulario de inicio de sesión:
 - Renderiza el componente `Login` dentro del componente principal o en la ruta deseada:
@@ -551,7 +551,7 @@ El componente `Login` implementa un formulario interactivo de inicio de sesión 
 
 El contexto de autenticación (`AuthProvider`) proporciona un contexto global en una aplicación React para gestionar el estado de autenticación del usuario.
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2010.png)
+![imagen](Imagenes/Frontend/Untitled%2010.png)
 
 Para utilizar este contexto de autenticación en una aplicación React:
 
@@ -569,7 +569,7 @@ En los componentes hijos, podemos acceder al estado de autenticación utilizando
 
 El componente `Home` representa la página de inicio de la aplicación de juegos de damas (`Checkers Elite`). Proporciona una interfaz para que los usuarios se registren o inicien sesión y ofrece información sobre el juego y sus características.
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2011.png)
+![imagen](Imagenes/Frontend/Untitled%2011.png)
 
 - **`React`**: Importa la librería principal de React para definir componentes.
 - **`useNavigate`**: Hook de React Router para gestionar la navegación entre rutas.
@@ -588,7 +588,7 @@ El componente `Home` representa la página de inicio de la aplicación de juegos
 
 # Game.jsx
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2012.png)
+![imagen](Imagenes/Frontend/Untitled%2012.png)
 
 Este componente **`Game`** representa el juego principal de damas dentro de la aplicación. Es responsable de renderizar el tablero de juego utilizando el componente **`Board`**.
 
@@ -603,7 +603,7 @@ Este componente **`Game`** representa el juego principal de damas dentro de la a
 
 El componente **`Board`** es responsable de representar y gestionar el tablero de juego de damas. Este componente utiliza elementos **`Tile`** para renderizar cada casilla del tablero y manejar la interacción con las piezas de juego.
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2013.png)
+![imagen](Imagenes/Frontend/Untitled%2013.png)
 
 - **`React`**: Importa la librería principal de React para definir componentes.
 - **`useRef`**: Hook de React utilizado para acceder al elemento DOM del tablero.
@@ -623,7 +623,7 @@ El componente **`Board`** es responsable de representar y gestionar el tablero d
 
 El componente **`Tile`** representa un cuadrado individual del tablero de juego de damas. Este componente se encarga de renderizar visualmente un cuadrado negro o blanco, dependiendo de su posición en el tablero, y opcionalmente muestra una imagen de una pieza en el cuadrado.
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2014.png)
+![imagen](Imagenes/Frontend/Untitled%2014.png)
 
 - **`React`**: Importa la librería principal de React para definir componentes.
 - **`"./Tile.css"`**: Archivo de estilos CSS específicos para el componente **`Tile`**.
@@ -640,7 +640,7 @@ El componente **`Tile`** representa un cuadrado individual del tablero de juego 
 
 El componente **`Lobby`** representa la interfaz de la sala de espera del juego de damas. Este componente permite al usuario elegir entre jugar contra otro usuario en línea, contra la computadora o cerrar sesión.
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2015.png)
+![imagen](Imagenes/Frontend/Untitled%2015.png)
 
 - **`"./Lobby.css"`**: Archivo de estilos CSS específicos para el componente **`Lobby`**.
 - Imágenes importadas para la interfaz (**`imgtablero`**, **`imglinea2`**, **`logocheckers`**, **`robot`**, **`uservsuser`**, **`linev`**, **`logout`**).
@@ -659,12 +659,11 @@ El componente **`Lobby`** representa la interfaz de la sala de espera del juego 
             - **`lobby-button2`**: Botón para jugar contra la computadora.
     - **`lobby-cierresesion`**: Sección para cerrar sesión con un botón de "Cerrar sesión".
     
-
 # Modal.jsx
 
 El componente **`Modal`** renderiza un modal condicionalmente basado en el estado proporcionado. Este componente permite mostrar o ocultar contenido dentro de un modal en la interfaz.
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2016.png)
+![imagen](Imagenes/Frontend/Untitled%2016.png)
 
 - **`React`**: Importa la librería principal de React para definir componentes.
 - **`"./Modal.css"`**: Archivo de estilos CSS específicos para el componente **`Modal`**.
@@ -679,7 +678,7 @@ El componente **`Modal`** renderiza un modal condicionalmente basado en el estad
 
 El componente **`Personalizartablero`** renderiza una sección que contiene botones para abrir y cerrar dos modales (**`Modal`**) diferentes. Cada modal tiene su propio estado (**`estadoModal1`** y **`estadoModal2`**) para controlar su visibilidad.
 
-![Untitled](SoftwareDevelopment/Imagenes/Frontend/Untitled%2017.png)
+![imagen](Imagenes/Frontend/Untitled%2017.png)
 
 - **`"./Personalizartab.css"`**: Archivo de estilos CSS específicos para el componente **`Personalizartablero`**.
 - **`Modal`**: Componente **`Modal`** importado para mostrar los modales.
@@ -695,27 +694,32 @@ mecanismo de seguridad que nos permite restringir las solicitudes HTTP que se re
 un origen diferente al del servidor donde se encuentra la aplicacion web.</p>
 
 <h3>Importaciones de Spring</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/CorsConfig/CorsConfig1.png)
+
+![imagen](Imagenes/CorsConfig/CorsConfig1.png)
 <p>Realizamos las importaciones necesarias</p>
 
 <h3>Clase de configuracion de Spring</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/CorsConfig/CorsConfig2.png)
+
+![imagen](Imagenes/CorsConfig/CorsConfig2.png)
 <p>@Configuracion es una anotacion para indicar que esta clase es una configuracion de Spring y ademas
 implemento la interfaz WebMvcConfigurer permitiendo personalizar la configuracion de Spring MVC</p>
 
 <h3>Clase de configuracion de Spring</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/CorsConfig/CorsConfig3.png)
+
+![imagen](Imagenes/CorsConfig/CorsConfig3.png)
 <p>WebMvcConfigurer tiene este metodo como parte de la interfaz y la utiliza para agregar reglas de CORS
 al registro</p>
 
 <h3>Configuracion de reglas CORS</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/CorsConfig/CorsConfig4.png)
+
+![imagen](Imagenes/CorsConfig/CorsConfig4.png)
 <p>Se configuran las reglas CORS para todas las rutas de la aplicacion, se permite que el origen sea http://localhost:5173,
 se especifican los metodos HTTP permitidos, los encabezados permitidos, se permite el uso de credenciales y se estaablece el
 tiempo maximo de cache para el preflights OPTIONS a 3600 segundos.</p>
 
 <h3>Configuracion CORS especifica para la ruta /user/**</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/CorsConfig/CorsConfig5.png)
+
+![imagen](Imagenes/CorsConfig/CorsConfig5.png)
 <p>Utilizo esta configuracion especifica para sobreescribir la configuracion global para la ruta /user/**, en este caso se deshabilita
 el uso de credenciales, lo que significa que las solicitudes CORS no incluiran cookies de autenticacion u otros datos confidenciales en
 las solicitudes</p>
@@ -725,63 +729,75 @@ las solicitudes</p>
 Este bean representa un componente de validación de usuarios en el sistema.</p>
 
 <h3>Importaciones de Spring</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/ValidationConfig/ValidationConfig1.png)
+
+![imagen](Imagenes/ValidationConfig/ValidationConfig1.png)
 <p>Realizamos las importaciones necesarias</p>
 
 <h3>Definicion del metodo de configuracion</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/ValidationConfig/ValidationConfig2.png)
+
+![imagen](Imagenes/ValidationConfig/ValidationConfig2.png)
 <p>Declaro la clase como una configuraacion de Spring y defino el metodo userValidation() anotado con @Bean, este 
 metodo es responsable de crear y configurar un bean de tipo UserValidation dentro del metodo para crear una nueva
 instancia de UserValidation y lo retorne</p>
 
 <h2>Clase Usercontroller</h2>
 <h3>Importaciones de Spring</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/Usercontroller/Usercontroller1.png)
+
+![imagen](Imagenes/Usercontroller/Usercontroller1.png)
 <p>Realizamos las importaciones necesarias</p>
 
 <h3>Definicion de la clase Controladora</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/Usercontroller/Usercontroller2.png)
+
+![imagen](Imagenes/Usercontroller/Usercontroller2.png)
 <p>La clase UserController se define como un controlador REST utilizando las anotaciones @RestController y 
 @RequestMapping para mapear las solicitudes HTTP a metodos especificos de esta clase.</p>
 
 <h3>Inyeccion de dependencias del servicio de usuario</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/Usercontroller/Usercontroller3.png)
+
+![imagen](Imagenes/Usercontroller/Usercontroller3.png)
 <p>Utilizo la anotacion @Autowired para inyectar una instancia del servicio de usuarios</p>
 
 <h3>Metodo GET para obtener todos los usuarios</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/Usercontroller/Usercontroller4.png)
+
+![imagen](Imagenes/Usercontroller/Usercontroller4.png)
 <p>Este metodo maneja una solicitud GET en la ruta /user/find-all y devuelve una lista de todos los usuarios junto
 con el codigo de estado HTTP OK(200)</p>
 
 <h3>Metodo GET para obtener un usuario por su ID</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/Usercontroller/Usercontroller5.png)
+
+![imagen](Imagenes/Usercontroller/Usercontroller5.png)
 <p>Este metodo maneja una solicitud GET en la ruta /user/{id}, donde {id} es el ID del usuario y devuelve un usuario
 especifico por su ID junto con el codigo de estado HTTP OK(200) si se encuentra de lo contrario enviara un codigo
 de estado NOT FOUND(404)</p>
 
 <h2>Clase UserControllers</h2>
 <h3>Importaciones de Spring</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserControllers/UserController1.png)
+
+![imagen](Imagenes/UserControllers/UserController1.png)
 <p>Realizamos las importaciones necesarias</p>
 
 <h3>Definicion del controllador REST y mapeo de la ruta base</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserControllers/UserController2.png)
+
+![imagen](Imagenes/UserControllers/UserController2.png)
 <p>Defino la clase UserControllers como un controlador REST y mapea la ruta base /user
 para todas las operaciones relacionadas con usuarios</p>
 
 <h3>Inyeccion del servicio de usuarios</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserControllers/UserControllers3.png)
+
+![imagen](Imagenes/UserControllers/UserControllers3.png)
 <p>Utilizo la anotacion @Autowired para inyectar una instancia del servicio de usuarios IUserService en el controlador</p>
 
 <h3>Metodo para registrar un usuario</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserControllers/UserController4.png)
+
+![imagen](Imagenes/UserControllers/UserController4.png)
 <p>Este método maneja una solicitud POST en la ruta /user/register para registrar un nuevo usuario. Se valida el usuario utilizando 
 la clase UserValidation, en caso hay errores de validación, se devuelve una respuesta con el código de estado BadRequest (400). 
 en caso la validación es exitosa, se llama al servicio para registrar al usuario y se devuelve la respuesta del servicio con el código 
 de estado CREATED (201).</p>
 
 <h3>Metodo para realizar el inicio de sesion de un usuario</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserControllers/UserController5.png)
+
+![imagen](Imagenes/UserControllers/UserController5.png)
 <p>Este método maneja una solicitud POST en la ruta /user/login para realizar el inicio de sesión de un usuario, lo que hace es Llamar al servicio 
 para realizar el inicio de sesión y obtiene el resultado. Si se genera un token de autenticación, devuelve la respuesta con el token 
 y el código de estado OK (200). Si no se genera un token, devuelve la respuesta sin el token y el código de estado UNAUTHORIZED (401).</p>
@@ -792,11 +808,13 @@ automáticamente los métodos getters, setters y constructores, y proporciona an
 relaciones con los atributos de la clase.</p>
 
 <h3>Importaciones de Spring</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserEntity/UserEntity1.png)
+
+![imagen](Imagenes/UserEntity/UserEntity1.png)
 <p>Realizamos las importaciones necesarias</p>
 
 <h3>Anotaciones de Lombok y JPA</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserEntity/UserEntity2.png)
+
+![imagen](Imagenes/UserEntity/UserEntity2.png)
 <p>@Setter, @Getter, @AllArgsConstructor, @NoArgsConstructor y @Builder: Estas anotaciones son proporcionadas por Lombok, una biblioteca de Java que 
 permite generar automáticamente los métodos getters, setters, constructores y otros métodos comunes. @Setter y @Getter generan automáticamente los 
 métodos setter y getter para todos los campos de la clase. @AllArgsConstructor genera un constructor con todos los campos de la clase como parámetros. 
@@ -805,13 +823,15 @@ métodos setter y getter para todos los campos de la clase. @AllArgsConstructor 
 en la base de datos a la que está mapeada la entidad.</p>
 
 <h3>Anotaciones de JPA para los atributos</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserEntity/UserEntity3.png)
+
+![imagen](Imagenes/UserEntity/UserEntity3.png)
 <p>@Id Indica que el atributo es la clave primaria de la entidad, @GeneratedValue(strategy = GenerationType.IDENTITY) especifica la estrategia de generación 
 de valores para la clave primaria. En este caso, se utiliza la identidad de la base de datos para generar valores automáticamente 
 @Column(name = "nombre de la columna") especifica el nombre de la columna en la tabla de la base de datos a la que está mapeado el atributo.</p>
 
 <h3>Metodos Getters y Setters</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserEntity/UserEntity4.png)
+
+![imagen](Imagenes/UserEntity/UserEntity4.png)
 <p>Se proporcionan métodos getters y setters para cada uno de los atributos de la clase para acceder y modificar sus valores.</p>
 
 <h2>Interfaz UserRepository</h2>
@@ -819,22 +839,26 @@ de valores para la clave primaria. En este caso, se utiliza la identidad de la b
 permiten buscar usuarios por correo electrónico y nombre de usuario.</p>
 
 <h3>Importaciones de Spring</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserRepositoryInterface/UserRepositoryInterface1.png)
+
+![imagen](Imagenes/UserRepositoryInterface/UserRepositoryInterface1.png)
 <p>Realizamos las importaciones necesarias</p>
 
 <h3>Declaracion de la interfaz</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserRepositoryInterface/UserRepositoryInterface2.png)
+
+![imagen](Imagenes/UserRepositoryInterface/UserRepositoryInterface2.png)
 <p>Esta línea declara la interfaz UserRepository, que extiende la interfaz JpaRepository. La interfaz JpaRepository es proporcionada por Spring 
 Data JPA y proporciona métodos CRUD estándar para interactuar con la base de datos.</p>
 
 <h3>Metodo findByEmail</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserRepositoryInterface/UserRepositoryInterface3.png)
+
+![imagen](Imagenes/UserRepositoryInterface/UserRepositoryInterface3.png)
 <p>@Query(value = "SELECT * FROM users WHERE email= :email", nativeQuery = true): Esta anotación @Query indica que se realizará una consulta nativa a la base 
 de datos para buscar un usuario por su correo electrónico. La consulta SQL se especifica como un valor de cadena, donde :email es un parámetro que se pasará a la consulta.
 Optional<UserEntity>: El método devuelve un objeto Optional que contiene un UserEntity si se encuentra un usuario con el correo electrónico especificado, o un objeto Optional vacío si no se encuentra ningún usuario.</p>
 
 <h3>Metodo findByName</h3>
-![Imagen not found](/home/david/Documents/VersionaFinal2.0/SoftwareDevelopment/Imagenes/UserRepositoryInterface/UserRepositoryInterface4.png)
+
+![imagen](Imagenes/UserRepositoryInterface/UserRepositoryInterface4.png)
 <p>Similar al método findByEmail, esta anotación @Query indica que se realizará una consulta nativa para buscar un usuario por su nombre de usuario.
 El método devuelve un objeto Optional que contiene un UserEntity si se encuentra un usuario con el nombre de usuario especificado, o un objeto 
 Optional vacío si no se encuentra ningún usuario.</p>
@@ -843,7 +867,7 @@ Optional vacío si no se encuentra ningún usuario.</p>
 
 La clase **`JWTAuthorizationFilter`** es un filtro de seguridad utilizado para autorizar las solicitudes HTTP mediante el uso de tokens JWT (JSON Web Tokens).
 
-![Untitled](SoftwareDevelopment/Imagenes/Security/Untitled.png)
+![imagen](Imagenes/Security/Untitled.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Security`**: Ubicación del archivo en el paquete de seguridad del backend.
@@ -876,7 +900,7 @@ La clase **`JWTAuthorizationFilter`** es un filtro de seguridad utilizado para a
 
 La clase **`SecurityConfig`** define la configuración de seguridad de Spring para gestionar la autenticación y autorización de las solicitudes HTTP en una aplicación web.
 
-![Untitled](SoftwareDevelopment/Imagenes/Security/Untitled%201.png)
+![imagen](Imagenes/Security/Untitled%201.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Security`**: Ubicación del archivo en el paquete de seguridad del backend.
@@ -906,7 +930,7 @@ La clase **`SecurityConfig`** define la configuración de seguridad de Spring pa
 
 La clase **`TokenManager`** es responsable de gestionar y mantener los tokens activos asociados a cada usuario en una aplicación. Proporciona métodos para almacenar, eliminar y verificar la validez de los tokens JWT.
 
-![Untitled](SoftwareDevelopment/Imagenes/Security/Untitled%202.png)
+![imagen](Imagenes/Security/Untitled%202.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Security`**: Ubicación del archivo en el paquete de seguridad del backend.
@@ -934,7 +958,7 @@ La clase **`TokenManager`** es responsable de gestionar y mantener los tokens ac
 
 La clase **`LoginDTO`** representa un DTO (Objeto de Transferencia de Datos) utilizado para el proceso de inicio de sesión de un usuario. Contiene los campos necesarios para el correo electrónico y la contraseña del usuario.
 
-![Untitled](SoftwareDevelopment/Imagenes/Models/Untitled%203.png)
+![imagen](Imagenes/Models/Untitled%203.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos`**: Ubicación de la clase en el paquete de modelos de DTO del servicio de backend.
@@ -971,7 +995,7 @@ La clase **`LoginDTO`** representa un DTO (Objeto de Transferencia de Datos) uti
 
 La clase **`ResponseDTO`** representa un DTO (Objeto de Transferencia de Datos) utilizado para encapsular la respuesta de una API. Contiene información sobre el número de errores ocurridos y un mensaje descriptivo asociado con la respuesta.
 
-![Untitled](SoftwareDevelopment/Imagenes/Models/Untitled%204.png)
+![imagen](Imagenes/Models/Untitled%204.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos`**: Ubicación de la clase en el paquete de modelos de DTO del servicio de backend.
@@ -1003,7 +1027,7 @@ La clase **`ResponseDTO`** representa un DTO (Objeto de Transferencia de Datos) 
 
 La clase **`UserValidation`** es responsable de realizar la validación de los campos de un objeto **`UserEntity`** según ciertos criterios predefinidos. Utiliza un objeto **`ResponseDTO`** para almacenar el resultado de la validación, incluyendo el número de errores encontrados y un mensaje descriptivo asociado.
 
-![Untitled](SoftwareDevelopment/Imagenes/Models/Untitled%205.png)
+![imagen](Imagenes/Models/Untitled%205.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Validation`**: Ubicación de la clase en el paquete de validación del modelo del servicio de backend.
@@ -1037,7 +1061,7 @@ La clase **`UserValidation`** implementa la validación de los siguientes campos
 
 La interfaz **`IJWTUtilityService`** define métodos para generar y analizar tokens JWT (JSON Web Tokens) dentro del contexto de un servicio en la capa de lógica de negocio del backend.
 
-![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%206.png)
+![imagen](Imagenes/Services/Untitled%206.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la interfaz en el paquete de servicios del backend.
@@ -1069,7 +1093,7 @@ La interfaz **`IJWTUtilityService`** define métodos para generar y analizar tok
 
 La interfaz **`IUserService`** define métodos para gestionar usuarios dentro del contexto del servicio en la capa de lógica de negocio del backend.
 
-![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%207.png)
+![imagen](Imagenes/Services/Untitled%207.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la interfaz en el paquete de servicios del backend.
@@ -1096,7 +1120,7 @@ La interfaz **`IUserService`** define métodos para gestionar usuarios dentro de
 
 La interfaz **`IUserserviceImplement`** define métodos para la gestión y consulta de usuarios dentro del contexto del servicio en la capa de lógica de negocio del backend.
 
-![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%208.png)
+![imagen](Imagenes/Services/Untitled%208.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la interfaz en el paquete de servicios del backend.
@@ -1118,7 +1142,7 @@ La interfaz **`IUserserviceImplement`** define métodos para la gestión y consu
 
 La clase **`JWTUtilityServiceImpl`** implementa la interfaz **`IJWTUtilityService`** para proporcionar funcionalidades relacionadas con la generación, análisis y validación de tokens JWT utilizando algoritmos de firma RSA.
 
-![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%209.png)
+![imagen](Imagenes/Services/Untitled%209.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la clase en el paquete de servicios del backend.
@@ -1153,7 +1177,7 @@ La clase **`JWTUtilityServiceImpl`** implementa la interfaz **`IJWTUtilityServic
 
 La clase **`UserServiceImpl`** implementa la interfaz **`IUserService`** para proporcionar funcionalidades relacionadas con la autenticación y registro de usuarios, utilizando repositorios de persistencia, validaciones y servicios de tokens JWT.
 
-![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%2010.png)
+![imagen](Imagenes/Services/Untitled%2010.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la clase en el paquete de servicios del backend.
@@ -1193,7 +1217,7 @@ La clase **`UserServiceImpl`** implementa la interfaz **`IUserService`** para pr
 
 La clase **`UserServiceImplement`** implementa la interfaz **`IUserserviceImplement`** para proporcionar funcionalidades relacionadas con la gestión y recuperación de usuarios mediante el uso del repositorio de persistencia.
 
-![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%2011.png)
+![imagen](Imagenes/Services/Untitled%2011.png)
 
 - **Paquete:**
     - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la clase en el paquete de servicios del backend.
