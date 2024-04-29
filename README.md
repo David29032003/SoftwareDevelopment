@@ -386,23 +386,16 @@
         <th>Concluido</th>
     </tr>
     <tr>
-        <td style="text-align: center;"></td>
-        <td style="text-align: center;"></td>
-        <td>
-            <ul>
-                
-            </ul>
-        </td>
-        <td>
-            <ul>
-                <li></li>
-            </ul>
-        </td>
-        <td>
-            <ul>
-                <li></li>
-            </ul>
-        </td>
+        <li>1</li>
+    </tr>
+    <tr>
+        <li>Como nuevo usuario, necesito crear una cuenta para poder iniciar sesión</li>
+    </tr>
+    <tr>
+       <li>Hecho</li>
+    </tr>
+    <tr>
+        <li>Hecho</li>
     </tr>
     
 </table>
