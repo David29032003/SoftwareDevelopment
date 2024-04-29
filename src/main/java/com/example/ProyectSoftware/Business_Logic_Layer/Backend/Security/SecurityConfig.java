@@ -14,42 +14,42 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-// Configuración de seguridad de Spring
+//Configuración de seguridad de Spring
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true)
 
 public class SecurityConfig {
-    // Inyección del servicio de utilidad JWT
+    //Inyección del servicio de utilidad JWT
     @Autowired
     private IJWTUtilityService jwtUtilityService;
 
-    // Configuración del filtro de seguridad
+    //Configuración del filtro de seguridad
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-                // Deshabilita la protección CSRF
+                //Deshabilita la protección CSRF
                 .csrf(csrf ->
                         csrf.disable()
                         )
-                // Configura las reglas de autorización HTTP
+                //Configura las reglas de autorización HTTP
                 .authorizeHttpRequests(authRequest ->
                         authRequest
-                                // Permite todas las solicitudes a /user/**
+                                //Permite todas las solicitudes a /user/**
                                 .requestMatchers("/user/**").permitAll()
-                                // Requiere autenticación para cualquier otra solicitud
+                                //Requiere autenticación para cualquier otra solicitud
                                 .anyRequest().authenticated()
                 )
-                // Configura la gestión de sesiones
+                //Configura la gestión de sesiones
                 .sessionManagement(sessionManager ->
                         sessionManager
-                                // Establece la política de creación de sesiones como STATELESS (sin estado)
+                                //Establece la política de creación de sesiones como STATELESS (sin estado)
                                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
-                // Agrega el filtro de autorización JWT antes del filtro de autenticación de usuario y contraseña
+                //Agrega el filtro de autorización JWT antes del filtro de autenticación de usuario y contraseña
                 .addFilterBefore(new JWTAuthorizationFilter(jwtUtilityService),
         UsernamePasswordAuthenticationFilter.class)
-                // Configura el manejo de excepciones para responder con un código de estado de no autorizado
+                //Configura el manejo de excepciones para responder con un código de estado de no autorizado
                 .exceptionHandling(exceptionHandling ->
                         exceptionHandling
                                 .authenticationEntryPoint((request, response, authException) ->{
@@ -58,7 +58,7 @@ public class SecurityConfig {
                 .build();
     }
 
-    // Bean para proporcionar un codificador de contraseñas BCrypt
+    //Bean para proporcionar un codificador de contraseñas BCrypt
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();

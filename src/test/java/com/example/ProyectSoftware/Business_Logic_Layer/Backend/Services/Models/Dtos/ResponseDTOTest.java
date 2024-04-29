@@ -8,16 +8,16 @@ public class ResponseDTOTest {
 
     @Test
     void testResponseDTO() {
-        // Arrange
+        //Arrange
         int numOfErrors = 2;
-        String message = "Error occurred";
+        String message = "Error happened";
 
-        // Act
+        //Act
         ResponseDTO responseDTO = new ResponseDTO();
         responseDTO.setNumOfErrors(numOfErrors);
         responseDTO.setMessage(message);
 
-        // Assert
+        //Assert
         assertEquals(numOfErrors, responseDTO.getNumOfErrors());
         assertEquals(message, responseDTO.getMessage());
     }

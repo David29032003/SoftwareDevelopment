@@ -8,11 +8,11 @@ import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.
 
 import java.util.HashMap;
 
-// Interfaz para el servicio de usuarios
+//Interfaz para el servicio de usuarios
 public interface IUserService {
-    // Método para realizar el inicio de sesión
+    //Método para realizar el inicio de sesión
     public HashMap<String, String> login(LoginDTO login) throws Exception;
-    // Método para registrar un usuario
+    //Método para registrar un usuario
     ResponseDTO register(UserEntity user) throws Exception;
 
     public ResponseDTO registerTest(UserEntity user) throws Exception;

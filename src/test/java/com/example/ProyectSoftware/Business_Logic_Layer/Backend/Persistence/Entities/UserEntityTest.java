@@ -9,13 +9,13 @@ public class UserEntityTest {
 
     @Test
     void testUserEntity() {
-        // Arrange
+        //Arrange
         Integer id = 1;
         String name = "John";
         String password = "password123";
         String email = "john@example.com";
 
-        // Act
+        //Act
         UserEntity userEntity = UserEntity.builder()
                 .id(id)
                 .name(name)
@@ -23,7 +23,7 @@ public class UserEntityTest {
                 .email(email)
                 .build();
 
-        // Assert
+        //Assert
         assertNotNull(userEntity);
         assertEquals(id, userEntity.getId());
         assertEquals(name, userEntity.getName());

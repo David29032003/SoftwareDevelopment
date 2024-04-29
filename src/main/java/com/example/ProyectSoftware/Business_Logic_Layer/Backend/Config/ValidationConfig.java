@@ -4,7 +4,7 @@ import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-// Declaramos la clase como una clase de configuracion de Spring
+//Declaramos la clase como una clase de configuracion de Spring
 @Configuration
 public class ValidationConfig {
     /*
@@ -13,7 +13,7 @@ public class ValidationConfig {
     * */
     @Bean
     public UserValidation userValidation(){
-        // Crear y retornar una nueva instancia de UserValidation
+        //Crear y retornar una nueva instancia de UserValidation
         return new UserValidation();
     }
 }

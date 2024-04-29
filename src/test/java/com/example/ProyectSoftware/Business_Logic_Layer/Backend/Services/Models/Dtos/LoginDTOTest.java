@@ -8,16 +8,16 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class LoginDTOTest {
     @Test
     void testLoginDTO() {
-        // Arrange
-        String email = "test@example.com";
-        String password = "password123";
+        //Arrange
+        String email = "Email@ExampleTest.com";
+        String password = "Password2903";
 
-        // Act
+        //Act
         LoginDTO loginDTO = new LoginDTO();
         loginDTO.setPassword(password);
         loginDTO.setEmail(email);
 
-        // Assert
+        //Assert
         assertNotNull(loginDTO);
         assertEquals(email, loginDTO.getEmail());
         assertEquals(password, loginDTO.getPassword());

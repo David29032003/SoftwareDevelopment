@@ -12,33 +12,33 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-// Definición de la clase controladora
+//Definición de la clase controladora
 @RestController
 @RequestMapping("/user")
 public class Usercontroller {
 
-    // Inyección del servicio de usuarios
+    //Inyección del servicio de usuarios
     @Autowired
     IUserserviceImplement iUserservice;
 
-    // Manejo de la solicitud GET para obtener todos los usuarios
+    //Manejo de la solicitud GET para obtener todos los usuarios
     @GetMapping("/find-all")
     private ResponseEntity<List<UserEntity>> getAllUsers(){
         // Devuelve una respuesta con la lista de usuarios y código de estado OK
         return new ResponseEntity<>(iUserservice.findAllUsers(), HttpStatus.OK);
     }
 
-    // Método GET para obtener un usuario por su ID utilizando el ID en la URL
+    //Método GET para obtener un usuario por su ID utilizando el ID en la URL
     @GetMapping("/{id}")
     private ResponseEntity<UserEntity> getUserById(@PathVariable("id") int id) {
-        // Llama al servicio para obtener el usuario por su ID
+        //Llama al servicio para obtener el usuario por su ID
         UserEntity user = iUserservice.findUserById(id);
-        // Verifica si se encontró el usuario
+        //Verifica si se encontró el usuario
         if (user != null) {
-            // Si se encontró, devuelve el usuario y el código de estado OK
+            //si se encontró, devuelve el usuario y el código de estado OK
             return new ResponseEntity<>(user, HttpStatus.OK);
         } else {
-            // Si no se encontró, devuelve un código de estado NOT FOUND
+            //Si no se encontró, devuelve un código de estado NOT FOUND
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

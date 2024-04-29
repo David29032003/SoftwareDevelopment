@@ -19,7 +19,7 @@ public class ValidationConfigTest {
          assertNotNull(userValidation);
          assertTrue(userValidation instanceof UserValidation);
 
-         //Close the context
+         //For close the context
          context.close();
 
      }
