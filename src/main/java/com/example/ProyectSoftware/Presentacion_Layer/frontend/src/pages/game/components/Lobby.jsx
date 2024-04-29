@@ -18,50 +18,50 @@ const navigatetohome = () => { // Función para navegar a la ruta de inicio
     navigate('/'); // Navega a la ruta de inicio 
 }
     return ( // Retorna el componente Lobby con el nombre Lobby 
-        <div className="Lobby"> // Crea un div con la clase Lobby 
-            <div className="section1"> // Crea un div con la clase section1 
-                <img className="imgtablero" src={imgtablero}></img> // Crea un elemento img con la clase imgtablero y la imagen imgtablero.png 
+        <div className="Lobby">
+            <div className="section1"> 
+                <img className="imgtablero" src={imgtablero}></img>
             </div>
-            <div className="section2"> // Crea un div con la clase section2 
-                <div className="lobby-logo"> // Crea un div con la clase lobby-logo 
-                        <div   div className="lobby-line"> // Crea un div con la clase lobby-line 
-                            <img className="imglinea2" src={imglinea2} alt="Descripción de la imagen" /> // Crea un elemento img con la clase imglinea2 y la imagen imglinea2.png
+            <div className="section2"> 
+                <div className="lobby-logo">
+                        <div   div className="lobby-line"> 
+                            <img className="imglinea2" src={imglinea2} alt="Descripción de la imagen" /> 
                         </div>
-                        <img className="logocheckerhome" src={logocheckers} alt="Descripción de la imagen" /> // Crea un elemento img con la clase logocheckerhome y la imagen logocheckers.png
-                        <div className="lobby-line"> // Crea un div con la clase lobby-line 
-                            <img className="imglinea2" src={imglinea2} alt="Descripción de la imagen" /> // Crea un elemento img con la clase imglinea2 y la imagen imglinea2.png
+                        <img className="logocheckerhome" src={logocheckers} alt="Descripción de la imagen" /> 
+                        <div className="lobby-line">
+                            <img className="imglinea2" src={imglinea2} alt="Descripción de la imagen" /> 
                         </div>
                 </div>
-                <div className="lobby-title">Juega a las damas americanas </div> // Crea un elemento div con la clase lobby-title y el texto "Juega a las damas americanas"
-                <div className="lobby-options"> // Crea un div con la clase lobby-options
-                    <button className="lobby-button1" onClick={navigatetogame}> // Crea un elemento button con la clase lobby-button1 y un evento onClick que navega a la ruta del juego
-                        <div className="lobbycuadroicon"> // Crea un elemento div con la clase lobbycuadroicon 
-                           <img className="icong" src={uservsuser} alt="Descripción de la imagen" />  // Crea un elemento img con la clase icong y la imagen uservsuser.png
+                <div className="lobby-title">Juega a las damas americanas </div> 
+                <div className="lobby-options"> 
+                    <button className="lobby-button1" onClick={navigatetogame}> 
+                        <div className="lobbycuadroicon"> 
+                           <img className="icong" src={uservsuser} alt="Descripción de la imagen" />  
                         </div>
                            
-                        <img className="iconlin" src={linev} alt="Descripción de la imagen" /> // Crea un elemento img con la clase iconlin y la imagen linev.png 
-                        <div className="lobbytextb"> // Crea un elemento div con la clase lobbytextb
-                            <p className="lobbytextboton">Juega en linea</p> // Crea un elemento p con la clase lobbytextboton y el texto "Juega en linea"
+                        <img className="iconlin" src={linev} alt="Descripción de la imagen" /> 
+                        <div className="lobbytextb"> 
+                            <p className="lobbytextboton">Juega en linea</p> 
                         </div>
                         
                     </button>
-                    <button className="lobby-button2" onClick={navigatetogame}> // Crea un elemento button con la clase lobby-button2 y un evento onClick que navega a la ruta del juego
+                    <button className="lobby-button2" onClick={navigatetogame}> 
                 
-                        <div className="lobbycuadroicon"> // Crea un elemento div con la clase lobbycuadroicon
-                            <img className="iconr" src={robot} alt="Descripción de la imagen" /> // Crea un elemento img con la clase iconr y la imagen robot.png
+                        <div className="lobbycuadroicon"> 
+                            <img className="iconr" src={robot} alt="Descripción de la imagen" /> 
                         </div>
-                        <img className="iconlin" src={linev} alt="Descripción de la imagen" /> // Crea un elemento img con la clase iconlin y la imagen linev.png
-                        <div className="lobbytextb"> // Crea un elemento div con la clase lobbytextb
-                          <p className="lobbytextboton">Ordenador</p> // Crea un elemento p con la clase lobbytextboton y el texto "Ordenador"  
+                        <img className="iconlin" src={linev} alt="Descripción de la imagen" />
+                        <div className="lobbytextb"> 
+                          <p className="lobbytextboton">Ordenador</p> 
                         </div>
                         
                     </button>
                 </div>
-                <div className="lobby-cierresesion"> // Crea un div con la clase lobby-cierresesion
-                <button className="lobby-button" > // Crea un elemento button con la clase lobby-button
-                        <img className="iconlogout" src={logout} alt="Descripción de la imagen" /> // Crea un elemento img con la clase iconlogout y la imagen logout.png 
-                        <a href="/"> // Crea un elemento a que redirige a la ruta "/"
-                        <p>Cerrar sesion</p>     // Crea un elemento p con el texto "Cerrar sesion"
+                <div className="lobby-cierresesion"> 
+                <button className="lobby-button" > 
+                        <img className="iconlogout" src={logout} alt="Descripción de la imagen" /> 
+                        <a href="/">
+                        <p>Cerrar sesion</p>   
                         </a>
                         
                     </button>
