@@ -386,7 +386,7 @@
         <th>Milagros Cristina <br>Ruiz Arica</th>
     </tr>
     <tr>
-        <td style="text-align: center;">Jose Manuel <br> Ravichagua Marin</td>
+        <td style="text-align: center;">Andrei Steven <br> Trujillo Armas</td>
         <td style="text-align: center;"> 8</td>
         <td style="text-align: center;"> 9</td>
         <td style="text-align: center;"> 9</td>
