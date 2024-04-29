@@ -377,29 +377,6 @@
     </tr>
 </table>
 
-<h2>Avances de cada Sprint</h2>
-<table border="3" cellpadding="10">
-    <tr>
-        <th> Sprint </th>
-        <th> Historia de usuario </th>
-        <th> Cristerios de aceptacion </th>
-        <th>Concluido</th>
-    </tr>
-    <tr>
-        <li>1</li>
-    </tr>
-    <tr>
-        <li>Como nuevo usuario, necesito crear una cuenta para poder iniciar sesión</li>
-    </tr>
-    <tr>
-       <li>Hecho</li>
-    </tr>
-    <tr>
-        <li>Hecho</li>
-    </tr>
-    
-</table>
-
 <h3>Decisiones Clave:</h3>
 <ul>
     <li>Lenguaje de programación: Java</li>
@@ -409,6 +386,56 @@
     <li>Horario habitual de reunión: 7:00 p.m.</li>
 </ul>
 <h2>Estado Actual: </h2>
+<h3>I. Historias de Usuario </h3>
+    <table border="3" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Nombre de la historia de usuario</th>
+            <th>Descripcion de la historia de usuario</th>
+            <th>Prioridad</th>
+            <th>Esfuerzo Estimado (horas)</th>
+            <th>Esfuerzo Real (si se completa)</th>
+            <th>Estado(complentado, pendiente, en curso)</th>
+        </tr>
+        <tr>
+            <td style="text-align: center;">1</td>
+            <td>Registrar usuario</td>
+            <td>Como nuevo usuario, necesito crear una cuenta para poder iniciar sesión</td>
+            <td>Alto</td>
+            <td>17h</td>
+            <td>22h</td>
+            <td>Finalizado</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">2</td>
+            <td>Iniciar Sesion</td>
+            <td>Como usuario necesito iniciar sesion para poder jugar</td>
+            <td>Alto</td>
+            <td>14h</td>
+            <td>17h</td>
+            <td>Finalizado</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">3</td>
+            <td>Visualizacion del tablero</td>
+            <td>Como usuario que inicio sesion, necesito visualizar el tablero ara jugar</td>
+            <td>Alto</td>
+            <td>8h</td>
+            <td>12h</td>
+            <td>finalizado</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">4</td>
+            <td>Visualizacion del tablero</td>
+            <td>Como usuario quiero jugar con el computador</td>
+            <td>Medio</td>
+            <td>19h</td>
+            <td>21h</td>
+            <td>finalizado</td>
+        </tr>
+    </table>
+<p>
+
 <table border="3" cellpadding="10">
     <tr>
         <th>Tareas</th>
