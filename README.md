@@ -839,5 +839,380 @@ Optional<UserEntity>: El método devuelve un objeto Optional que contiene un Use
 El método devuelve un objeto Optional que contiene un UserEntity si se encuentra un usuario con el nombre de usuario especificado, o un objeto 
 Optional vacío si no se encuentra ningún usuario.</p>
 
+# Clase JWTAuthorizationFilter
+
+La clase **`JWTAuthorizationFilter`** es un filtro de seguridad utilizado para autorizar las solicitudes HTTP mediante el uso de tokens JWT (JSON Web Tokens).
+
+![Untitled](SoftwareDevelopment/Imagenes/Security/Untitled.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Security`**: Ubicación del archivo en el paquete de seguridad del backend.
+- **Importaciones:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.IJWTUtilityService`**: Importa la interfaz **`IJWTUtilityService`** del servicio de utilidad JWT.
+    - **`com.nimbusds.jose.JOSEException`**: Maneja excepciones relacionadas con JOSE (Java Object Signing and Encryption).
+    - **`com.nimbusds.jwt.JWTClaimsSet`**: Representa un conjunto de reclamaciones (claims) de un token JWT.
+    - **`jakarta.servlet.FilterChain`**: Proporciona una forma de invocar el siguiente filtro en una cadena de filtros.
+    - **`jakarta.servlet.ServletException`**: Excepción lanzada por métodos en el ciclo de vida del servlet.
+    - **`jakarta.servlet.http.HttpServletRequest`**: Proporciona métodos para obtener información sobre una solicitud HTTP.
+    - **`jakarta.servlet.http.HttpServletResponse`**: Proporciona métodos para manejar una respuesta HTTP.
+    - **`org.springframework.beans.factory.annotation.Autowired`**: Anotación utilizada para inyectar dependencias en Spring.
+    - **`org.springframework.security.authentication.UsernamePasswordAuthenticationToken`**: Representa una solicitud de autenticación con nombre de usuario y contraseña.
+    - **`org.springframework.security.core.context.SecurityContextHolder`**: Proporciona acceso al contexto de seguridad de Spring.
+- **Extensión:**
+    - **`OncePerRequestFilter`**: Clase base para filtros que deben aplicarse una vez por cada solicitud.
+- **Metodo `doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain)`:**
+    - Método principal que implementa la lógica de filtrado para cada solicitud HTTP.
+    - Obtiene el encabezado **`Authorization`** de la solicitud y extrae el token JWT.
+    - Valida y analiza el token JWT utilizando el servicio **`IJWTUtilityService`**.
+    - Crea un objeto de autenticación (**`UsernamePasswordAuthenticationToken`**) basado en el sujeto del token JWT.
+    - Establece el contexto de seguridad (**`SecurityContextHolder`**) con la autenticación creada.
+    - Captura y maneja excepciones relacionadas con la validación del token JWT.
+    - Continúa con el siguiente filtro en la cadena de filtros después de la validación.
+- **Constructor:**
+    - Recibe una instancia de **`IJWTUtilityService`** como parámetro.
+    - Inyecta la dependencia **`jwtUtilityService`** utilizando la anotación **`@Autowired`**.
+
+# Clase SecurityConfig
+
+La clase **`SecurityConfig`** define la configuración de seguridad de Spring para gestionar la autenticación y autorización de las solicitudes HTTP en una aplicación web.
+
+![Untitled](SoftwareDevelopment/Imagenes/Security/Untitled%201.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Security`**: Ubicación del archivo en el paquete de seguridad del backend.
+- **Importaciones:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.IJWTUtilityService`**: Importa la interfaz **`IJWTUtilityService`** del servicio de utilidad JWT.
+    - **`jakarta.servlet.http.HttpServletResponse`**: Proporciona métodos para manejar una respuesta HTTP.
+    - **`org.springframework.beans.factory.annotation.Autowired`**: Anotación utilizada para inyectar dependencias en Spring.
+    - **`org.springframework.context.annotation.Bean`**: Anotación para definir un método que expone un bean de Spring.
+    - **`org.springframework.context.annotation.Configuration`**: Anotación que indica que una clase define una configuración de Spring.
+    - **`org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity`**: Habilita la seguridad a nivel de método.
+    - **`org.springframework.security.config.annotation.web.builders.HttpSecurity`**: Configura la seguridad a nivel de HTTP.
+    - **`org.springframework.security.config.annotation.web.configuration.EnableWebSecurity`**: Habilita la configuración de seguridad web.
+    - **`org.springframework.security.config.http.SessionCreationPolicy`**: Enumeración que representa las políticas de creación de sesiones.
+    - **`org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder`**: Implementación de **`PasswordEncoder`** que utiliza el algoritmo BCrypt para el cifrado de contraseñas.
+    - **`org.springframework.security.crypto.password.PasswordEncoder`**: Interfaz para codificar y verificar contraseñas.
+- **Metodo `securityFilterChain(HttpSecurity)`:**
+    - Método anotado con **`@Bean`** que configura el filtro de seguridad para las solicitudes HTTP.
+    - Deshabilita la protección CSRF.
+    - Define reglas de autorización para las solicitudes HTTP.
+    - Configura la gestión de sesiones como **`STATELESS`** (sin estado).
+    - Agrega el filtro **`JWTAuthorizationFilter`** antes del filtro de autenticación **`UsernamePasswordAuthenticationFilter`**.
+    - Maneja excepciones de autenticación para responder con un código de estado **`UNAUTHORIZED`**.
+- **Metodo `passwordEncoder()`:**
+    - Método anotado con **`@Bean`** que expone un bean de Spring para proporcionar un codificador de contraseñas **`BCryptPasswordEncoder`**.
+
+# Clase TokenManager
+
+La clase **`TokenManager`** es responsable de gestionar y mantener los tokens activos asociados a cada usuario en una aplicación. Proporciona métodos para almacenar, eliminar y verificar la validez de los tokens JWT.
+
+![Untitled](SoftwareDevelopment/Imagenes/Security/Untitled%202.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Security`**: Ubicación del archivo en el paquete de seguridad del backend.
+- **Importaciones:**
+    - **`org.springframework.stereotype.Component`**: Anotación que indica que la clase es un componente de Spring y debe ser escaneada por el contexto de la aplicación.
+- **`activeTokens`:**
+    - **`Map<Integer, String>`**: Mapa que almacena los tokens activos asociados a cada usuario, donde la clave es el ID del usuario y el valor es el token JWT.
+- **Metodo `storeTokenInActiveTokens(int userId, String jwt)`:**
+    - Almacena el token JWT asociado a un usuario en la lista de tokens activos.
+    - Parámetros:
+        - **`userId`**: ID del usuario.
+        - **`jwt`**: Token JWT a almacenar.
+- **Metodo `removeTokenFromActiveTokens(int userId)`:**
+    - Elimina el token asociado a un usuario de la lista de tokens activos.
+    - Parámetro:
+        - **`userId`**: ID del usuario cuyo token debe eliminarse.
+- **Metodo `isTokenActive(int userId, String jwt)`:**
+    - Verifica si un token está activo para un usuario específico.
+    - Retorna **`true`** si el token es válido y está asociado al usuario especificado.
+    - Parámetros:
+        - **`userId`**: ID del usuario.
+        - **`jwt`**: Token JWT a verificar.
+
+# Clase LoginDTO
+
+La clase **`LoginDTO`** representa un DTO (Objeto de Transferencia de Datos) utilizado para el proceso de inicio de sesión de un usuario. Contiene los campos necesarios para el correo electrónico y la contraseña del usuario.
+
+![Untitled](SoftwareDevelopment/Imagenes/Models/Untitled%203.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos`**: Ubicación de la clase en el paquete de modelos de DTO del servicio de backend.
+- Atributos:
+    - **`email`:**
+        - Tipo: **`String`**
+        - Descripción: Campo que almacena el correo electrónico del usuario.
+    - **`password`:**
+        - Tipo: **`String`**
+        - Descripción: Campo que almacena la contraseña del usuario.
+- **`LoginDTO()`:**
+    - Descripción: Constructor predeterminado sin parámetros.
+- **`LoginDTO(String email, String password)`:**
+    - Descripción: Constructor que inicializa un objeto **`LoginDTO`** con el correo electrónico y la contraseña especificados.
+    - Parámetros:
+        - **`email`**: Correo electrónico del usuario.
+        - **`password`**: Contraseña del usuario.
+- **Metodo `getEmail()`:**
+    - Descripción: Retorna el correo electrónico almacenado en el DTO.
+    - Retorno: **`String`**
+- **Metodo `setEmail(String email)`:**
+    - Descripción: Establece el correo electrónico en el DTO.
+    - Parámetros:
+        - **`email`**: Nuevo correo electrónico a establecer.
+- **Metodo `getPassword()`:**
+    - Descripción: Retorna la contraseña almacenada en el DTO.
+    - Retorno: **`String`**
+- **Metodo `setPassword(String password)`:**
+    - Descripción: Establece la contraseña en el DTO.
+    - Parámetros:
+        - **`password`**: Nueva contraseña a establecer.
+
+# Clase ResponseDTO
+
+La clase **`ResponseDTO`** representa un DTO (Objeto de Transferencia de Datos) utilizado para encapsular la respuesta de una API. Contiene información sobre el número de errores ocurridos y un mensaje descriptivo asociado con la respuesta.
+
+![Untitled](SoftwareDevelopment/Imagenes/Models/Untitled%204.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos`**: Ubicación de la clase en el paquete de modelos de DTO del servicio de backend.
+- Atributos
+    - **`numOfErrors`:**
+        - Tipo: **`int`**
+        - Descripción: Número de errores asociados con la respuesta.
+    - **`message`:**
+        - Tipo: **`String`**
+        - Descripción: Mensaje descriptivo relacionado con la respuesta.
+- **`ResponseDTO()`:**
+    - Descripción: Constructor predeterminado sin parámetros.
+- **Metodo `getNumOfErrors()`:**
+    - Descripción: Retorna el número de errores almacenado en el DTO.
+    - Retorno: **`int`**
+- **Metodo `setNumOfErrors(int numOfErrors)`:**
+    - Descripción: Establece el número de errores en el DTO.
+    - Parámetros:
+        - **`numOfErrors`**: Nuevo número de errores a establecer.
+- **Metodo `getMessage()`:**
+    - Descripción: Retorna el mensaje descriptivo almacenado en el DTO.
+    - Retorno: **`String`**
+- **Metodo `setMessage(String message)`:**
+    - Descripción: Establece el mensaje descriptivo en el DTO.
+    - Parámetros:
+        - **`message`**: Nuevo mensaje descriptivo a establecer.
+
+# Clase UserValidation
+
+La clase **`UserValidation`** es responsable de realizar la validación de los campos de un objeto **`UserEntity`** según ciertos criterios predefinidos. Utiliza un objeto **`ResponseDTO`** para almacenar el resultado de la validación, incluyendo el número de errores encontrados y un mensaje descriptivo asociado.
+
+![Untitled](SoftwareDevelopment/Imagenes/Models/Untitled%205.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Validation`**: Ubicación de la clase en el paquete de validación del modelo del servicio de backend.
+
+La clase **`UserValidation`** implementa la validación de los siguientes campos del objeto **`UserEntity`**:
+
+- **Campo `name`:**
+    - Requisitos:
+        - No puede ser nulo.
+        - Debe tener entre 3 y 15 caracteres.
+    - Mensaje de Error: "El campo nombre no puede ser nulo y debe tener entre 3 y 15 caracteres."
+- **Campo `email`:**
+    - Requisitos:
+        - No puede ser nulo.
+        - Debe tener un formato válido de dirección de correo electrónico.
+    - Mensaje de Error: "El campo email no es válido."
+- **Campo `password`:**
+    - Requisitos:
+        - No puede ser nulo.
+        - Debe tener entre 8 y 16 caracteres.
+        - Debe contener al menos un número, una letra minúscula y una letra mayúscula.
+    - Mensaje de Error: "La contraseña debe tener entre 8 y 16 caracteres, al menos un número, una letra minúscula y una letra mayúscula."
+- **Metodo `validate(UserEntity user)`:**
+    - Descripción: Método utilizado para validar un objeto **`UserEntity`** con respecto a ciertos criterios.
+    - Parámetros:
+        - **`user`**: Objeto **`UserEntity`** que se va a validar.
+    - Retorno: **`ResponseDTO`**
+        - Objeto **`ResponseDTO`** que contiene el resultado de la validación, incluyendo el número de errores y un mensaje descriptivo.
+
+# Interfaz IJWTUtilityService
+
+La interfaz **`IJWTUtilityService`** define métodos para generar y analizar tokens JWT (JSON Web Tokens) dentro del contexto de un servicio en la capa de lógica de negocio del backend.
+
+![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%206.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la interfaz en el paquete de servicios del backend.
+- **Metodo `generateJWT(Integer id) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException, JOSEException`:**
+    - Descripción: Método para generar un token JWT dado un ID específico.
+    - Parámetros:
+        - **`id`**: Identificador único asociado al token JWT.
+    - Excepciones:
+        - **`IOException`**: Excepción de E/S que puede ocurrir durante la generación del token.
+        - **`NoSuchAlgorithmException`**: Excepción que indica un algoritmo no válido para la generación del token.
+        - **`InvalidKeySpecException`**: Excepción que indica una especificación de clave inválida durante la generación del token.
+        - **`JOSEException`**: Excepción relacionada con errores en la biblioteca JOSE (JSON Object Signing and Encryption).
+    - Retorno: **`String`**
+        - Token JWT generado como una cadena de caracteres.
+- **Metodo `parseJWT(String jwt) throws IOException, InvalidKeySpecException, NoSuchAlgorithmException, ParseException, JOSEException`:**
+    - Descripción: Método para analizar y validar un token JWT dado.
+    - Parámetros:
+        - **`jwt`**: Token JWT que se va a analizar y validar.
+    - Excepciones:
+        - **`IOException`**: Excepción de E/S que puede ocurrir durante el análisis del token.
+        - **`InvalidKeySpecException`**: Excepción que indica una especificación de clave inválida durante el análisis del token.
+        - **`NoSuchAlgorithmException`**: Excepción que indica un algoritmo no válido para el análisis del token.
+        - **`ParseException`**: Excepción que indica un error durante el análisis de la estructura del token.
+        - **`JOSEException`**: Excepción relacionada con errores en la biblioteca JOSE (JSON Object Signing and Encryption).
+    - Retorno: **`JWTClaimsSet`**
+        - Objeto que representa las afirmaciones (claims) extraídas del token JWT analizado y validado.
+
+# Interfaz IUserService
+
+La interfaz **`IUserService`** define métodos para gestionar usuarios dentro del contexto del servicio en la capa de lógica de negocio del backend.
+
+![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%207.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la interfaz en el paquete de servicios del backend.
+- **Metodo `login(LoginDTO login) throws Exception`:**
+    - Descripción: Método para realizar el inicio de sesión de un usuario.
+    - Parámetros:
+        - **`login`**: DTO (Objeto de Transferencia de Datos) que contiene el correo electrónico y la contraseña del usuario.
+    - Excepciones:
+        - **`Exception`**: Excepción genérica que puede ocurrir durante el proceso de inicio de sesión.
+- **Metodo `register(UserEntity user) throws Exception`:**
+    - Descripción: Método para registrar un nuevo usuario.
+    - Parámetros:
+        - **`user`**: Entidad que representa los datos del usuario a registrar.
+    - Excepciones:
+        - **`Exception`**: Excepción genérica que puede ocurrir durante el proceso de registro de usuario.
+- **Metodo `registerTest(UserEntity user) throws Exception`:**
+    - Descripción: Método de prueba para registrar un usuario (no utilizado en producción).
+    - Parámetros:
+        - **`user`**: Entidad que representa los datos del usuario a registrar.
+    - Excepciones:
+        - **`Exception`**: Excepción genérica que puede ocurrir durante el proceso de registro de usuario.
+
+# Interfaz IUserserviceImplement
+
+La interfaz **`IUserserviceImplement`** define métodos para la gestión y consulta de usuarios dentro del contexto del servicio en la capa de lógica de negocio del backend.
+
+![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%208.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la interfaz en el paquete de servicios del backend.
+- **Metodo `findAllUsers() : List<UserEntity>`**
+    - Descripción: Método para obtener todos los usuarios registrados en el sistema.
+    - Retorna: Lista de entidades **`UserEntity`** que representan a todos los usuarios.
+- **Metodo `findUserByName(String username) : UserEntity`**
+    - Descripción: Método para obtener un usuario por su nombre de usuario.
+    - Parámetros:
+        - **`username`**: Nombre de usuario del usuario a buscar.
+    - Retorna: Entidad **`UserEntity`** correspondiente al usuario encontrado.
+- **Metodo `findUserById(int id) : UserEntity`**
+    - Descripción: Método para obtener un usuario por su identificador único (ID).
+    - Parámetros:
+        - **`id`**: Identificador único del usuario a buscar.
+    - Retorna: Entidad **`UserEntity`** correspondiente al usuario encontrado por su ID.
+
+# Clase JWTUtilityServiceImpl
+
+La clase **`JWTUtilityServiceImpl`** implementa la interfaz **`IJWTUtilityService`** para proporcionar funcionalidades relacionadas con la generación, análisis y validación de tokens JWT utilizando algoritmos de firma RSA.
+
+![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%209.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la clase en el paquete de servicios del backend.
+- **`@Service`**
+    - Indica que esta clase es un componente de servicio de Spring.
+- **`privateKeyResource` (Resource)**
+    - Recurso que representa la clave privada utilizada para firmar los tokens JWT.
+- **`publicKeyResource` (Resource)**
+    - Recurso que representa la clave pública utilizada para verificar y validar los tokens JWT.
+- **Metodo `generateJWT(Integer id) : String`**
+    - Descripción: Método para generar un token JWT utilizando el ID proporcionado como sujeto del token.
+    - Parámetros:
+        - **`id`**: Identificador único asociado al sujeto del token.
+    - Retorna: Token JWT generado como una cadena serializada.
+- **Metodo `parseJWT(String jwt) : JWTClaimsSet`**
+    - Descripción: Método para analizar y validar un token JWT dado.
+    - Parámetros:
+        - **`jwt`**: Token JWT en forma de cadena a analizar y validar.
+    - Retorna: Objeto **`JWTClaimsSet`** que contiene los claims (datos) del token JWT analizado y validado.
+- **Metodo `loadPrivateKey(Resource resource) : PrivateKey`**
+    - Descripción: Método privado para cargar la clave privada desde un recurso.
+    - Parámetros:
+        - **`resource`**: Recurso que representa el archivo que contiene la clave privada.
+    - Retorna: Clave privada (**`PrivateKey`**) generada a partir del recurso especificado.
+- **Metodo `loadPublicKey(Resource resource) : PublicKey`**
+    - Descripción: Método privado para cargar la clave pública desde un recurso.
+    - Parámetros:
+        - **`resource`**: Recurso que representa el archivo que contiene la clave pública.
+    - Retorna: Clave pública (**`PublicKey`**) generada a partir del recurso especificado.
+
+# Clase: UserServiceImpl
+
+La clase **`UserServiceImpl`** implementa la interfaz **`IUserService`** para proporcionar funcionalidades relacionadas con la autenticación y registro de usuarios, utilizando repositorios de persistencia, validaciones y servicios de tokens JWT.
+
+![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%2010.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la clase en el paquete de servicios del backend.
+- **`@Service`**
+    - Indica que esta clase es un componente de servicio de Spring.
+- **`userRepository` (UserRepository)**
+    - Repositorio utilizado para acceder y manipular entidades de usuario en la base de datos.
+- **`jwtUtilityService` (IJWTUtilityService)**
+    - Servicio utilizado para generar y analizar tokens JWT.
+- **`userValidation` (UserValidation)**
+    - Validador utilizado para verificar la validez de los datos de usuario antes de su registro.
+- **`tokenManager` (TokenManager)**
+    - Gestor utilizado para almacenar y verificar tokens asociados a usuarios activos.
+- **Metodo `login(LoginDTO login) : HashMap<String, String>`**
+    - Descripción: Método para autenticar a un usuario con las credenciales proporcionadas.
+    - Parámetros:
+        - **`login`**: DTO que contiene el correo electrónico y la contraseña del usuario.
+    - Retorna: Un mapa (**`HashMap`**) que contiene el resultado de la autenticación (JWT si es exitosa).
+- **Metodo `register(UserEntity user) : ResponseDTO`**
+    - Descripción: Método para registrar un nuevo usuario en el sistema.
+    - Parámetros:
+        - **`user`**: Entidad **`UserEntity`** que representa al usuario a registrar.
+    - Retorna: DTO de respuesta (**`ResponseDTO`**) que indica el resultado del registro.
+- **Metodo `registerTest(UserEntity user) : ResponseDTO`**
+    - Descripción: Método para registrar un nuevo usuario en el sistema (versión de prueba).
+    - Parámetros:
+        - **`user`**: Entidad **`UserEntity`** que representa al usuario a registrar.
+    - Retorna: DTO de respuesta (**`ResponseDTO`**) que indica el resultado del registro (versión de prueba).
+- **Metodo `verifyPassword(String enteredPassword, String storedPassword) : boolean`**
+    - Descripción: Método para verificar si la contraseña ingresada coincide con la contraseña almacenada (utilizando bcrypt).
+    - Parámetros:
+        - **`enteredPassword`**: Contraseña ingresada por el usuario.
+        - **`storedPassword`**: Contraseña almacenada en la base de datos (codificada).
+    - Retorna: **`true`** si las contraseñas coinciden, **`false`** si no coinciden.
+
+# Clase UserServiceImplement
+
+La clase **`UserServiceImplement`** implementa la interfaz **`IUserserviceImplement`** para proporcionar funcionalidades relacionadas con la gestión y recuperación de usuarios mediante el uso del repositorio de persistencia.
+
+![Untitled](SoftwareDevelopment/Imagenes/Services/Untitled%2011.png)
+
+- **Paquete:**
+    - **`com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services`**: Ubicación de la clase en el paquete de servicios del backend.
+- **`@Service`**
+    - Indica que esta clase es un componente de servicio de Spring.
+- **`userRepository` (UserRepository)**
+    - Repositorio utilizado para acceder y manipular entidades de usuario en la base de datos.
+- **Metodo `findAllUsers() : List<UserEntity>`**
+    - Descripción: Método para obtener todos los usuarios registrados en el sistema.
+    - Retorna: Una lista (**`List`**) de entidades **`UserEntity`** que representan todos los usuarios almacenados en la base de datos.
+- **Metodo `findUserByName(String username) : UserEntity`**
+    - Descripción: Método para obtener un usuario por su nombre de usuario.
+    - Parámetros:
+        - **`username`**: Nombre de usuario del usuario que se desea recuperar.
+    - Retorna: La entidad **`UserEntity`** correspondiente al usuario con el nombre de usuario especificado, o **`null`** si no se encuentra ningún usuario con ese nombre.
+- **Metodo `findUserById(int id) : UserEntity`**
+    - Descripción: Método para obtener un usuario por su identificador único (ID).
+    - Parámetros:
+        - **`id`**: Identificador único del usuario que se desea recuperar.
+    - Retorna: La entidad **`UserEntity`** correspondiente al usuario con el ID especificado, o **`null`** si no se encuentra ningún usuario con ese ID.
 </body>
 </html>
