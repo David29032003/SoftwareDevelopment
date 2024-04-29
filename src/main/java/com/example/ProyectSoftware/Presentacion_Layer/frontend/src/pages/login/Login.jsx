@@ -79,7 +79,7 @@ const Login = () => {
                     <h1>You are logged in!</h1>
                     <br />
                     <p>
-                        <a href="/">Go to Home</a>
+                        <a href="/lobby">Go to Lobby</a>
                     </p>
                 </section>
             ) : (
