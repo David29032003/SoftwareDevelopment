@@ -72,14 +72,14 @@ const Login = () => {
         } else if (err.response?.status === 401) {
             setErrMsg('Unauthorized');// Credenciales incorrectas
         } else {
-            setErrMsg('Login Failed');// Otro error
+            setErrMsg('Login Failed');// Otro error 
         }
         errRef.current.focus();
     }
     
     return (
         <div className="bod-login">
-           
+            {/* mostrar el formulario de inicio */}
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Login</h1>
