@@ -376,6 +376,7 @@
         </td>
     </tr>
 </table>
+
 <h3>Decisiones Clave:</h3>
 <ul>
     <li>Lenguaje de programación: Java</li>
@@ -385,6 +386,7 @@
     <li>Horario habitual de reunión: 7:00 p.m.</li>
 </ul>
 <h2>Estado Actual: </h2>
+
 <table border="3" cellpadding="10">
     <tr>
         <th>Tareas</th>
@@ -575,66 +577,66 @@
 <p>
 
 </p>
-<table border="3" cellpadding="10">
-    <tr>
-        <th>Tareas</th>
-        <th>¿Qué se hace?</th>
-        <th>¿Quién ha contribuido?</th>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Historias de usuarios</td>
-        <td>Como jugador necesito seleccionar un tablero de damas para jugar</td>
-        <td>
-            <ul>
-                <li>Ruiz Milagros</li>
-                <li>Ravichagua Manuel</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Criterios de aceptación</td>
-        <td>
-            <ol>
-                <li>
-                    <p>Selección de modelo de tablero de damas</p>
-                    <b>Dado</b> un jugador presiona el botón de jugar una partida de damas <br>
-                    <b>Cuando</b> selecciono el boton para elegir un modelo tablero de damas <br>
-                    <b>Y</b> confirmar el diseño elegido <br>
-                    <b>Entonces</b> el sistema debería mostrar el tablero elegido <br>
-                    <br>
-                </li>
-                <li>
-                    <p>Selección de un color de pieza de damas</p>
-                    <b>Dado</b> un jugador presiona el botón de jugar una partida de damas <br>
-                    <b>Y</b> elegido un tablero de damas <br>
-                    <b>Cuando</b> presiono el botón para elegir un color de pieza de damas <br>
-                    <b>Y</b> confirmar el color elegido <br>
-                    <b>Entonces</b> el sistema debería mostrar el color de pieza elegido <br>
-                    <br>
-                </li>
-                <li>
-                    <p>Visualizacion exitosa de tablero de damas</p>
-                    <b>Dado</b> un jugador que selecciono el modelo de tablero de damas <br>
-                    <b>Y</b> un color de pieza de damas <br>
-                    <b>Cuando</b> presiono el botón iniciar partida <br>
-                    <b>Entonces</b> el sistema debería mostrar el modelo del tablero<br>
-                    <b>Y</b> el color de pieza de damas elegido;
-                </li>
-            </ol>
-        </td>
-        <td>
-            <ul>
-                <li>Ruiz Milagros</li>
-                <li>Ravichagua Manuel</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Codificación</td>
-        <td> </td>
-        <td> </td>
-    </tr>
-</table>
+
+<h3>I. Historias de Usuario </h3>
+    <table border="3" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Nombre de la historia de usuario</th>
+            <th>Descripcion de la historia de usuario</th>
+            <th>Prioridad</th>
+            <th>Esfuerzo Estimado (horas)</th>
+            <th>Esfuerzo Real (si se completa)</th>
+            <th>Estado(complentado, pendiente, en curso)</th>
+        </tr>
+        <tr>
+            <td style="text-align: center;">1</td>
+            <td>Registrar usuario</td>
+            <td>Como nuevo usuario, necesito crear una cuenta para poder iniciar sesión</td>
+            <td>Alto</td>
+            <td>17h</td>
+            <td>22h</td>
+            <td>Finalizado</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">2</td>
+            <td>Iniciar Sesion</td>
+            <td>Como usuario necesito iniciar sesion para poder jugar</td>
+            <td>Alto</td>
+            <td>14h</td>
+            <td>17h</td>
+            <td>Finalizado</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">2</td>
+            <td>Cierre de sesion</td>
+            <td>Como usuario necesito cerrarr sesion para poder salir del jugo</td>
+            <td>Medio</td>
+            <td>6h</td>
+            <td>9h</td>
+            <td>Finalizado</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">3</td>
+            <td>Visualizacion del tablero</td>
+            <td>Como usuario que inicio sesion, necesito visualizar el tablero ara jugar</td>
+            <td>Medio</td>
+            <td>8h</td>
+            <td>12h</td>
+            <td>Finalizado</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">4</td>
+            <td>Jugar con el computador</td>
+            <td>Como usuario quiero jugar con el computador</td>
+            <td>Alto</td>
+            <td>19h</td>
+            <td>21h</td>
+            <td>Finalizado</td>
+        </tr>
+    </table>
+<p>
+
 <h2>Calificacion de amigos:</h2>
 <table border="3" cellpadding="10">
     <tr>
