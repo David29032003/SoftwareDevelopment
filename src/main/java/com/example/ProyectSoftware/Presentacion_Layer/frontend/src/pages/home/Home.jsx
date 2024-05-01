@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { routes } from "../../utils/routes";
 export default function Home() {
     const navigate = useNavigate(); // Hook para manejar la navegación
+    
 
     const navigateToRegister = () => {
         console.log("navigateToRegister");

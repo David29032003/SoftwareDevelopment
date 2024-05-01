@@ -1,6 +1,8 @@
 import "./Login.css"
 import { useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from "./components/AuthProvider";
+import { useNavigate } from "react-router-dom";
+
 
 import axios from '../../utils/axios';
 const LOGIN_URL = '/user/login';
@@ -15,6 +17,8 @@ const Login = () => {
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
+    const navigate = useNavigate(); // Hook para manejar la navegación
+
 
     useEffect(() => {
         userRef.current.focus();
@@ -55,34 +59,27 @@ const Login = () => {
         setErrMsg(''); // Limpiar el mensaje de error
         setEmail('');
         setPwd('');
+        navigate('/lobby');// Navegar a la ruta del lobby
        
     }
     
     // Función para manejar los errores
     const handleError = (err) => {
         if (!err?.response) {
-            setErrMsg('No Server Response');
+            setErrMsg('No Server Response');// No hay respuesta del servidor
         } else if (err.response?.status === 400) {
-            setErrMsg('Missing Username or Password');
+            setErrMsg('Missing Username or Password');// Falta el nombre de usuario o la contraseña
         } else if (err.response?.status === 401) {
-            setErrMsg('Unauthorized');
+            setErrMsg('Unauthorized');// Credenciales incorrectas
         } else {
-            setErrMsg('Login Failed');
+            setErrMsg('Login Failed');// Otro error
         }
         errRef.current.focus();
     }
     
     return (
         <div className="bod-login">
-            {success ? (
-                <section>
-                    <h1>You are logged in!</h1>
-                    <br />
-                    <p>
-                        <a href="/">Go to Home</a>
-                    </p>
-                </section>
-            ) : (
+           
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Login</h1>
@@ -109,15 +106,15 @@ const Login = () => {
                         <button className="botonlogin">Login</button>
                     </form>
                     <p>
-                        {/* router link here for login */}
-                        Need an Account?<br />
+                       
+                       ¿Necesitas una cuenta ?<br />
                         <span className="line"> 
-                            {/*put router link here*/}
-                            <a href="/register">Sign Up</a>
+                            {/* router link para el  registro */}
+                            <a href="/register">Registrate</a>
                         </span>
                     </p>
                 </section>
-            )}
+            
         </div>
     )
 }

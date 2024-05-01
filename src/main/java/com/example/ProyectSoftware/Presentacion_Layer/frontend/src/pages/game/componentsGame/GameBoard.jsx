@@ -21,16 +21,10 @@ const GameBoard = () => {
         aiDepthCutoff: 3, // inteligencia del bot
         count: 0,
         popShown: false, // para mostrar popup cuando hay un ganador
-        moves:[]
+        moves:[] // historial de movimientos
     });
     
-    // useEffect(() => {
-        
-    // }, [state.board]);
-
-    // const aboutPopOpen = (e) => {
-    //     // setState({ popShown: true });
-    // };
+   
 
     const findAllJumps = (sourceRowIndex, sourceCellIndex, board, directionOfMotion, possibleJumps, wouldDelete, isKing, activePlayer) => {
         let thisIterationDidSomething = false;

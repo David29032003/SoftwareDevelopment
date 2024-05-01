@@ -1,5 +1,4 @@
-// import React from 'react';
-/* eslint-disable react/prop-types */
+
 import Cell from './Cell';
 import './LogicGame.css';
 
