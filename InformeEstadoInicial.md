@@ -11,6 +11,8 @@
     <li>Ruiz Arica Milagros Cristina</li>
     <li>Ravichagua Marin José Manuel</li>
 </ul>
+<h2>Presentacion del Proyecyo</h2>
+<p>https://www.canva.com/design/DAGDxZRT374/ZOT10-emJS_8wIiASf9q3Q/edit?utm_content=DAGDxZRT374&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton</p>
 <h2>Acta de reunion:</h2>
 <table border="3" cellpadding="10">
     <tr>
