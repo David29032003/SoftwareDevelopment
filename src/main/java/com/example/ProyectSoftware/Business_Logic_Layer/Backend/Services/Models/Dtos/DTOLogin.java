@@ -1,21 +1,19 @@
 package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos;
-
-/**
- * Clase que representa un DTO (Objeto de Transferencia de Datos) para el login de usuario.
- * Contiene los campos de correo electrónico y contraseña.
- */
-public class LoginDTO {
+//Clase que representa un DTO (Objeto de Transferencia de Datos) para el login de usuario.
+//Contiene los campos de correo electrónico y contraseña.
+//corrected
+public class DTOLogin {
 
     // Campo para almacenar el correo electrónico del usuario
     private String email;
     // Campo para almacenar la contraseña del usuario
     private String password;
 
-    public LoginDTO(){
+    public DTOLogin(){
 
     }
 
-    public LoginDTO(String email, String password) {
+    public DTOLogin(String email, String password) {
         this.email = email;
         this.password = password;
     }

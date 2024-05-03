@@ -1,8 +1,8 @@
 package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.TestUserImplement1;
 
-import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Repositories.UserRepository;
+import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Repositories.RepositoryForTheUsers;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.IJWTUtilityService;
-import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos.LoginDTO;
+import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos.DTOLogin;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.UserServiceImplement1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,17 +14,19 @@ import java.util.HashMap;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
-public class testLoginUnRegisteredUser {
+public class testLoginRegisteredUser1 {
+
     @Mock
-    private UserRepository userRepository;
+    private RepositoryForTheUsers respositoryForTheUsers;
 
     @Mock
     private IJWTUtilityService jwtUtilityService;
 
     @InjectMocks
-    private UserServiceImplement1 userService;
+    private UserServiceImplement1 userServiceImplement1;
 
     @BeforeEach
     void setUp() {
@@ -32,17 +34,15 @@ public class testLoginUnRegisteredUser {
     }
 
     @Test
-    void login_WithUnregisteredUser_ReturnsUserNotRegisteredError() throws Exception {
+    void LoginWithUnregisteredUser() throws Exception {
         //Arrange
-        String email = "unknown@example.com";
-        String password = "password";
-
-        LoginDTO loginDTO = new LoginDTO(email, password);
-
-        when(userRepository.findByEmail(email)).thenReturn(Optional.empty());
+        String email = "Alexandro@example.com";
+        String password = "Alex123";
+        DTOLogin dtoLogin = new DTOLogin(email, password);
+        when(respositoryForTheUsers.findUserByEmail(email)).thenReturn(Optional.empty());
 
         //Act
-        HashMap<String, String> result = userService.login(loginDTO);
+        HashMap<String, String> result = userServiceImplement1.LoginUser(dtoLogin);
 
         //Assert
         assertEquals("User not registered!", result.get("error"));

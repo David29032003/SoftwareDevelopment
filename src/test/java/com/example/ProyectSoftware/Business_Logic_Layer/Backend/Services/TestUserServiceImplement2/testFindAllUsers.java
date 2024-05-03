@@ -1,7 +1,7 @@
 package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.TestUserServiceImplement2;
 
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Entities.UserEntity;
-import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Repositories.UserRepository;
+import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Repositories.RepositoryForTheUsers;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.UserServiceImplement2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -22,23 +22,23 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class testFindAllUsers {
     @Mock
-    private UserRepository userRepository;
+    private RepositoryForTheUsers repositoryForTheUsers;
 
     @InjectMocks
-    private UserServiceImplement2 userService;
+    private UserServiceImplement2 userServiceImplement2;
 
-    private List<UserEntity> userList;
+    private List<UserEntity> ListForUsers;
 
     @BeforeEach
     void setUp() {
-        userList = new ArrayList<>();
-        userList.add(UserEntity.builder()
+        ListForUsers = new ArrayList<>();
+        ListForUsers.add(UserEntity.builder()
                 .id(1)
                 .name("User1")
                 .password("password1")
                 .email("user1@example.com")
                 .build());
-        userList.add(UserEntity.builder()
+        ListForUsers.add(UserEntity.builder()
                 .id(2)
                 .name("User2")
                 .password("password2")
@@ -50,21 +50,21 @@ public class testFindAllUsers {
     @DisplayName("Test para encontrar todos los usuarios")
     void testFindAllUsers() {
         //Arrange
-        when(userRepository.findAll()).thenReturn(userList);
+        when(repositoryForTheUsers.findAll()).thenReturn(ListForUsers);
 
         //Act
-        List<UserEntity> foundUsers = userService.findAllUsers();
+        List<UserEntity> foundUsers = userServiceImplement2.findAllTheUsers();
 
         //Assert
-        assertEquals(userList.size(), foundUsers.size());
-        assertEquals(userList.get(0).getId(), foundUsers.get(0).getId());
-        assertEquals(userList.get(0).getName(), foundUsers.get(0).getName());
-        assertEquals(userList.get(0).getPassword(), foundUsers.get(0).getPassword());
-        assertEquals(userList.get(0).getEmail(), foundUsers.get(0).getEmail());
-        assertEquals(userList.get(1).getId(), foundUsers.get(1).getId());
-        assertEquals(userList.get(1).getName(), foundUsers.get(1).getName());
-        assertEquals(userList.get(1).getPassword(), foundUsers.get(1).getPassword());
-        assertEquals(userList.get(1).getEmail(), foundUsers.get(1).getEmail());
+        assertEquals(ListForUsers.size(), foundUsers.size());
+        assertEquals(ListForUsers.get(0).getId(), foundUsers.get(0).getId());
+        assertEquals(ListForUsers.get(0).getName(), foundUsers.get(0).getName());
+        assertEquals(ListForUsers.get(0).getPassword(), foundUsers.get(0).getPassword());
+        assertEquals(ListForUsers.get(0).getEmail(), foundUsers.get(0).getEmail());
+        assertEquals(ListForUsers.get(1).getId(), foundUsers.get(1).getId());
+        assertEquals(ListForUsers.get(1).getName(), foundUsers.get(1).getName());
+        assertEquals(ListForUsers.get(1).getPassword(), foundUsers.get(1).getPassword());
+        assertEquals(ListForUsers.get(1).getEmail(), foundUsers.get(1).getEmail());
     }
 
 }

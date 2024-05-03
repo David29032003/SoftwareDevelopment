@@ -25,10 +25,10 @@ public class testDoFilterInternalNoToken {
     private IJWTUtilityService jwtUtilityService;
 
     @Mock
-    private HttpServletRequest request;
+    private HttpServletRequest HttpRequest;
 
     @Mock
-    private HttpServletResponse response;
+    private HttpServletResponse HttpResponse;
 
     @Mock
     private FilterChain filterChain;
@@ -41,15 +41,13 @@ public class testDoFilterInternalNoToken {
     @Test
     public void testDoFilterInternalNoToken() throws ServletException, IOException {
         //Configuramos el encabezado de autorización en la solicitud como nulo
-        when(request.getHeader("Authorization")).thenReturn(null);
-
+        when(HttpRequest.getHeader("Authorization")).thenReturn(null);
         //Llamo al método doFilterInternal
-        jwtAuthorizationFilter.doFilterInternal(request, response, filterChain);
-
+        jwtAuthorizationFilter.doFilterInternal(HttpRequest, HttpResponse, filterChain);
         //Verifico que no se haya creado ninguna autenticación
         assert SecurityContextHolder.getContext().getAuthentication() == null;
 
         //Verifico que se haya llamado al siguiente filtro
-        verify(filterChain, times(1)).doFilter(request, response);
+        verify(filterChain, times(1)).doFilter(HttpRequest, HttpResponse);
     }
 }

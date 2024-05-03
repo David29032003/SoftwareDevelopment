@@ -5,15 +5,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class UserEntityTest {
+public class TestUserEntity {
 
     @Test
     void testUserEntity() {
         //Arrange
-        Integer id = 1;
-        String name = "John";
-        String password = "password123";
-        String email = "john@example.com";
+        Integer id = 21;
+        String name = "David";
+        String password = "David1234";
+        String email = "David@example.com";
 
         //Act
         UserEntity userEntity = UserEntity.builder()

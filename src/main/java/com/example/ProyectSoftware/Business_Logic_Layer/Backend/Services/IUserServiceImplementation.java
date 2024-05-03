@@ -5,12 +5,13 @@ import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Enti
 import java.util.List;
 
 //Interfaz para el servicio de usuarios
-public interface IUserserviceImplement {
+//corrected
+public interface IUserServiceImplementation {
     //Método para obtener todos los usuarios
-    public List<UserEntity> findAllUsers();
+    public List<UserEntity> findAllTheUsers();
 
     //Método para obtener un usuario por su nombre de usuario
-    UserEntity findUserByName(String username);
+    UserEntity findTheUserByName(String username);
 
-    UserEntity findUserById(int id);
+    UserEntity findTheUserById(int id);
 }

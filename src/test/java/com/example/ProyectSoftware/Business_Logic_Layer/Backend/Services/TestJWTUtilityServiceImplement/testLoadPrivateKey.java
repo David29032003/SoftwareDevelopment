@@ -39,7 +39,7 @@ public class testLoadPrivateKey {
         when(privateKeyResource.getURI()).thenReturn(getClass().getResource("/jwtKeys/private_key.pem").toURI());
 
         //Call the method under test
-        PrivateKey privateKey = jwtUtilityService.loadPrivateKey(privateKeyResource);
+        PrivateKey privateKey = jwtUtilityService.LoadThePrivateKey(privateKeyResource);
 
         //Assert that the private key is not null
         assertEquals(true, privateKey != null);

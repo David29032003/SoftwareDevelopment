@@ -1,11 +1,12 @@
 package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.TestJWTUtilityServiceImplement;
 
-import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.JWTUtilityServiceImplement;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.JWTUtilityServiceImplement;
 import org.springframework.core.io.Resource;
 
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class testLoadPublicKey {
         when(publicKeyResource.getURI()).thenReturn(getClass().getResource("/jwtKeys/public_key.pem").toURI());
 
         //Call the method under test
-        PublicKey publicKey = jwtUtilityService.loadPublicKey(publicKeyResource);
+        PublicKey publicKey = jwtUtilityService.LoadThePublicKey(publicKeyResource);
 
         //Assert that the public key is not null
         assertEquals(true, publicKey != null);

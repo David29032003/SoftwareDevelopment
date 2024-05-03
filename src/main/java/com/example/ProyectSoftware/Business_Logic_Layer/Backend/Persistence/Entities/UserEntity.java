@@ -6,11 +6,12 @@ import lombok.*;
 @Setter
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
+@NoArgsConstructor
 
 @Entity
 @Table(name = "users")//nombre de la tabla en la base de datos
+//corrected
 public class UserEntity {
     //identificador único del usuario en la base de datos
     @Id

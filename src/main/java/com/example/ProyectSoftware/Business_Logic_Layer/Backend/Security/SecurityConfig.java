@@ -15,6 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 //Configuración de seguridad de Spring
+//corrected
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true)

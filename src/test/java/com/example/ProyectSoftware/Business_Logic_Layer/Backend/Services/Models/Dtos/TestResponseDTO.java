@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ResponseDTOTest {
+public class TestResponseDTO {
 
     @Test
     void testResponseDTO() {
@@ -13,12 +13,12 @@ public class ResponseDTOTest {
         String message = "Error happened";
 
         //Act
-        ResponseDTO responseDTO = new ResponseDTO();
-        responseDTO.setNumOfErrors(numOfErrors);
-        responseDTO.setMessage(message);
+        DTOResponse dtoResponse = new DTOResponse();
+        dtoResponse.setNumOfErrors(numOfErrors);
+        dtoResponse.setMessage(message);
 
         //Assert
-        assertEquals(numOfErrors, responseDTO.getNumOfErrors());
-        assertEquals(message, responseDTO.getMessage());
+        assertEquals(numOfErrors, dtoResponse.getNumOfErrors());
+        assertEquals(message, dtoResponse.getMessage());
     }
 }

@@ -1,11 +1,12 @@
 package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.TestUserImplement1;
 
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Entities.UserEntity;
-import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Repositories.UserRepository;
+import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Persistence.Repositories.RepositoryForTheUsers;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.IJWTUtilityService;
-import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos.LoginDTO;
-import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Validation.UserValidation;
+import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos.DTOLogin;
+import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Validation.ValidationForTheUser;
 import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.UserServiceImplement1;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,26 +20,27 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
+
 @SpringBootTest
 public class testLoginUserNotRegistered {
 
     @Mock
-    private UserRepository userRepository;
+    private RepositoryForTheUsers respositoryForTheUsers;
 
     @Mock
     private IJWTUtilityService jwtUtilityService;
 
     @InjectMocks
-    private UserServiceImplement1 userService;
+    private UserServiceImplement1 userServiceImplement1;
 
     @Mock
-    private UserValidation userValidation;
+    private ValidationForTheUser validationForTheUser;
 
-    private UserEntity user;
+    private UserEntity userEntity;
 
     @BeforeEach
     void setUp() {
-        user = UserEntity.builder()
+        userEntity = UserEntity.builder()
                 .id(21)
                 .name("Alexandra")
                 .password("Alexandra34756")
@@ -50,13 +52,13 @@ public class testLoginUserNotRegistered {
     @Test
     void testLoginUserNotRegistered() throws Exception {
         //Arrange
-        String email = "NotRegistered@Example.com";
-        String password = "Password2903";
-        LoginDTO loginDTO = new LoginDTO(email, password);
-        when(userRepository.findByEmail(email)).thenReturn(Optional.empty());
+        String email = "Andrei@Example.com";
+        String password = "Andrei2903";
+        DTOLogin dtoLogin = new DTOLogin(email, password);
+        when(respositoryForTheUsers.findUserByEmail(email)).thenReturn(Optional.empty());
 
         //Act
-        HashMap<String, String> result = userService.login(loginDTO);
+        HashMap<String, String> result = userServiceImplement1.LoginUser(dtoLogin);
 
         //Assert
         assertEquals(1, result.size());

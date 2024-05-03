@@ -1,13 +1,14 @@
 package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.TestJWTUtilityServiceImplement;
 
-import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.JWTUtilityServiceImplement;
-import com.nimbusds.jose.JOSEException;
-import com.nimbusds.jwt.JWTClaimsSet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.JWTUtilityServiceImplement;
+import com.nimbusds.jose.JOSEException;
+import com.nimbusds.jwt.JWTClaimsSet;
 import org.springframework.core.io.Resource;
 
 import java.io.IOException;
@@ -18,6 +19,7 @@ import java.text.ParseException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
+
 
 public class testGenerateAndParseJWT {
     @InjectMocks
@@ -41,12 +43,12 @@ public class testGenerateAndParseJWT {
         when(publicKeyResource.getURI()).thenReturn(getClass().getResource("/jwtKeys/public_key.pem").toURI());
 
         //Generate JWT
-        String jwt = jwtUtilityService.generateJWT(123);
+        String JWT = jwtUtilityService.GenerateTheJWT(21);
 
         //Parse JWT
-        JWTClaimsSet claimsSet = jwtUtilityService.parseJWT(jwt);
+        JWTClaimsSet claimsSet = jwtUtilityService.ParseTheJWT(JWT);
 
         //Verify
-        assertEquals("123", claimsSet.getSubject());
+        assertEquals("21", claimsSet.getSubject());
     }
 }

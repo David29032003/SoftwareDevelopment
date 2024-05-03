@@ -29,31 +29,31 @@ import java.util.Date;
 @Service
 public class JWTUtilityServiceImplement implements IJWTUtilityService {
     //Inyección de dependencias para cargar las claves privadas y públicas desde recursos
-    @Value("classpath:jwtKeys/private_key.pem")
-    private Resource privateKeyResource;
     @Value("classpath:jwtKeys/public_key.pem")
     private Resource publicKeyResource;
+    @Value("classpath:jwtKeys/private_key.pem")
+    private Resource privateKeyResource;
 
     //Método para generar un token JWT
     @Override
-    public String generateJWT(Integer id) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException, JOSEException {
+    public String GenerateTheJWT(Integer IdUser) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException, JOSEException {
         //Carga de la clave privada
-        PrivateKey privateKey = loadPrivateKey(privateKeyResource);
+        PrivateKey privateKey = LoadThePrivateKey(privateKeyResource);
 
         //Creación de un firmador para firmar el JWT
-        JWSSigner signer = new RSASSASigner(privateKey);
+        JWSSigner JWSsigner = new RSASSASigner(privateKey);
 
         //Creación de los claims (datos) del JWT
         Date now = new Date();
         JWTClaimsSet claimsSet = new JWTClaimsSet.Builder()
-                .subject(id.toString())
+                .subject(IdUser.toString())
                 .issueTime(now)
                 .expirationTime(new Date(now.getTime() + 14400000))
                 .build();
 
         //Creación del JWT firmado
         SignedJWT signedJWT = new SignedJWT(new JWSHeader(JWSAlgorithm.RS256), claimsSet);
-        signedJWT.sign(signer);
+        signedJWT.sign(JWSsigner);
 
         //Serialización del JWT
         return signedJWT.serialize();
@@ -61,9 +61,9 @@ public class JWTUtilityServiceImplement implements IJWTUtilityService {
 
     //Método para analizar y validar un token JWT
     @Override
-    public JWTClaimsSet parseJWT(String jwt) throws IOException, InvalidKeySpecException, NoSuchAlgorithmException, ParseException, JOSEException {
+    public JWTClaimsSet ParseTheJWT(String jwt) throws IOException, InvalidKeySpecException, NoSuchAlgorithmException, ParseException, JOSEException {
         //Carga de la clave pública
-        PublicKey publicKey = loadPublicKey(publicKeyResource);
+        PublicKey publicKey = LoadThePublicKey(publicKeyResource);
 
         //Parseo del JWT
         SignedJWT signedJWT = SignedJWT.parse(jwt);
@@ -85,7 +85,7 @@ public class JWTUtilityServiceImplement implements IJWTUtilityService {
     }
 
     //Método privado para cargar la clave privada desde un recurso
-    public PrivateKey loadPrivateKey(Resource resource) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
+    public PrivateKey LoadThePrivateKey(Resource resource) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
         //Lectura del archivo de la clave privada
         byte[] keyBytes = Files.readAllBytes(Paths.get(resource.getURI()));
         String privateKeyPEM = new String(keyBytes, StandardCharsets.UTF_8)
@@ -102,7 +102,7 @@ public class JWTUtilityServiceImplement implements IJWTUtilityService {
     }
 
     //Método privado para cargar la clave pública desde un recurso
-    public PublicKey loadPublicKey(Resource resource) throws IOException, InvalidKeySpecException, NoSuchAlgorithmException {
+    public PublicKey LoadThePublicKey(Resource resource) throws IOException, InvalidKeySpecException, NoSuchAlgorithmException {
         //Lectura del archivo de la clave pública
         byte[] keyBytes = Files.readAllBytes(Paths.get(resource.getURI()));
         String publicKeyPEM = new String(keyBytes, StandardCharsets.UTF_8)

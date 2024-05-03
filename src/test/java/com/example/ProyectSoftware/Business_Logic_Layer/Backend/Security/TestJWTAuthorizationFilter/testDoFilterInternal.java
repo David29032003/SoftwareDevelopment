@@ -31,10 +31,10 @@ public class testDoFilterInternal {
     private IJWTUtilityService jwtUtilityService;
 
     @Mock
-    private HttpServletRequest request;
+    private HttpServletRequest HttpRequest;
 
     @Mock
-    private HttpServletResponse response;
+    private HttpServletResponse HttpResponse;
 
     @Mock
     private FilterChain filterChain;
@@ -47,28 +47,25 @@ public class testDoFilterInternal {
     @Test
     public void testDoFilterInternal() throws ServletException, IOException, ParseException, InvalidKeySpecException, NoSuchAlgorithmException, JOSEException, ParseException {
         //Mock del token JWT
-        String token = "TokenForTest";
-
+        String TokenForTest = "TokenForTest";
         //Mock de las reclamaciones del token JWT
-        JWTClaimsSet claims = new JWTClaimsSet.Builder()
-                .subject("TestUser1")
+        JWTClaimsSet claimsSet = new JWTClaimsSet.Builder()
+                .subject("UserDavid")
                 .build();
 
         //Configuramos el comportamiento del servicio para devolver las reclamaciones del token JWT
-        when(jwtUtilityService.parseJWT(token)).thenReturn(claims);
-
+        when(jwtUtilityService.ParseTheJWT(TokenForTest)).thenReturn(claimsSet);
         //Configuramos el encabezado de autorización en la solicitud
-        when(request.getHeader("Authorization")).thenReturn("Bearer " + token);
-
-        // Llamar al método doFilterInternal
-        jwtAuthorizationFilter.doFilterInternal(request, response, filterChain);
+        when(HttpRequest.getHeader("Authorization")).thenReturn("Bearer " + TokenForTest);
+        //Llamar al método doFilterInternal
+        jwtAuthorizationFilter.doFilterInternal(HttpRequest, HttpResponse, filterChain);
 
         //Verificamos que se haya creado correctamente la autenticación
         UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
         assert authenticationToken != null;
-        assert authenticationToken.getPrincipal().equals("TestUser1");
+        assert authenticationToken.getPrincipal().equals("UserDavid");
 
         //Verificamos que se haya llamado al siguiente filtro
-        verify(filterChain, times(1)).doFilter(request, response);
+        verify(filterChain, times(1)).doFilter(HttpRequest, HttpResponse);
     }
 }

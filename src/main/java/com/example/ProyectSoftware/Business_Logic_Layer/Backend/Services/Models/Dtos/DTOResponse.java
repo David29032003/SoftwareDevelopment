@@ -1,10 +1,8 @@
 package com.example.ProyectSoftware.Business_Logic_Layer.Backend.Services.Models.Dtos;
-
-/**
- * Clase que representa un DTO (Objeto de Transferencia de Datos) para la respuesta de la API.
- * Contiene el número de errores y un mensaje descriptivo.
- */
-public class ResponseDTO {
+//Clase que representa un Objeto de Transferencia de Datos(DTO) para la respuesta de la API.
+//Contiene el número de errores y un mensaje descriptivo.
+//corrected
+public class DTOResponse {
     // Número de errores en la respuesta
     private int numOfErrors;
     // Mensaje descriptivo de la respuesta
