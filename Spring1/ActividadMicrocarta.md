@@ -1,5 +1,4 @@
-# Título del Proyecto: Damas Online : American Checkers Challenge
-
+# Título del Proyecto: Damas Online : Checkers Elite
 ## Visión:
 Proporcionar a los usuarios una plataforma accesible y amigable para jugar al juego de damas americanas en línea, promoviendo la diversión y la competencia mientras se fomenta el aprendizaje de las reglas y estrategias del juego.
 
