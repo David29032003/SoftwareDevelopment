@@ -287,7 +287,7 @@
         <td>Reunion virtual por Google Meet</td>
         <td>
             <ul>
-                <li>Ravichagua Manuel</li>
+                <li>Trujillo Andrei</li>
                 <li>Reeves David</li>
                 <li>Ruiz Milagros</li>
             </ul>
@@ -648,7 +648,7 @@
 <table border="3" cellpadding="10">
     <tr>
         <th> </th>
-        <th>Jose Manuel <br> Ravichagua Marin</th>
+        <th>Andrei Steven <br> Trujillo Armas</th>
         <th>David Fernando <br> Reeves Goñi</th>
         <th>Milagros Cristina <br>Ruiz Arica</th>
     </tr>
