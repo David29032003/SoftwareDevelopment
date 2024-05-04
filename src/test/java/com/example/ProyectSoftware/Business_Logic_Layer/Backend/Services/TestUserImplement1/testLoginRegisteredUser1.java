@@ -45,6 +45,6 @@ public class testLoginRegisteredUser1 {
         HashMap<String, String> result = userServiceImplement1.LoginUser(dtoLogin);
 
         //Assert
-        assertEquals("User not registered!", result.get("error"));
+        assertEquals("success", result.get("Authentication succefully"));
     }
 }

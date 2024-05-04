@@ -276,7 +276,7 @@ El componente **`Personalizartablero`** renderiza una sección que contiene boto
     - Este componente es una función de React que utiliza el estado local (**`useState`**) para controlar la visibilidad de los modales.
     - Renderiza botones que, al hacer clic, cambian el estado de los respectivos modales para mostrar u ocultar su contenido.
 <h1>Documentacion del Backend</h1>
-<h2>1)Clase CorsConfig</h2>
+<h2>1)Clase CorsForConfig</h2>
 <p>Esta clase es una configuracion de Spring que se encarga de configurar las
 reglas de CORS(Cross-Origin Resource Sharing) para una aplicacion web. Ya que CORS es un
 mecanismo de seguridad que nos permite restringir las solicitudes HTTP que se realizan desde
@@ -284,101 +284,92 @@ un origen diferente al del servidor donde se encuentra la aplicacion web.</p>
 
 <h3>Importaciones de Spring</h3>
 
-![imagen](../Imagenes/CorsConfig/CorsConfig1.png)
+![imagen](../Imagenes/CorsForConfig/CorsForConfig1.png)
 <p>Realizamos las importaciones necesarias</p>
 
 <h3>Clase de configuracion de Spring</h3>
 
-![imagen](../Imagenes/CorsConfig/CorsConfig2.png)
+![imagen](../Imagenes/CorsForConfig/CorsForConfig2.png)
 <p>@Configuracion es una anotacion para indicar que esta clase es una configuracion de Spring y ademas
 implemento la interfaz WebMvcConfigurer permitiendo personalizar la configuracion de Spring MVC</p>
 
 <h3>Clase de configuracion de Spring</h3>
 
-![imagen](../Imagenes/CorsConfig/CorsConfig3.png)
+![imagen](../Imagenes/CorsForConfig/CorsForConfig3.png)
 <p>WebMvcConfigurer tiene este metodo como parte de la interfaz y la utiliza para agregar reglas de CORS
 al registro</p>
 
 <h3>Configuracion de reglas CORS</h3>
 
-![imagen](../Imagenes/CorsConfig/CorsConfig4.png)
+![imagen](../Imagenes/CorsForConfig/CorsForConfig4.png)
 <p>Se configuran las reglas CORS para todas las rutas de la aplicacion, se permite que el origen sea http://localhost:5173,
 se especifican los metodos HTTP permitidos, los encabezados permitidos, se permite el uso de credenciales y se estaablece el
 tiempo maximo de cache para el preflights OPTIONS a 3600 segundos.</p>
 
 <h3>Configuracion CORS especifica para la ruta /user/**</h3>
 
-![imagen](../Imagenes/CorsConfig/CorsConfig5.png)
+![imagen](../Imagenes/CorsForConfig/CorsForConfig5.png)
 <p>Utilizo esta configuracion especifica para sobreescribir la configuracion global para la ruta /user/**, en este caso se deshabilita
 el uso de credenciales, lo que significa que las solicitudes CORS no incluiran cookies de autenticacion u otros datos confidenciales en
 las solicitudes</p>
 
-<h2>2)Clase ValidationConfig</h2>
+<h2>2)Clase ValidationForConfig</h2>
 <p>La clase ValidationConfig es una clase de configuración de Spring que se encarga de definir y configurar un bean llamado UserValidation. 
 Este bean representa un componente de validación de usuarios en el sistema.</p>
 
 <h3>Importaciones de Spring</h3>
 
-![imagen](../Imagenes/ValidationConfig/ValidationConfig1.png)
+![imagen](../Imagenes/ValidationForConfig/ValidationForConfig1.png)
 <p>Realizamos las importaciones necesarias</p>
 
 <h3>Definicion del metodo de configuracion</h3>
 
-![imagen](../Imagenes/ValidationConfig/ValidationConfig2.png)
+![imagen](../Imagenes/ValidationForConfig/ValidationForConfig2.png)
 <p>Declaro la clase como una configuraacion de Spring y defino el metodo userValidation() anotado con @Bean, este 
 metodo es responsable de crear y configurar un bean de tipo UserValidation dentro del metodo para crear una nueva
 instancia de UserValidation y lo retorne</p>
 
-<h2>Clase Usercontroller</h2>
-<h3>Importaciones de Spring</h3>
-
-![imagen](../Imagenes/Usercontroller/Usercontroller1.png)
-<p>Realizamos las importaciones necesarias</p>
+<h2>Clase UserController1(refactorizamos esta clase en la carpeta controllers)</h2>
 
 <h3>Definicion de la clase Controladora</h3>
 
-![imagen](../Imagenes/Usercontroller/Usercontroller2.png)
+![imagen](../Imagenes/UserController1/Controller1.png)
 <p>La clase UserController se define como un controlador REST utilizando las anotaciones @RestController y 
 @RequestMapping para mapear las solicitudes HTTP a metodos especificos de esta clase.</p>
 
 <h3>Inyeccion de dependencias del servicio de usuario</h3>
 
-![imagen](../Imagenes/Usercontroller/Usercontroller3.png)
+![imagen](../Imagenes/UserController1/Controller2.png)
 <p>Utilizo la anotacion @Autowired para inyectar una instancia del servicio de usuarios</p>
 
 <h3>Metodo GET para obtener todos los usuarios</h3>
 
-![imagen](../Imagenes/Usercontroller/Usercontroller4.png)
+![imagen](../Imagenes/UserController1/Controller3.png)
 <p>Este metodo maneja una solicitud GET en la ruta /user/find-all y devuelve una lista de todos los usuarios junto
 con el codigo de estado HTTP OK(200)</p>
 
 <h3>Metodo GET para obtener un usuario por su ID</h3>
 
-![imagen](../Imagenes/Usercontroller/Usercontroller5.png)
+![imagen](../Imagenes/UserController1/Controller4.png)
 <p>Este metodo maneja una solicitud GET en la ruta /user/{id}, donde {id} es el ID del usuario y devuelve un usuario
 especifico por su ID junto con el codigo de estado HTTP OK(200) si se encuentra de lo contrario enviara un codigo
 de estado NOT FOUND(404)</p>
 
-<h2>Clase UserControllers</h2>
-<h3>Importaciones de Spring</h3>
-
-![imagen](../Imagenes/UserControllers/UserController1.png)
-<p>Realizamos las importaciones necesarias</p>
-
+<h2>Clase UserController2(Esta clase tambien la refactorizamos en la carpeta Controllers)</h2>
 <h3>Definicion del controllador REST y mapeo de la ruta base</h3>
 
-![imagen](../Imagenes/UserControllers/UserController2.png)
+![imagen](../Imagenes/UserController2/UserController2-1.png)
 <p>Defino la clase UserControllers como un controlador REST y mapea la ruta base /user
 para todas las operaciones relacionadas con usuarios</p>
 
 <h3>Inyeccion del servicio de usuarios</h3>
 
-![imagen](../Imagenes/UserControllers/UserControllers3.png)
+![imagen](../Imagenes/UserController2/UserController2-2.png)
 <p>Utilizo la anotacion @Autowired para inyectar una instancia del servicio de usuarios IUserService en el controlador</p>
 
 <h3>Metodo para registrar un usuario</h3>
 
-![imagen](../Imagenes/UserControllers/UserController4.png)
+![imagen](../Imagenes/UserController2/UserController2-4.png)
 <p>Este método maneja una solicitud POST en la ruta /user/register para registrar un nuevo usuario. Se valida el usuario utilizando 
 la clase UserValidation, en caso hay errores de validación, se devuelve una respuesta con el código de estado BadRequest (400). 
 en caso la validación es exitosa, se llama al servicio para registrar al usuario y se devuelve la respuesta del servicio con el código 
@@ -386,7 +377,7 @@ de estado CREATED (201).</p>
 
 <h3>Metodo para realizar el inicio de sesion de un usuario</h3>
 
-![imagen](../Imagenes/UserControllers/UserController5.png)
+![imagen](../Imagenes/UserController2/UserController2-3.png)
 <p>Este método maneja una solicitud POST en la ruta /user/login para realizar el inicio de sesión de un usuario, lo que hace es Llamar al servicio 
 para realizar el inicio de sesión y obtiene el resultado. Si se genera un token de autenticación, devuelve la respuesta con el token 
 y el código de estado OK (200). Si no se genera un token, devuelve la respuesta sin el token y el código de estado UNAUTHORIZED (401).</p>
@@ -423,31 +414,26 @@ de valores para la clave primaria. En este caso, se utiliza la identidad de la b
 ![imagen](../Imagenes/UserEntity/UserEntity4.png)
 <p>Se proporcionan métodos getters y setters para cada uno de los atributos de la clase para acceder y modificar sus valores.</p>
 
-<h2>Interfaz UserRepository</h2>
+<h2>Interfaz RepositoryForTheUsers</h2>
 <p>la interfaz UserRepository define métodos personalizados para buscar usuarios en la base de datos utilizando consultas SQL nativas. Estos métodos 
 permiten buscar usuarios por correo electrónico y nombre de usuario.</p>
 
-<h3>Importaciones de Spring</h3>
-
-![imagen](../Imagenes/UserRepositoryInterface/UserRepositoryInterface1.png)
-<p>Realizamos las importaciones necesarias</p>
-
 <h3>Declaracion de la interfaz</h3>
 
-![imagen](../Imagenes/UserRepositoryInterface/UserRepositoryInterface2.png)
+![imagen](../Imagenes/UserRepositoryInterface/RepositoryForTheUsers1.png)
 <p>Esta línea declara la interfaz UserRepository, que extiende la interfaz JpaRepository. La interfaz JpaRepository es proporcionada por Spring 
 Data JPA y proporciona métodos CRUD estándar para interactuar con la base de datos.</p>
 
 <h3>Metodo findByEmail</h3>
 
-![imagen](../Imagenes/UserRepositoryInterface/UserRepositoryInterface3.png)
+![imagen](../Imagenes/UserRepositoryInterface/RepositoryForTheUsrs3.png)
 <p>@Query(value = "SELECT * FROM users WHERE email= :email", nativeQuery = true): Esta anotación @Query indica que se realizará una consulta nativa a la base 
 de datos para buscar un usuario por su correo electrónico. La consulta SQL se especifica como un valor de cadena, donde :email es un parámetro que se pasará a la consulta.
 Optional<UserEntity>: El método devuelve un objeto Optional que contiene un UserEntity si se encuentra un usuario con el correo electrónico especificado, o un objeto Optional vacío si no se encuentra ningún usuario.</p>
 
 <h3>Metodo findByName</h3>
 
-![imagen](../Imagenes/UserRepositoryInterface/UserRepositoryInterface4.png)
+![imagen](../Imagenes/UserRepositoryInterface/RepositoryForTheUsers2.png)
 <p>Similar al método findByEmail, esta anotación @Query indica que se realizará una consulta nativa para buscar un usuario por su nombre de usuario.
 El método devuelve un objeto Optional que contiene un UserEntity si se encuentra un usuario con el nombre de usuario especificado, o un objeto 
 Optional vacío si no se encuentra ningún usuario.</p>
