@@ -50,7 +50,7 @@
                     <tr id="71d5378e-17bd-457a-b3d3-f4cb2d02228e">
                         <td id="}bA&lt;" class="">3</td>
                         <td id="WK\y" class="">Cierre de sesion</td>
-                        <td id="mgwQ" class="">Como usuario necesito cerrarr sesion para poder salir del jugo</td>
+                        <td id="mgwQ" class="">Como usuario necesito cerrar sesion para poder salir del jugo</td>
                         <td id=";}GX" class="">Medio</td>
                         <td id="]K:b" class="">6h</td>
                         <td id="Q?Un" class="">9h</td>
@@ -60,7 +60,7 @@
                     <tr id="f2ee6fe4-a555-4375-a945-63ce717a4c99">
                         <td id="}bA&lt;" class="">4</td>
                         <td id="WK\y" class="">Visualizacion del tablero</td>
-                        <td id="mgwQ" class="">Como usuario que inicio sesion, necesito visualizar el tablero ara jugar
+                        <td id="mgwQ" class="">Como usuario que inicio sesion, necesito visualizar el tablero para jugar
                         </td>
                         <td id=";}GX" class="">Medio</td>
                         <td id="]K:b" class="">8h</td>
@@ -83,116 +83,196 @@
             <ol type="1" id="70a951ab-371f-47c9-bbb9-441e6da3892f" class="numbered-list" start="1">
                 <li><strong>Criterios de Aceptación (AC)</strong></li>
             </ol>
-            <table id="69af73a0-24d8-4537-872e-3453c1d392a5" class="simple-table">
-                <tbody>
-                    <tr id="e0b46d30-a13c-4575-84a3-062f8868550b">
-                        <td id="?I|?" class=""><strong>ID y nombre de la historia del usuario</strong></td>
-                        <td id="f][t" class=""><strong>ACID</strong></td>
-                        <td id="=Cmh" class="" style="width:119px"><strong>Descripción del criterio de
-                                aceptación</strong></td>
-                        <td id="gRej" class=""><strong>Estado (completado, pendiente, en progreso)</strong></td>
-                        <td id="ZvGn" class=""><strong>Desarrollador</strong></td>
-                    </tr>
-                    <tr id="3fc5e9b6-8e86-47d2-b959-2b8ac012fcd0">
-                        <td id="?I|?" class="">1 Registrar usuario</td>
-                        <td id="f][t" class="">1.1Creación exitosa de una cuenta de usuario válida</td>
-                        <td id="=Cmh" class="" style="width:119px"><strong>Dado </strong>un nombre de usuario válido
-                            inexistente<strong><br />Cuando<br /></strong> creo una cuenta con este nombre
-                            usuario<strong><br />Y<br /></strong> una contraseña válida que coincida con la contraseña
-                            confirmada<strong><br />Y <br /></strong>una direccion de correo electrónico
-                            válida<strong><br />Entonces<br /></strong> el sistema deberían crear unaa nueva
-                            cuenta.<br /><br /><strong>Y</strong> mostrar un mensaje de que me he registrado con éxito.
-                        </td>
-                        <td id="gRej" class="">En progreso</td>
-                        <td id="ZvGn" class="">- Ruiz Milagros<br />- Ravichagua Manuel<br />- Reeves David<br /></td>
-                    </tr>
-                    <tr id="6b6bdc05-9116-42f4-8b86-68b61c797d91">
-                        <td id="?I|?" class=""></td>
-                        <td id="f][t" class="">1.2 Creación de una cuenta fallida con un nombre de usuario existente
-                        </td>
-                        <td id="=Cmh" class="" style="width:119px"><strong>Dado </strong>un nombre de usuario que ya
-                            existe<strong><br />Cuando<br /></strong> creo una cuenta con este nombre de
-                            usuario<strong><br />Y<br /></strong> una contraseña válida que coincida con la contraseña
-                            confirmada<strong><br />Y<br /></strong> una dirección de correo electrónico
-                            válida<strong><br />Entonces<br /></strong> el sistema no debería crear una nueva
-                            cuenta<strong><br />Y<br /></strong> debería mostrar un mensaje de error.
-                            <br /><br />
-                        </td>
-                        <td id="gRej" class="">En progreso</td>
-                        <td id="ZvGn" class="">- Ruiz Milagros<br />- Ravichagua Manuel<br />- Reeves David<br /></td>
-                    </tr>
-                    <tr id="a715a870-f20e-4653-a325-3713f6b0b143">
-                        <td id="?I|?" class=""></td>
-                        <td id="f][t" class="">1.3Creación fallida de una contraseña existente</td>
-                        <td id="=Cmh" class="" style="width:119px"><strong>Dado </strong>un nombre de usuario válido
-                            inexistente<strong><br />Cuando<br /></strong> un usuario crea una cuenta con este nombre de
-                            usuario<strong><br />Y<br /></strong> una contraseña no válida<strong><br />Y<br /></strong>
-                            la misma contraseña confirmada<strong><br />Y<br /></strong> una dirección de correo
-                            electrónico no válida<strong><br />Entonces<br /></strong> el sistema no debería crear una
-                            nueva cuenta<strong><br />Y<br /></strong> debería mostrar un mensaje de error.</td>
-                        <td id="gRej" class="">En progreso</td>
-                        <td id="ZvGn" class="">- Ruiz Milagros<br />- Ravichagua Manuel<br />- Reeves David<br /></td>
-                    </tr>
-                    <tr id="84c68b97-5f97-4e36-83df-dccac9d0c634">
-                        <td id="?I|?" class="">2 Iniciar Sesion</td>
-                        <td id="f][t" class="">2.1Inicio de sesión exitoso con credenciales válidas</td>
-                        <td id="=Cmh" class="" style="width:119px"><strong>Dado </strong>un usuario ya registrado
-                            <strong>y</strong> confirmado<strong><br />Cuando<br /></strong> ingrese el nombre de
-                            usuario<strong><br />Y<br /></strong> la contraseña
-                            válida<strong><br />Entonces<br /></strong> el sistema debería autenticar
-                            exitosamente<strong><br />Y<br /></strong> redirigir a la página de inicio</td>
-                        <td id="gRej" class="">En progreso</td>
-                        <td id="ZvGn" class="">- Ruiz Milagros<br />- Reeves David<br /></td>
-                    </tr>
-                    <tr id="06443424-b6cb-46de-aed5-7525106cd5ee">
-                        <td id="?I|?" class=""></td>
-                        <td id="f][t" class="">2.2Intento fallido de inicio de sesión con contraseña incorrecta</td>
-                        <td id="=Cmh" class="" style="width:119px"><strong>Dado </strong>un usuario ya registrado
-                            <strong>y </strong>confirmado<strong><br />Cuando<br /></strong> ingreso un nombre de
-                            usuario<br /><br /><strong>Y</strong> la contraseña
-                            incorrecta<strong><br />Entonces<br /></strong> el sistema debería no autenticar
-                            exitosamente<strong><br />Y<br /></strong> debería mostrar un mensaje de error.</td>
-                        <td id="gRej" class="">En progreso</td>
-                        <td id="ZvGn" class="">- Ruiz Milagros<br />- Reeves David<br /></td>
-                    </tr>
-                    <tr id="c8b2de6a-f567-448d-a03a-4485b2be3994">
-                        <td id="?I|?" class=""></td>
-                        <td id="f][t" class="">2.3Intento de inicio de sesión con un nombre de usuario inexistente</td>
-                        <td id="=Cmh" class="" style="width:119px"><strong>Dado </strong>un nombre de usuario
-                            inexistente<strong><br />Cuando<br /></strong> ingreso un nombre de
-                            usuario<strong><br />Y<br /></strong> una contraseña
-                            inexistente<strong><br />Entonces<br /></strong> el sistema debería no permitir iniciar
-                            sesión<strong><br />Y<br /></strong> mostrar un mensaje de error.</td>
-                        <td id="gRej" class="">En progreso</td>
-                        <td id="ZvGn" class="">- Ruiz Milagros<br />- Reeves David<br /></td>
-                    </tr>
-                    <tr id="a914cdc6-34ba-44f6-9f10-4027163dab47">
-                        <td id="?I|?" class=""></td>
-                        <td id="f][t" class="">2.4Intento de inicio de sesión con un correo electrónico no asociado a
-                            ningún usuario</td>
-                        <td id="=Cmh" class="" style="width:119px"><strong>Dado</strong> un correo electrónico que no
-                            esta asociado a ningun usuario registrado<strong><br />Cuando<br /></strong> ingreso un
-                            correo no registrado<strong><br />Y<br /></strong> una contraseña
-                            inexistente<strong><br />Entonces<br /></strong> el sistema debería no autenticar
-                            exitosamente<strong><br />Y<br /></strong> debería mostrar un mensaje de error.</td>
-                        <td id="gRej" class="">En progreso</td>
-                        <td id="ZvGn" class="">- Ruiz Milagros<br />- Reeves David<br /></td>
-                    </tr>
-                    <tr id="fca9b1b9-8509-4021-8310-7173149a3ddf">
-                        <td id="?I|?" class="">3 Cierre de Sesion</td>
-                        <td id="f][t" class="">3.1 Cierre de sesión exitoso de una cuenta registrada</td>
-                        <td id="=Cmh" class="" style="width:119px"><strong>Dado </strong>un usuario con una cuenta
-                            registrada
-                            <strong>Y </strong>autenticacion exitosa<strong><br />Cuando<br /></strong> presiono el
-                            botón de cerrar sesión<strong><br />Y<br /></strong> confirmo el mensaje de
-                            aceptación<strong><br />Entonces<br /></strong> el sistema debería cerrar sesión de la
-                            cuenta registrada<strong><br />Y<br /></strong> redirigir a la pagina de inicio de sesión.
-                        </td>
-                        <td id="gRej" class="">En progreso</td>
-                        <td id="ZvGn" class="">- Ruiz Milagros<br />- Reeves David<br /></td>
-                    </tr>
-                </tbody>
-            </table>
+            <table id="a1b1ce2a-f029-4e29-bc67-88466dda6d87" class="simple-table">
+				<tbody>
+					<tr id="2794fcaa-a05c-418c-895e-e215ad7ca388">
+						<td id="aaS`" class=""><strong>ID y nombre de la historia del usuario</strong></td>
+						<td id="]AzI" class=""><strong>ACID</strong></td>
+						<td id="XiE:" class=""><strong>Descripción del criterio de aceptación</strong></td>
+						<td id="c}|x" class=""><strong>Estado (completado, pendiente, en progreso)</strong></td>
+						<td id="@`iv" class=""><strong>Nombres de desarrolladores</strong></td>
+					</tr>
+					<tr id="291fbafc-c43b-410a-b3e7-430e3c78ba1f">
+						<td id="aaS`" class="">1 Registrar usuario</td>
+						<td id="]AzI" class="">1.1Creación exitosa de una cuenta de usuario válida</td>
+						<td id="XiE:" class=""><strong>Dado </strong>un nombre de usuario válido
+							inexistente<strong> Cuando</strong>creo una cuenta con este nombre
+							usuario <strong>Y</strong>una contraseña válida que coincida con la contraseña
+							confirmada <strong>Y</strong>una direccion de correo electrónico
+							válida <strong>Entonces</strong>el sistema deberían crear unaa nueva
+							cuenta.<strong>Y</strong> mostrar un mensaje de que me he registrado con éxito.</td>
+						<td id="c}|x" class="">Terminado</td>
+						<td id="@`iv" class="">- Ruiz Milagros- Ravichagua Manuel- Reeves David</td>
+					</tr>
+					<tr id="c067c673-a606-4c9f-8ef1-fbec0c3e5452">
+						<td id="aaS`" class=""></td>
+						<td id="]AzI" class="">1.2 Creación de una cuenta fallida con un nombre de usuario existente
+						</td>
+						<td id="XiE:" class=""><strong>Dado </strong>un nombre de usuario que ya
+							existe<strong> Cuando </strong>creo una cuenta con este nombre de usuario<strong> Y </strong>una
+							contraseña válida que coincida con la contraseña confirmada<strong> Y </strong>una dirección
+							de correo electrónico válida<strong> Entonces </strong>el sistema no debería crear una nueva
+							cuenta<strong> Y </strong>debería mostrar un mensaje de error.</td>
+						<td id="c}|x" class="">Terminado</td>
+						<td id="@`iv" class="">- Ruiz Milagros- Ravichagua Manuel- Reeves David</td>
+					</tr>
+					<tr id="f4494a08-279a-4307-977e-671ccf3b7244">
+						<td id="aaS`" class=""></td>
+						<td id="]AzI" class="">1.3Creación fallida de una contraseña existente</td>
+						<td id="XiE:" class=""><strong> Dado </strong>un nombre de usuario válido
+							inexistente<strong> Cuando </strong>un usuario crea una cuenta con este nombre de
+							usuario<strong> Y </strong>una contraseña no válida<strong> Y </strong>la misma contraseña
+							confirmada<strong> Y </strong>una dirección de correo electrónico no
+							válida<strong> Entonces </strong>el sistema no debería crear una nueva
+							cuenta<strong> Y </strong>debería mostrar un mensaje de error.</td>
+						<td id="c}|x" class="">Terminado</td>
+						<td id="@`iv" class="">- Ruiz Milagros- Ravichagua Manuel- Reeves David</td>
+					</tr>
+					<tr id="862b3bcb-c9f5-423e-a625-037528911a38">
+						<td id="aaS`" class="">2 Iniciar Sesion</td>
+						<td id="]AzI" class="">2.1Inicio de sesión exitoso con credenciales válidas</td>
+						<td id="XiE:" class=""><strong>Dado </strong>un usuario ya
+							registrado <strong> Y </strong> confirmado<strong> Cuando </strong>ingrese el nombre de
+							usuario<strong> Y </strong>la contraseña válida<strong> Entonces </strong>el sistema debería
+							autenticar exitosamente<strong> Y </strong>redirigir a la página de inicio</td>
+						<td id="c}|x" class="">Terminado</td>
+						<td id="@`iv" class="">- Ruiz Milagros- Ravichagua Manuel- Reeves David</td>
+					</tr>
+					<tr id="8e270fc3-d37f-4996-9b1f-b5e45a49d778">
+						<td id="aaS`" class=""></td>
+						<td id="]AzI" class="">2.2Intento fallido de inicio de sesión con contraseña incorrecta</td>
+						<td id="XiE:" class=""><strong>Dado </strong>un usuario ya
+							registrado <strong> Y </strong>confirmado<strong> Cuando </strong>ingreso un nombre de
+							usuario<strong> Y </strong> la contraseña incorrecta<strong> Entonces </strong>el sistema
+							debería no autenticar exitosamente<strong> Y </strong>debería mostrar un mensaje de error.
+						</td>
+						<td id="c}|x" class="">Terminado</td>
+						<td id="@`iv" class="">- Ruiz Milagros- Ravichagua Manuel- Reeves David</td>
+					</tr>
+					<tr id="6fea0086-cd47-4d64-ba70-7bc331df0c86">
+						<td id="aaS`" class=""></td>
+						<td id="]AzI" class="">2.3Intento de inicio de sesión con un nombre de usuario inexistente</td>
+						<td id="XiE:" class=""><strong>Dado </strong>un nombre de usuario
+							inexistente<strong> Cuando </strong>ingreso un nombre de usuario<strong> Y </strong>una
+							contraseña inexistente<strong> Entonces </strong>el sistema debería no permitir iniciar
+							sesión<strong> Y </strong>mostrar un mensaje de error.</td>
+						<td id="c}|x" class="">Terminado</td>
+						<td id="@`iv" class="">- Ruiz Milagros- Ravichagua Manuel- Reeves David</td>
+					</tr>
+					<tr id="3e4f35aa-e2be-4cef-b452-aba7fa0c8fd3">
+						<td id="aaS`" class=""></td>
+						<td id="]AzI" class="">2.4Intento de inicio de sesión con un correo electrónico no asociado a
+							ningún usuario</td>
+						<td id="XiE:" class=""><strong>Dado </strong> un correo electrónico que no esta asociado a ningun
+							usuario registrado<strong> Cuando </strong>ingreso un correo no
+							registrado<strong> Y </strong>una contraseña inexistente<strong> Entonces </strong>el sistema
+							debería no autenticar exitosamente<strong> Y </strong>debería mostrar un mensaje de error.
+						</td>
+						<td id="c}|x" class="">Terminado</td>
+						<td id="@`iv" class="">- Ruiz Milagros- Ravichagua Manuel- Reeves David</td>
+					</tr>
+					<tr id="f3c6ae3d-5a66-4485-b421-e6d2a7900d2e">
+						<td id="aaS`" class="">3 Cierre de Sesion</td>
+						<td id="]AzI" class="">3.1 Cierre de sesión exitoso de una cuenta registrada</td>
+						<td id="XiE:" class=""><strong>Dado </strong>un usuario con una cuenta
+							registrada <strong> Y </strong>autenticacion exitosa<strong> Cuando </strong>presiono el botón
+							de cerrar sesión<strong> Y </strong>confirmo el mensaje de
+							aceptación<strong> Entonces </strong>el sistema debería cerrar sesión de la cuenta
+							registrada<strong> Y </strong>redirigir a la pagina de inicio de sesión.</td>
+						<td id="c}|x" class="">Terminado</td>
+						<td id="@`iv" class="">- Ruiz Milagros- Ravichagua Manuel- Reeves David</td>
+					</tr>
+					<tr id="65d5349b-20e8-421f-a763-4964ad154b9e">
+						<td id="aaS`" class="">4 Visualizacion del tablero</td>
+						<td id="]AzI" class="">4.1 El tablero debe incluir todas las casillas necesarias para jugar
+						</td>
+						<td id="XiE:" class=""><strong> Dado </strong> un juego iniciado con un tablero
+							visible,<strong> Y </strong>todas las piezas y componentes necesarios para el
+							juego configurados correctamente,<strong> Cuando </strong>observo el
+							tablero,<strong> Entonces </strong>debería ver todas las casillas requeridas para
+							jugar el juego según las reglas establecidas,<strong>Y</strong> cada casilla
+							debe estar definida y listada en el tablero de manera que sea comprensible para el jugador.
+						</td>
+						<td id="c}|x" class="">En proceso</td>
+						<td id="@`iv" class="">- Ruiz Milagros<br />- Trujillo Andrei<br />- Reeves David<br /></td>
+					</tr>
+					<tr id="64f7389f-b2a0-4400-bbff-51cb1ca8b531">
+						<td id="aaS`" class=""></td>
+						<td id="]AzI" class="">4.2 La visualizacion de las casillas donde se puede mover una dama</td>
+						<td id="XiE:" class=""><strong>Dado</strong> un juego de damas en
+							progreso,<strong> Y </strong> una dama seleccionada por el jugador para
+							mover,<strong> Cuando </strong> el sistema determina los movimientos legales
+							disponibles para esa dama,<strong> Entonces </strong> debería resaltar visualmente
+							las casillas en las que la dama puede moverse,<strong> Y </strong> estas casillas
+							resaltadas deben ser claramente distinguibles del resto del tablero,<strong> Y
+							</strong>el resaltado debe indicar claramente al jugador las opciones disponibles para mover
+							la dama.</td>
+						<td id="c}|x" class="">En proceso</td>
+						<td id="@`iv" class="">- Ruiz Milagros<br />- Trujillo Andrei<br />- Reeves David<br /></td>
+					</tr>
+					<tr id="7dc0aa10-b790-40d6-8cbf-d3fd3944683b">
+						<td id="aaS`" class=""></td>
+						<td id="]AzI" class="">4.3 Visualizacion de la cantidad de damas y reynas en el tablero</td>
+						<td id="XiE:" class=""><strong>Dado</strong> un juego de damas en curso con un tablero
+							visible,<strong> Cuando </strong> observo el
+							tablero,<strong> Entonces </strong> debería poder ver claramente la cantidad de
+							damas <strong> Y </strong> reinas que tiene cada jugador en el
+							tablero,<strong> Y </strong> esta información debe ser fácilmente visible para los
+							jugadores durante el juego,<strong> Y </strong> la visualización de las damas y
+							reinas debe ser clara y distintiva para cada jugador,<strong> Y </strong>la
+							cantidad de damas y reinas debe actualizarse correctamente después de cada movimiento
+							realizado en el juego.</td>
+						<td id="c}|x" class="">En proceso</td>
+						<td id="@`iv" class="">- Ruiz Milagros<br />- Trujillo Andrei<br />- Reeves David<br /></td>
+					</tr>
+					<tr id="f02c297e-3ba6-46d2-9f6c-281e6618f0ba">
+						<td id="aaS`" class=""></td>
+						<td id="]AzI" class="">4.4 La visualizacion del historial de movimiento de las damas</td>
+						<td id="XiE:" class=""><strong>Dado </strong> un juego de damas en
+							curso,<strong> Cuando </strong> deseo revisar el historial de movimientos de las
+							damas realizados durante la partida,<strong> Entonces </strong> el sistema debera
+							proporcionar una forma de acceder al historial de movimientos previos<strong> Y
+							</strong>el historial debe mostrar cada movimiento realizado por los jugadores, incluyendo
+							la posición inicial y final de la dama movida</td>
+						<td id="c}|x" class="">En proceso</td>
+						<td id="@`iv" class="">- Ruiz Milagros<br />- Trujillo Andrei<br />- Reeves David<br /></td>
+					</tr>
+					<tr id="e4ffa273-1ae4-49ac-9375-3e61759cd636">
+						<td id="aaS`" class="">5. Jugar con el computador </td>
+						<td id="]AzI" class="">5.1 Opción en la interfaz que permita al usuario iniciar un juego contra
+							el computador</td>
+						<td id="XiE:" class=""><strong>Dado </strong>que estoy en el lobby del
+							juego,<strong> Cuando </strong> busco la opción para iniciar una nueva
+							partida,<strong> Entonces </strong>debería haber una clara y distinguible opción
+							en la interfaz que me permita seleccionar &quot;Jugar contra el Computador&quot;
+							<strong> Y </strong> al seleccionar esta opción, el juego debe comenzar
+							inmediatamente con el computador como oponente,</td>
+						<td id="c}|x" class="">En proceso</td>
+						<td id="@`iv" class="">- Ruiz Milagros<br />- Trujillo Andrei<br />- Reeves David<br /></td>
+					</tr>
+					<tr id="406c7647-b1b0-4ff5-8dad-c2b6f4a640e9">
+						<td id="aaS`" class=""></td>
+						<td id="]AzI" class="">5.2 Visualizacion de los movimientos del computador</td>
+						<td id="XiE:" class=""><strong>Dado </strong>un juego en el que se esta jugando contra el
+							computador,<strong> Cuando </strong> el computador realiza un movimiento durante
+							su turno,<strong> Entonces </strong>el sistema debería mostrar claramente el
+							movimiento realizado por el computador en el tablero.</td>
+						<td id="c}|x" class="">En proceso</td>
+						<td id="@`iv" class="">- Ruiz Milagros<br />- Trujillo Andrei<br />- Reeves David<br /></td>
+					</tr>
+					<tr id="742e64c6-5288-419f-b1cd-928e22b92617">
+						<td id="aaS`" class=""></td>
+						<td id="]AzI" class="">5.3 Permitir al usuario jugar su turno después de cada movimiento del
+							computador</td>
+						<td id="XiE:" class=""><strong>Dado </strong> que estoy jugando una partida contra el
+							computador,<strong> Cuando </strong> el computador realiza un movimiento en su
+							turno,<strong> Entonces </strong> el sistema debe permitir inmediatamente al
+							usuario realizar su propio movimiento en respuesta al movimiento del computador.</td>
+						<td id="c}|x" class="">En proceso</td>
+						<td id="@`iv" class="">- Ruiz Milagros<br />- Trujillo Andrei<br />- Reeves David<br /></td>
+					</tr>
+				</tbody>
+			</table>
             <ol type="1" id="4973b1ce-e322-42f3-b182-e6257bd64bff" class="numbered-list" start="1">
                 <li><strong>Tareas de implementación</strong></li>
             </ol>
@@ -289,198 +369,6 @@
                         <td id="NT~{" class="">Reeves Goñi ,<br />Ruiz Arica<br /></td>
                         <td id="}vxh" class="">Terminado</td>
                         <td id="aAzc" class="">La clase Lobby.jsx pertenece al frontend, y la clase ….</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p id="0bcc11c0-d6e1-4cf3-a122-1df8415492ee" class="">Resumen del código de prueba automatizado (que
-                corresponde directamente a algunos criterios de aceptación)</p>
-            <table id="4e035881-349a-4cd3-ac8b-ed6fb206526e" class="simple-table">
-                <tbody>
-                    <tr id="4dc35ff3-9a24-4598-938b-de6dfc80ac9d">
-                        <td id="hFTZ" class=""><strong>ID y nombre de la historia del usuario</strong></td>
-                        <td id="rEFD" class=""><strong>ID del criterio de aceptación</strong></td>
-                        <td id="]_@z" class=""><strong>Nombre(s) de clase del código de prueba</strong></td>
-                        <td id="wRlM" class=""><strong>Nombre(s) del método del código de prueba</strong></td>
-                        <td id="N};b" class=""><strong>Descripción del caso de prueba (entrada y salida
-                                esperada)</strong></td>
-                        <td id="FYih" class=""><strong>Estado</strong></td>
-                        <td id="hfiq" class=""><strong>Desarrollador</strong></td>
-                    </tr>
-                    <tr id="589ab663-fd55-45cf-b7ed-4a105c9bd2b8">
-                        <td id="hFTZ" class="">1Registrar usuario</td>
-                        <td id="rEFD" class="">1.1Creación exitosa de una cuenta de usuario válida</td>
-                        <td id="]_@z" class="">dav</td>
-                        <td id="wRlM" class=""></td>
-                        <td id="N};b" class=""></td>
-                        <td id="FYih" class="">Terminado</td>
-                        <td id="hfiq" class="">Reeves Goñi David</td>
-                    </tr>
-                    <tr id="6b5dfd97-6c46-463c-b091-c6c5402eb96e">
-                        <td id="hFTZ" class=""></td>
-                        <td id="rEFD" class="">1.2 Creación de una cuenta fallida con un nombre de usuario existente
-                        </td>
-                        <td id="]_@z" class="">dav</td>
-                        <td id="wRlM" class=""></td>
-                        <td id="N};b" class=""></td>
-                        <td id="FYih" class="">Terminado</td>
-                        <td id="hfiq" class="">Reeves Goñi David</td>
-                    </tr>
-                    <tr id="37a99656-c463-469f-85e3-6eca10b64cf1">
-                        <td id="hFTZ" class=""></td>
-                        <td id="rEFD" class="">1.3Creación fallida de una contraseña existente</td>
-                        <td id="]_@z" class="">dav</td>
-                        <td id="wRlM" class=""></td>
-                        <td id="N};b" class=""></td>
-                        <td id="FYih" class="">Terminado</td>
-                        <td id="hfiq" class="">Reeves Goñi David</td>
-                    </tr>
-                    <tr id="f65acaed-25a4-46e0-b991-d755aaa6e277">
-                        <td id="hFTZ" class="">2Iniciar Sesion</td>
-                        <td id="rEFD" class="">2.1Inicio de sesión exitoso con credenciales válidas</td>
-                        <td id="]_@z" class="">dav</td>
-                        <td id="wRlM" class=""></td>
-                        <td id="N};b" class=""></td>
-                        <td id="FYih" class="">Terminado</td>
-                        <td id="hfiq" class="">Reeves Goñi David</td>
-                    </tr>
-                    <tr id="291bdfb0-2b48-463a-aae9-f4248b01644d">
-                        <td id="hFTZ" class=""></td>
-                        <td id="rEFD" class="">2.2Intento fallido de inicio de sesión con contraseña incorrecta</td>
-                        <td id="]_@z" class="">dav</td>
-                        <td id="wRlM" class=""></td>
-                        <td id="N};b" class=""></td>
-                        <td id="FYih" class="">Terminado</td>
-                        <td id="hfiq" class="">Reeves Goñi David</td>
-                    </tr>
-                    <tr id="199183d7-3194-4b04-bca5-a101ea77897c">
-                        <td id="hFTZ" class=""></td>
-                        <td id="rEFD" class="">2.3Intento de inicio de sesión con un nombre de usuario inexistente</td>
-                        <td id="]_@z" class="">dav</td>
-                        <td id="wRlM" class=""></td>
-                        <td id="N};b" class=""></td>
-                        <td id="FYih" class="">Terminado</td>
-                        <td id="hfiq" class="">Reeves Goñi David</td>
-                    </tr>
-                    <tr id="3d0519a9-f6c7-46e3-b329-caa185c2626b">
-                        <td id="hFTZ" class=""></td>
-                        <td id="rEFD" class="">2.4Intento de inicio de sesión con un correo electrónico no asociado a
-                            ningún usuario</td>
-                        <td id="]_@z" class="">davdav</td>
-                        <td id="wRlM" class=""></td>
-                        <td id="N};b" class=""></td>
-                        <td id="FYih" class="">Terminado</td>
-                        <td id="hfiq" class="">Reeves Goñi David</td>
-                    </tr>
-                    <tr id="58ae8e2d-58af-434b-a737-545bfbb84553">
-                        <td id="hFTZ" class="">3.Cierre de sesion</td>
-                        <td id="rEFD" class="">3.1Cierre de sesión exitoso de una cuenta registrada</td>
-                        <td id="]_@z" class="">dav</td>
-                        <td id="wRlM" class=""></td>
-                        <td id="N};b" class=""></td>
-                        <td id="FYih" class="">Terminado</td>
-                        <td id="hfiq" class="">Reeves Goñi David</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p id="c82af739-231b-43c2-9c31-b13c0377c146" class="">Resumen de casos de prueba manuales (que corresponden
-                directamente a algunos criterios de aceptación)</p>
-            <table id="f2f5d781-4a74-442c-8f10-c8ba6e770002" class="simple-table">
-                <tbody>
-                    <tr id="c3382ff5-252b-4212-b094-85f377cfb210">
-                        <td id="JVSs" class=""><strong>ID y nombre de la historia del usuario</strong></td>
-                        <td id="qobD" class=""><strong>ID del criterio de aceptación</strong></td>
-                        <td id="VfPS" class=""><strong>Entrada de caso de prueba</strong></td>
-                        <td id="G~}V" class=""><strong>Prueba de Oracle (resultado esperado)</strong></td>
-                        <td id="V@SB" class=""><strong>Estado</strong></td>
-                        <td id="Jux=" class=""><strong>Notas</strong></td>
-                        <td id="cJO{" class=""><strong>Desarrollador</strong></td>
-                    </tr>
-                    <tr id="79059c94-418a-4648-a1fe-6bc32ae3a57f">
-                        <td id="JVSs" class="">1Registrar usuario</td>
-                        <td id="qobD" class="">1.1</td>
-                        <td id="VfPS" class=""></td>
-                        <td id="G~}V" class=""></td>
-                        <td id="V@SB" class=""></td>
-                        <td id="Jux=" class=""></td>
-                        <td id="cJO{" class=""></td>
-                    </tr>
-                    <tr id="3a56c136-c77c-4413-9538-158d86e547a0">
-                        <td id="JVSs" class=""></td>
-                        <td id="qobD" class="">1.2</td>
-                        <td id="VfPS" class=""></td>
-                        <td id="G~}V" class=""></td>
-                        <td id="V@SB" class=""></td>
-                        <td id="Jux=" class=""></td>
-                        <td id="cJO{" class=""></td>
-                    </tr>
-                    <tr id="2c6fa449-4ed7-401a-b52c-ac44af632d59">
-                        <td id="JVSs" class=""></td>
-                        <td id="qobD" class="">…</td>
-                        <td id="VfPS" class=""></td>
-                        <td id="G~}V" class=""></td>
-                        <td id="V@SB" class=""></td>
-                        <td id="Jux=" class=""></td>
-                        <td id="cJO{" class=""></td>
-                    </tr>
-                    <tr id="1e3e8226-d162-4cf2-a383-a05a321061ef">
-                        <td id="JVSs" class="">2Iniciar Sesion</td>
-                        <td id="qobD" class="">2.1</td>
-                        <td id="VfPS" class=""></td>
-                        <td id="G~}V" class=""></td>
-                        <td id="V@SB" class=""></td>
-                        <td id="Jux=" class=""></td>
-                        <td id="cJO{" class=""></td>
-                    </tr>
-                    <tr id="f43ba94f-4f09-4951-bf67-07f746718e80">
-                        <td id="JVSs" class=""></td>
-                        <td id="qobD" class="">…</td>
-                        <td id="VfPS" class=""></td>
-                        <td id="G~}V" class=""></td>
-                        <td id="V@SB" class=""></td>
-                        <td id="Jux=" class=""></td>
-                        <td id="cJO{" class=""></td>
-                    </tr>
-                    <tr id="1bfec6f6-6c06-4fdb-9f7c-687488d806d6">
-                        <td id="JVSs" class="">3.Cierre de sesion</td>
-                        <td id="qobD" class=""></td>
-                        <td id="VfPS" class=""></td>
-                        <td id="G~}V" class=""></td>
-                        <td id="V@SB" class=""></td>
-                        <td id="Jux=" class=""></td>
-                        <td id="cJO{" class=""></td>
-                    </tr>
-                </tbody>
-            </table>
-            <p id="712d213e-83f6-464e-bb52-eaa2a72479c9" class="">Resumen de otras pruebas automatizadas o manuales (que
-                no corresponden a los criterios de aceptación)</p>
-            <table id="f8096622-711d-472b-b1c3-fbbe680cc742" class="simple-table">
-                <tbody>
-                    <tr id="6eb221cd-a4fc-4fec-b941-1478553abd27">
-                        <td id="MYvK" class=""><strong>Número</strong></td>
-                        <td id="eQVB" class=""><strong>Entrada de prueba</strong></td>
-                        <td id="VWk{" class=""><strong>Resultado Esperado</strong></td>
-                        <td id="ErLD" class=""><strong>Nombre de clase del código de prueba</strong></td>
-                        <td id="Cwzl" class=""><strong>Nombre del método del código de prueba</strong></td>
-                        <td id="}}KS" class=""><strong>Estado</strong></td>
-                        <td id="RAyo" class=""><strong>Desarrollador</strong></td>
-                    </tr>
-                    <tr id="4cd11c4b-bc66-42b4-be39-7c4a843d55a4">
-                        <td id="MYvK" class=""></td>
-                        <td id="eQVB" class=""></td>
-                        <td id="VWk{" class=""></td>
-                        <td id="ErLD" class=""></td>
-                        <td id="Cwzl" class=""></td>
-                        <td id="}}KS" class=""></td>
-                        <td id="RAyo" class=""></td>
-                    </tr>
-                    <tr id="d866a1bb-acd9-4801-8ad3-d9731ee47382">
-                        <td id="MYvK" class=""></td>
-                        <td id="eQVB" class=""></td>
-                        <td id="VWk{" class=""></td>
-                        <td id="ErLD" class=""></td>
-                        <td id="Cwzl" class=""></td>
-                        <td id="}}KS" class=""></td>
-                        <td id="RAyo" class=""></td>
                     </tr>
                 </tbody>
             </table>
